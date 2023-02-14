@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Patients</title>
+  <title>Doctors</title>
   <script src="https://unpkg.com/phosphor-icons"></script>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <header>
   <div class="nav">
     <object data="../images/lightbulb.svg" width="45"></object>
-    <a href="#" class="nav-link">Doctors</a>
-    <a href="#" class="nav-link active-link">Patients</a>
+    <a href="#" class="nav-link active-link">Doctors</a>
+    <a href="#" class="nav-link">Patients</a>
   </div>
 
   <a href="#" class="add nav-link">Add</a>
@@ -19,20 +19,22 @@
 <body>
 <form method="POST" action="#" class="selector">
   <div class="selector-items">
-    <label for="sorting-patients"></label>
-    <select name="select" id="sorting-patients">
+    <label for="sorting-doctors"></label>
+    <select name="select" id="sorting-doctors">
       <option selected disabled>Sorting by</option>
-      <option value="ache">Kind of ache</option>
+      <option value="seniority">Seniority</option>
       <option value="name">Full name</option>
-      <option value="year">Year of birth</option>
+      <option value="clients">Amount of clients</option>
     </select>
 
-    <input type="radio" id="contactChoice1"
-           name="contact" value="email">
-    <label for="contactChoice1">Appointed</label>
-    <input type="radio" id="contactChoice2"
-           name="contact" value="phone">
-    <label for="contactChoice2">Not appointed</label>
+    <label for="doctors-specialty"></label>
+    <select name="select" id="doctors-specialty">
+      <option selected disabled>Specialty</option>
+      <option value="therapist">Therapist</option>
+      <option value="orthopedist">Orthopedist</option>
+      <option value="surgeon">Surgeon</option>
+      <option value="radiologist">Radiologist</option>
+    </select>
 
   </div>
 
@@ -43,21 +45,21 @@
 
 <div class="patients-list">
   <div class="patient-in-list">
-    <p class="full-name-in-list">Jack Herer, 2000</p>
+    <p class="full-name-in-list">Alexandr Evtushenko, therapist</p>
     <div class="item-buttons-in-list">
       <a href="#" class="open-button">Open</a>
       <a href="#" class="delete-button">Delete</a>
     </div>
   </div>
   <div class="patient-in-list">
-    <p class="full-name-in-list">Jack Herer, 2000</p>
+    <p class="full-name-in-list">Kirill Antipov, surgeon</p>
     <div class="item-buttons-in-list">
       <a href="#" class="open-button">Open</a>
       <a href="#" class="delete-button">Delete</a>
     </div>
   </div>
   <div class="patient-in-list">
-    <p class="full-name-in-list">Jack Herer, 2000</p>
+    <p class="full-name-in-list">Anatoli Gunev, orthopedist</p>
     <div class="item-buttons-in-list">
       <a href="#" class="open-button">Open</a>
       <a href="#" class="delete-button">Delete</a>
