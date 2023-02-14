@@ -1,0 +1,240 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #bca8f9;
+    transition: 0.2s;
+}
+
+html {
+    /*
+    10px / 16px = 0.925 = 62.5%
+    percentage of user's browser font-size settings
+    */
+    font-size: 62.5%;
+    overflow-x: hidden;
+    margin: 0 4rem 0 4rem;
+    /*Does not work in Safari*/
+    /*scroll-behavior: smooth;*/
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #555;
+    overflow-x: hidden;
+}
+
+.open-button {
+    font-weight: 500;
+    font-size: 1.8rem;
+    background-color: #5b6268;
+    color: white;
+    text-decoration: none;
+    padding: 1.3rem 1.2rem;
+    border-radius: 0.8rem;
+}
+
+.open-button:hover, .open-button:active {
+    background-color: white;
+    color: #5b6268;
+    box-shadow: inset 0 0 0 3px #5b6268;
+}
+
+.delete-button {
+    font-weight: 500;
+    font-size: 1.8rem;
+    background-color: #e03131;
+    color: white;
+    text-decoration: none;
+    padding: 1.3rem 1.2rem;
+    border-radius: 0.8rem;
+}
+
+.delete-button:hover, .delete-button:active {
+    background-color: white;
+    color: #e03131;
+    box-shadow: inset 0 0 0 3px #e03131;
+}
+
+.item-buttons-in-list {
+    margin-right: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    background-color: rgb(5, 133, 2529);
+}
+
+/**************************/
+/* HEADER */
+/**************************/
+
+header {
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: center;
+    justify-content: space-between;
+    /* Because we want header to be sticky latter */
+    height: 6.8rem;
+    padding: 0 1rem;
+    position: relative;
+    margin: 1.2rem;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    text-align: center;
+    color: blue;
+    font-weight: 585;
+    font-size: 1.8rem;
+}
+
+.nav-link:hover, .nav-link:active {
+    color: white;
+}
+
+.active-link {
+    background-color: rgb(0, 133, 2523);
+    color: white;
+    padding: 1.3rem 1rem;
+    border-radius: 0.8rem;
+}
+
+.active-link:hover, .active-link:active {
+    background-color: white;
+    color: rgb(0, 133, 2523);
+    box-shadow: inset 0 0 0 3px rgb(0, 133, 2523);
+}
+
+.add {
+    background-color: #2b8a3e;
+    color: white;
+    padding: 1.3rem 1.2rem;
+    border-radius: 0.8rem;
+}
+
+.add:hover, .add:active {
+    background-color: white;
+    color: #2b8a3e;
+    box-shadow: inset 0 0 0 3px #2b8a3e;
+}
+
+/**************************/
+/* SELECTOR */
+/**************************/
+
+.selector {
+    display: flex;
+    align-items: center;
+
+    height: 6.8rem;
+    padding: 0 1rem;
+    position: relative;
+    margin: 1.2rem;
+
+    gap: 4.6rem;
+}
+
+.selector-items {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.selector-items select {
+    position: relative;
+
+    width: 12.6rem;
+    height: 3.6rem;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-color: rgb(0, 133, 2523);
+    border-width: 0.2rem;
+    background-color: white;
+}
+
+.selector-items select option {
+    background-color: white;
+}
+
+.selector-items select:hover, .selector-items select:active {
+    box-shadow: inset 0 0 0 2px #509999;
+    transition: 0.2s;
+}
+
+.selector-items label {
+    font-size: 1.6rem;
+    color: black;
+}
+
+.selector-items input {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.radio-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.selector-items input:hover, .selector-items input:active {
+    height: 1.7rem;
+    width: 1.7rem;
+    transition: 0.2s;
+    border-width: 2rem;
+    border-color: blue;
+}
+
+.selector-items input:checked {
+    height: 1.7rem;
+    width: 1.7rem;
+}
+
+.submit-button {
+    width: 7.4rem;
+    height: 3.6rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-radius: 0.8rem;
+    background-color: rgb(0, 133, 2523);
+    font-size: 1.6rem;
+    color: white;
+}
+
+.submit-button:hover, .submit-button:active {
+    background-color: white;
+    color: rgb(0, 133, 2523);
+    box-shadow: inset 0 0 0 3px rgb(0, 133, 2523);
+}
+
+/**************************/
+/* List of patients */
+/**************************/
+
+.patient-in-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(0, 133, 2523);
+    height: 5.4rem;
+    box-shadow: inset 0 0 0 3px rgb(0, 133, 2523);
+    border-radius: 0.7rem;
+    margin: 0 3rem 0.8rem 3rem;
+
+    color: white;
+}
+
+.full-name-in-list {
+    margin-left: 2rem;
+    background-color: rgb(0, 133, 2523);
+    font-size: 1.9rem;
+}
