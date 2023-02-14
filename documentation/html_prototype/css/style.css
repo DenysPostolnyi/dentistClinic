@@ -246,7 +246,7 @@ header {
 
 .info {
     margin: 2rem;
-    width: 45%;
+    width: 35%;
     border: solid #5f3dc4 0.2rem;
     border-radius: 4.2rem;
     background-color: #ded4fc;
@@ -306,7 +306,7 @@ header {
     margin-left: 5.2rem;
     display: flex;
     align-items: center;
-    width: 40%;
+    width: 31%;
     justify-content: space-between;
 }
 
