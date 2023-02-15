@@ -474,7 +474,7 @@ header {
 }
 
 /**************************/
-/* modal for making appointment */
+/* edit/add form */
 /**************************/
 
 .main-field-for-entering-data {
@@ -507,10 +507,11 @@ header {
     border-color: #5b6268;
     padding-left: 1rem;
     font-size: 1.4rem;
+    outline: none;
 }
 
 .full-name input:hover, .full-name input:active, .full-name input:focus {
-    box-shadow: inset 0 0 0 2px #5f3dc4;
+    box-shadow: inset 0 0 0 2px #bca8f9;
     transition: 0.2s;
 }
 
@@ -547,10 +548,11 @@ header {
     border-radius: 0.8rem;
     padding-left: 1rem;
     font-size: 1.4rem;
+    outline: none;
 }
 
 .field-for-general-info:hover, .field-for-general-info:active, .field-for-general-info:focus {
-    box-shadow: inset 0 0 0 2px #5f3dc4;
+    box-shadow: inset 0 0 0 2px #bca8f9 !important;
     transition: 0.2s;
 }
 
@@ -578,4 +580,43 @@ header {
     background-color: white;
     color: #e03131;
     box-shadow: inset 0 0 0 3px #e03131;
+}
+
+/**************************/
+/* delete dialog box */
+/**************************/
+
+.dialog-del {
+    margin: 24rem;
+    height: 12rem;
+    width: 25rem;
+    border: 0.1rem solid;
+    background-color: white;
+}
+.dialog-del h3 {
+    background-color: inherit;
+    margin: 0.8rem 0.8rem;
+    font-size: 1.6rem;
+}
+
+.dialog-del p {
+    background-color: inherit;
+    margin: 1.6rem 0.8rem;
+    font-size: 1.3rem;
+}
+
+.del-choose {
+    background-color: inherit;
+    display: flex;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.del-choose input {
+    border-width: 0.1rem;
+    text-align: center;
+    width: 11.5rem;
+    padding: 0.8rem 0 0.8rem 0;
 }
