@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient</title>
+  <script src="https://unpkg.com/phosphor-icons"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<form method="" action="" class="making-appointment">
+  <h3>Making an appointment</h3>
+  <hr>
+  <div class="form-of-appointment">
+    <div class="left-part">
+
+      <label for="kind-of-doc"></label>
+      <select class="kind-of-doc" name="kind-of-doc" id="kind-of-doc">
+        <option selected disabled>Choose kind of doc</option>
+        <option value="therapist">Therapist</option>
+        <option value="orthopedist">Orthopedist</option>
+        <option value="surgeon">Surgeon</option>
+        <option value="radiologist">Radiologist</option>
+      </select>
+      <br>
+      <label for="doc"></label>
+      <select class="doc" name="doc" id="doc">
+        <option selected disabled>Choose doctor</option>
+        <option value="#">Alexandr Evtushenko</option>
+        <option value="#">Kirill Antipov</option>
+        <option value="#">Anatoli Gunev</option>
+      </select>
+    </div>
+    <div class="right-part">
+      <label for="date-for-making-appointment"></label>
+      <input id="date-for-making-appointment" type="date" class="kalendar" data-date-inline-picker="true">
+    </div>
+  </div>
+  <div class="buttons-appointment">
+    <input class="close-appointment" type="button" value="Close">
+    <input class="make-appointment-submit" type="submit" value="Make">
+  </div>
+</form>
+</body>
+</html>
