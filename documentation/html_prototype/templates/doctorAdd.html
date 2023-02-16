@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add doc</title>
+  <script src="https://unpkg.com/phosphor-icons"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<header>
+  <div class="nav">
+    <object data="../images/lightbulb.svg" width="45"></object>
+    <a href="#" class="nav-link">Doctors</a>
+    <a href="#" class="nav-link">Patients</a>
+  </div>
+</header>
+<body>
+
+<form class="main-field-for-entering-data">
+
+  <div class="full-name">
+    <label for="full-name">Full name</label> <br>
+    <input type="text" name="full-name" id="full-name" class="field-for-full-name" value="Full name">
+  </div>
+
+  <div class="general-info">
+    <div class="left-info-enter-part">
+      <label for="specialty" class="label-for-general-info">Specialty</label><br>
+      <select name="specialty" id="specialty" class="field-for-general-info">
+        <option selected disabled>Specialty</option>
+        <option value="therapist">therapist</option>
+        <option value="orthopedist">orthopedist</option>
+        <option value="surgeon">surgeon</option>
+        <option value="radiologist">radiologist</option>
+      </select>
+      <label for="email" class="label-for-general-info">Email</label> <br>
+      <input type="text" name="email" id="email" class="field-for-general-info" value="Email">
+      <br>
+    </div>
+    <div class="right-info-enter-part">
+      <label for="seniority" class="label-for-general-info">Seniority</label> <br>
+      <input type="text" name="seniority" id="seniority" class="field-for-general-info" value="Seniority">
+      <label for="phone" class="label-for-general-info">Phone number</label> <br>
+      <input type="text" name="phone" id="phone" class="field-for-general-info" value="Phone number"><br>
+
+    </div>
+  </div>
+
+  <div class="buttons-appointment color-from-field">
+    <input class="submit-button" type="submit" value="Submit">
+    <input class="cancel-entering" type="button" value="Cancel">
+  </div>
+</form>
+
+</body>
+</html>
