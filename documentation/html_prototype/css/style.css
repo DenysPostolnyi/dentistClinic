@@ -593,6 +593,7 @@ header {
     border: 0.1rem solid;
     background-color: white;
 }
+
 .dialog-del h3 {
     background-color: inherit;
     margin: 0.8rem 0.8rem;
@@ -619,4 +620,58 @@ header {
     text-align: center;
     width: 11.5rem;
     padding: 0.8rem 0 0.8rem 0;
+}
+
+
+/**************************/
+/* doctor info */
+/**************************/
+
+.doctor-info {
+    margin: 2rem;
+    height: 38rem;
+    width: 65rem;
+    border: solid #5f3dc4 0.2rem;
+    border-radius: 4.2rem;
+    background-color: #ded4fc;
+    color: blue;
+    font-size: 1.8rem;
+    font-weight: 600;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.doctor-info p {
+    padding: 3.4rem 1.2rem 0 3.2rem;
+    background-color: inherit;
+}
+
+.doctor-info p a {
+    background-color: inherit;
+}
+
+.buttons-doctor-info {
+    width: 58rem;
+}
+
+.left-info-doc-part .kalendar {
+    margin-left: 4.4rem;
+}
+
+.appointed-patients-list {
+    margin-right: 1.2rem;
+    margin-top: 0.8rem;
+    height: 24rem;
+    border: solid 0.1rem black;
+    border-radius: 4.2rem;
+    background-color: white;
+    overflow: hidden;
+}
+
+.appointed-patients-list a {
+    background-color: inherit;
+    margin-top: 0.8rem;
+    display: block;
+    text-align: center;
 }
