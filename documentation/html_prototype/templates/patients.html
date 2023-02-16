@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patients</title>
+  <script src="https://unpkg.com/phosphor-icons"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<header>
+  <div class="nav">
+    <object data="../images/lightbulb.svg" width="45"></object>
+    <a href="#" class="nav-link">Doctors</a>
+    <a href="#" class="nav-link active-link">Patients</a>
+  </div>
+
+  <a href="#" class="add nav-link">Add</a>
+</header>
+
+<body>
+<form method="POST" action="#" class="selector">
+  <div class="selector-items">
+    <label for="sorting-patients"></label>
+    <select name="select" id="sorting-patients">
+      <option selected disabled>Sorting by</option>
+      <option value="ache">Kind of ache</option>
+      <option value="name">Full name</option>
+      <option value="year">Year of birth</option>
+    </select>
+
+    <input type="radio" id="contactChoice1"
+           name="contact" value="email">
+    <label for="contactChoice1">Appointed</label>
+    <input type="radio" id="contactChoice2"
+           name="contact" value="phone">
+    <label for="contactChoice2">Not appointed</label>
+
+  </div>
+
+  <div>
+    <input type="submit" value="Submit" class="submit-button">
+  </div>
+</form>
+
+<div class="patients-list">
+  <div class="patient-in-list">
+    <p class="full-name-in-list">Jack Herer, 2000</p>
+    <div class="item-buttons-in-list">
+      <a href="#" class="open-button">Open</a>
+      <a href="#" class="delete-button">Delete</a>
+    </div>
+  </div>
+  <div class="patient-in-list">
+    <p class="full-name-in-list">Jack Herer, 2000</p>
+    <div class="item-buttons-in-list">
+      <a href="#" class="open-button">Open</a>
+      <a href="#" class="delete-button">Delete</a>
+    </div>
+  </div>
+  <div class="patient-in-list">
+    <p class="full-name-in-list">Jack Herer, 2000</p>
+    <div class="item-buttons-in-list">
+      <a href="#" class="open-button">Open</a>
+      <a href="#" class="delete-button">Delete</a>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Doctors</title>
+  <script src="https://unpkg.com/phosphor-icons"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<header>
+  <div class="nav">
+    <object data="../images/lightbulb.svg" width="45"></object>
+    <a href="#" class="nav-link active-link">Doctors</a>
+    <a href="#" class="nav-link">Patients</a>
+  </div>
+
+  <a href="#" class="add nav-link">Add</a>
+</header>
+
+<body>
+<form method="POST" action="#" class="selector">
+  <div class="selector-items">
+    <label for="sorting-doctors"></label>
+    <select name="select" id="sorting-doctors">
+      <option selected disabled>Sorting by</option>
+      <option value="seniority">Seniority</option>
+      <option value="name">Full name</option>
+      <option value="clients">Amount of clients</option>
+    </select>
+
+    <label for="doctors-specialty"></label>
+    <select name="select" id="doctors-specialty">
+      <option selected disabled>Specialty</option>
+      <option value="therapist">Therapist</option>
+      <option value="orthopedist">Orthopedist</option>
+      <option value="surgeon">Surgeon</option>
+      <option value="radiologist">Radiologist</option>
+    </select>
+
+  </div>
+
+  <div>
+    <input type="submit" value="Submit" class="submit-button">
+  </div>
+</form>
+
+<div class="patients-list">
+  <div class="patient-in-list">
+    <p class="full-name-in-list">Alexandr Evtushenko, therapist</p>
+    <div class="item-buttons-in-list">
+      <a href="#" class="open-button">Open</a>
+      <a href="#" class="delete-button">Delete</a>
+    </div>
+  </div>
+  <div class="patient-in-list">
+    <p class="full-name-in-list">Kirill Antipov, surgeon</p>
+    <div class="item-buttons-in-list">
+      <a href="#" class="open-button">Open</a>
+      <a href="#" class="delete-button">Delete</a>
+    </div>
+  </div>
+  <div class="patient-in-list">
+    <p class="full-name-in-list">Anatoli Gunev, orthopedist</p>
+    <div class="item-buttons-in-list">
+      <a href="#" class="open-button">Open</a>
+      <a href="#" class="delete-button">Delete</a>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
