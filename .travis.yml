@@ -1,12 +1,6 @@
 #language versions used to test src
 language: python
 python:
-  - "2.7"
-  - "3.4"
-  - "3.5"
-  - "3.6"      # current default Python on Travis CI
-  - "3.7"
-  - "3.8"
   - "3.9"
   - "3.9-dev"  # 3.9 development branch
   - "nightly"  # nightly build
@@ -21,11 +15,11 @@ install: # command to install dependencies
 
 # command to run tests
 script:
-  - coverage run -m pylint src/
+  - coverage run -m pylint src/ html
 #  - coverage run -m pytest && coverage html --pylint
 
 after_success:
-  - coverage
+  - coverage html
 #running acceptance test
 #build latest documentation
 #deployment to staging environment
