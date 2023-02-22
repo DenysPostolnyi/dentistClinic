@@ -15,5 +15,4 @@ class DBSettings:
     USERNAME = os.getenv('MYSQL_USERNAME')
     PASSWORD = os.getenv('MYSQL_PASSWORD')
     PORT = os.getenv('MYSQL_PORT')
-    SQLALCHEMY_DATABASE_URL = "mysql+pymysql://" + USERNAME + ":" + PASSWORD + "@" \
-                              + "0.0.0.0" + ":" + PORT + "/" + DATABASE
+    SQLALCHEMY_DATABASE_URL = "mysql+pymysql://" + USERNAME + ":" + PASSWORD + "@" + "0.0.0.0" + ":" + PORT + "/" + DATABASE
