@@ -21,7 +21,7 @@ install: # command to install dependencies
 
 # command to run tests
 script:
-  - coverage run -m --pylint
+  - coverage run -m pylint src/
 #  - coverage run -m pytest && coverage html --pylint
 
 after_success:
