@@ -15,11 +15,10 @@ install: # command to install dependencies
 
 # command to run tests
 script:
-  - coverage run -m pylint src/ html
+  - pylint src/
+  - coverage run -m pytest && coverage report
 #  - coverage run -m pytest && coverage html --pylint
-
-after_success:
-  - coverage html
+#after_success:
 #running acceptance test
 #build latest documentation
 #deployment to staging environment
