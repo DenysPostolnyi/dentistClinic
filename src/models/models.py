@@ -32,6 +32,9 @@ class Doctor(db.Model):
     phone_number = db.Column(db.Integer, unique=True)
     email = db.Column(db.String(100), unique=True)
 
+    def __repr__(self):
+        return f"({self.full_name}, {self.seniority}, {self.specialty}, {self.phone_number}, {self.email})"
+
 
 class KindOfAche(enum.Enum):
     """
@@ -55,3 +58,6 @@ class Patient(db.Model):
     kind_of_ache = db.Column(db.Enum(KindOfAche))
     phone_number = db.Column(db.Integer, unique=True)
     email = db.Column(db.String(100), unique=True)
+
+    def __repr__(self):
+        return f"({self.full_name}, {self.year_of_birth}, {self.kind_of_ache}, {self.phone_number}, {self.email})"
