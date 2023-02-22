@@ -11,8 +11,8 @@ doctor_db_routes = Blueprint('doctor_db_routes', __name__,
 @doctor_db_routes.route('/doctor-add')
 def adding():
     try:
-        doctor = Doctor(full_name="Derek", seniority=4, specialty=Specialty.THERAPIST, phone_number="0682748592",
-                        email="email@gmail.com")
+        doctor = Doctor(full_name="Derek", seniority=4, specialty=Specialty.THERAPIST, phone_number="0636582647",
+                        email="email2@gmail.com")
         doctor_service.add_doctors(doctor)
         return render_template(f'good.html')
     except TemplateNotFound:
