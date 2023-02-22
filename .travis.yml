@@ -19,10 +19,7 @@ script:
   - coverage run -m pytest && coverage report
 
 env:
-  - MYSQL_DATABASE=db
-  - MYSQL_PASSWORD=2332
-  - MYSQL_USERNAME=den
-  - MYSQL_PORT=3306
+  - MYSQL_DATABASE=db MYSQL_PASSWORD=2332 MYSQL_USERNAME=den MYSQL_PORT=3306
 #  - coverage run -m pytest && coverage html --pylint
 #after_success:
 #running acceptance test
