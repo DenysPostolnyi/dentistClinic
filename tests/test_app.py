@@ -1,6 +1,5 @@
 import unittest
 
-from src.models.models import db, Doctor, Specialty
 from src.service import doctor_service
 from src import create_app
 

@@ -6,36 +6,25 @@ python:
   - "nightly"  # nightly build
 
 #src dependencies installation
-services:
-  - mysql
-
-before_install:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS db;'
-
 install: # command to install dependencies
   - pip install -r requirements.txt
   - pip install pylint
   - pip install coverage
-  
-development:
-  database: db
-  username: travis
-  password: 1111
+  - pip install Flask-Migrate
 
-test:
-  adapter: mysql12
-  database: db
-  username: travis
-  password: 1111
-  encoding: utf8
 #running unit tests
+before_script:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS db;'
 
 # command to run tests
 script:
   - pylint src/
+  - flask db migrate
+  - flask db upgrade
   - coverage run -m pytest && coverage report
 
 env:
+  - DB=mysql
   - MYSQL_DATABASE=db MYSQL_PASSWORD=1111 MYSQL_USERNAME=travis MYSQL_PORT=3306
 #  - coverage run -m pytest && coverage html --pylint
 #after_success:
