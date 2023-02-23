@@ -26,8 +26,3 @@ script:
 env:
   - DB=mysql
   - MYSQL_DATABASE=db MYSQL_PASSWORD=1111 MYSQL_USERNAME=travis MYSQL_PORT=3306
-#  - coverage run -m pytest && coverage html --pylint
-#after_success:
-#running acceptance test
-#build latest documentation
-#deployment to staging environment
