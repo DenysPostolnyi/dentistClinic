@@ -11,9 +11,9 @@ env:
 
 #src dependencies installation
 install: # command to install dependencies
-#  - pip install -r requirements.txt
-#  - pip install pylint
-#  - pip install coverage
+  - pip install -r requirements.txt
+  - pip install pylint
+  - pip install coverage
   - pip install Flask-Migrate
   - pip install mysqlclient
 
@@ -23,7 +23,7 @@ before_script:
 
 # command to run tests
 script:
-#  - pylint src/
+  - pylint src/
   - flask --app=src/ db init
   - flask --app=src/ db migrate
   - flask --app=src/ db upgrade
