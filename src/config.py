@@ -16,7 +16,5 @@ class DBSettings:
     PASSWORD = os.getenv('MYSQL_PASSWORD') if os.getenv('MYSQL_PASSWORD') else ""
     HOST = os.getenv('MYSQL_HOST')
     PORT = os.getenv('MYSQL_PORT')
-    if DATABASE is "db":
-        SQLALCHEMY_DATABASE_URL = "mysql+pymysql://" + USERNAME + ":" + PASSWORD + "@" + HOST + ":" + PORT + "/" + DATABASE
-    elif DATABASE is "travis_db":
-        SQLALCHEMY_DATABASE_URL = "mysql://" + USERNAME + ":" + PASSWORD + "@" + HOST + ":" + PORT + "/" + DATABASE
+    SQLALCHEMY_DATABASE_URL = "mysql+pymysql://" + USERNAME + ":" + PASSWORD + "@" + HOST + ":" + PORT + "/" + DATABASE \
+        if DATABASE == "db" else "mysql://" + USERNAME + ":" + PASSWORD + "@" + HOST + ":" + PORT + "/" + DATABASE
