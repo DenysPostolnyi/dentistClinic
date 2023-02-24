@@ -13,6 +13,6 @@ class DBSettings:
     """
     DATABASE = os.getenv('MYSQL_DATABASE')
     USERNAME = os.getenv('MYSQL_USERNAME')
-    PASSWORD = os.getenv('MYSQL_PASSWORD')
+    PASSWORD = os.getenv('MYSQL_PASSWORD') if os.getenv('MYSQL_PASSWORD') else ""
     PORT = os.getenv('MYSQL_PORT')
     SQLALCHEMY_DATABASE_URL = "mysql+pymysql://" + USERNAME + ":" + PASSWORD + "@" + "0.0.0.0" + ":" + PORT + "/" + DATABASE
