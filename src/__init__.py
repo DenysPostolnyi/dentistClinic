@@ -19,9 +19,9 @@ def create_app(test_config=None):
     db.init_app(app)
     migrate.init_app(app, db)
     from src.models.models import Doctor, Patient
-
-    from src.views import doctor_db_routes, patioent_db_routes
-    app.register_blueprint(doctor_db_routes.doctor_db_routes)
-    app.register_blueprint(patioent_db_routes.patient_db_routes)
+    #
+    # from src.views import doctor_db_routes, patioent_db_routes
+    # app.register_blueprint(doctor_db_routes.doctor_db_routes)
+    # app.register_blueprint(patioent_db_routes.patient_db_routes)
 
     return app
