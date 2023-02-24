@@ -5,6 +5,10 @@ python:
   - "3.9-dev"  # 3.9 development branch
 services:
   - mysql
+
+env:
+  - MYSQL_DATABASE=travis_db MYSQL_USER=root MYSQL_PORT=3306 MYSQL_HOST=127.0.0.1 DATABASE_URL=mysql://$MYSQL_USER:@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE
+
 #src dependencies installation
 install: # command to install dependencies
   - pip install -r requirements.txt
@@ -24,6 +28,3 @@ script:
   - flask --app=src/ db migrate
   - flask --app=src/ db upgrade
   - coverage run -m pytest && coverage report
-
-env:
-  - MYSQL_DATABASE=travis_db MYSQL_USER=root MYSQL_PORT=3306 MYSQL_HOST=127.0.0.1 DATABASE_URL=mysql://$MYSQL_USER:@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE/
