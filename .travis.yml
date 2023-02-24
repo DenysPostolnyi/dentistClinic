@@ -12,6 +12,7 @@ install: # command to install dependencies
   - pip install pylint
   - pip install coverage
   - pip install Flask-Migrate
+  - pip install mysqlclient
 
 #running unit tests
 before_script:
@@ -26,4 +27,4 @@ script:
   - coverage run -m pytest && coverage report
 
 env:
-  - MYSQL_DATABASE=db MYSQL_USERNAME=root MYSQL_PORT=3306
+  - MYSQL_DATABASE=db MYSQL_USERNAME=root MYSQL_PORT=3306 MYSQL_HOST=127.0.0.1
