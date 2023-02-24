@@ -5,10 +5,10 @@ from flask import Flask
 from src.config import DBSettings
 
 
-def create_app():
+def create_app(test_config=None):
     """
     creating app
-    :param:
+    :param test_config:
     :return: app
     """
     app = Flask(__name__, instance_relative_config=True)
