@@ -20,6 +20,7 @@ before_script:
 # command to run tests
 script:
   - pylint src/
+  - flask db init
   - flask db migrate
   - flask db upgrade
   - coverage run -m pytest && coverage report
