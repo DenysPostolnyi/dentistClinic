@@ -1,30 +1,28 @@
-#language versions used to test app
+#language versions used to test src
 language: python
 python:
-  - "2.7"
-  - "3.4"
-  - "3.5"
-  - "3.6"      # current default Python on Travis CI
-  - "3.7"
-  - "3.8"
   - "3.9"
   - "3.9-dev"  # 3.9 development branch
-  - "nightly"  # nightly build
+services:
+  - mysql
 
-#app dependencies installation
+env:
+  - MYSQL_DATABASE=travis_db MYSQL_USER=root MYSQL_PORT=3306 MYSQL_HOST=127.0.0.1 DATABASE_URL=mysql://$MYSQL_USER:@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE
+
+#src dependencies installation
 install: # command to install dependencies
   - pip install -r requirements.txt
   - pip install pylint
   - pip install coverage
+  - pip install Flask-Migrate
+  - pip install mysqlclient
 
 #running unit tests
+before_script:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS travis_db;'
 
 # command to run tests
 script:
-  - coverage run -m pytest && coverage html --pylint
-
-after_success:
-  - coverage
-#running acceptance test
-#build latest documentation
-#deployment to staging environment
+#  - pylint src/
+  - flask --app=src/ db upgrade
+  - coverage run -m pytest && coverage report
