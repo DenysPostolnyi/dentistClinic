@@ -2,7 +2,6 @@
 Models for entities
 """
 import enum
-
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
@@ -12,7 +11,7 @@ migrate = Migrate()
 
 class Specialty(enum.Enum):
     """
-        Enum with kinds of specialty
+    Enum with kinds of specialty
     """
     THERAPIST = 'therapist'
     ORTHOPEDIST = 'orthopedist'
@@ -33,7 +32,8 @@ class Doctor(db.Model):
     email = db.Column(db.String(100), unique=True)
 
     def __repr__(self):
-        return f"({self.full_name}, {self.seniority}, {self.specialty}, {self.phone_number}, {self.email})"
+        return f"({self.full_name}, {self.seniority}, {self.specialty}, " \
+               f"{self.phone_number}, {self.email})"
 
 
 class KindOfAche(enum.Enum):
@@ -60,4 +60,5 @@ class Patient(db.Model):
     email = db.Column(db.String(100), unique=True)
 
     def __repr__(self):
-        return f"({self.full_name}, {self.year_of_birth}, {self.kind_of_ache}, {self.phone_number}, {self.email})"
+        return f"({self.full_name}, {self.year_of_birth}, {self.kind_of_ache}, " \
+               f"{self.phone_number}, {self.email})"

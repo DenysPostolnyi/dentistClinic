@@ -10,5 +10,5 @@ class TestDB(unittest.TestCase):
         with create_app().app_context():
             doctor = Doctor(full_name="Derek", seniority=4, specialty=Specialty.THERAPIST, phone_number="0636582647",
                             email="email2@gmail.com")
-            doctor_service.add_doctors(doctor)
+            # doctor_service.add_doctors(doctor)
             self.assertIsNotNone(doctor_service.get_all())

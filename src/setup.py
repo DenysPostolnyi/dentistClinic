@@ -1,3 +1,6 @@
+"""
+Project's setups
+"""
 from setuptools import setup
 
 with open('../requirements.txt') as f:
@@ -15,4 +18,3 @@ setup(
     # zip_safe=False,
     install_requires=requirements
 )
-

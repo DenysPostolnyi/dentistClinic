@@ -1,20 +1,41 @@
+"""
+Doctor services for working with DB
+"""
 from src.models.models import db, Doctor
 
 
 def add_doctors(doctor):
+    """
+    Function for adding doctor to DB
+    :param doctor:
+    """
     db.session.add(doctor)
     db.session.commit()
 
 
 def get_all():
+    """
+    Function for getting all doctors from DB
+    :return list of Doctor objects:
+    """
     return Doctor.query.all()
 
 
 def get_one_by_id(doctor_id):
+    """
+    Function for getting doctor from DB by id
+    :param doctor_id:
+    :return doctor:
+    """
     return Doctor.query.get_or_404(doctor_id)
 
 
 def update(doctor_id, doctor):
+    """
+    Function for updating doctor in DB
+    :param doctor_id:
+    :param doctor:
+    """
     doctor_for_edit = Doctor.query.get_or_404(doctor_id)
 
     doctor_for_edit.full_name = doctor.full_name
@@ -28,6 +49,10 @@ def update(doctor_id, doctor):
 
 
 def delete(doctor_id):
+    """
+    Function for deleting doctor from DB
+    :param doctor_id:
+    """
     doctor = Doctor.query.get_or_404(doctor_id)
     db.session.delete(doctor)
     db.session.commit()
