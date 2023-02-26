@@ -31,7 +31,7 @@ class PatientAPIGetUpdateDelete(Resource):
             patient = patient_service.get_one_by_id(id)
             return json.loads(patient.to_json())
         except RuntimeError as error:
-            abort(404, error)
+            abort(404, str(error))
 
     def put(self, id):
         new_patient = request.get_json(force=True)
