@@ -27,11 +27,11 @@ class DoctorAPIGetPost(Resource):
 
 class DoctorAPIGetUpdateDelete(Resource):
     def get(self, id):
-        doctor = doctor_service.get_one_by_id(id)
-        if doctor:
+        try:
+            doctor = doctor_service.get_one_by_id(id)
             return json.loads(doctor.to_json())
-        else:
-            abort(404, f"Doctor with id: {id} was not found")
+        except RuntimeError as error:
+            abort(404, str(error))
 
     def put(self, id):
         new_doctor = request.get_json(force=True)
