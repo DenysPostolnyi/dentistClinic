@@ -6,8 +6,8 @@ from src.service import doctor_service
 from src.util import doctor_mapper
 
 app = Flask(__name__)
-api_bp = Blueprint('api', __name__)
-api = Api(api_bp)
+api_doctor = Blueprint('doctor_api', __name__)
+api = Api(api_doctor)
 
 
 class DoctorAPIGetPost(Resource):

@@ -74,3 +74,14 @@ class Patient(db.Model):
     def __repr__(self):
         return f"({self.full_name}, {self.year_of_birth}, {self.kind_of_ache}, " \
                f"{self.phone_number}, {self.email})"
+
+    def to_json(self):
+        return json.dumps({
+            "patient_id": self.patient_id,
+            "doctor_id": self.doctor_id,
+            "full_name": self.full_name,
+            "year_of_birth": self.year_of_birth,
+            "kind_of_ache": self.kind_of_ache.__str__(),
+            "phone_number": self.phone_number,
+            "email": self.email,
+        })

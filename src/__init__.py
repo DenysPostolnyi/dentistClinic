@@ -5,7 +5,8 @@ from flask import Flask
 from flask_restful import Api
 from src.models.models import db, migrate
 from src.config import DBSettings
-from src.rest.doctor_api import api_bp
+from src.rest.doctor_api import api_doctor
+from src.rest.patient_api import api_patient
 
 app = Flask(__name__, instance_relative_config=True)
 app.config['SQLALCHEMY_DATABASE_URI'] = DBSettings.SQLALCHEMY_DATABASE_URL
@@ -16,4 +17,5 @@ migrate.init_app(app, db)
 from src.models.models import Doctor, Patient
 
 api = Api()
-app.register_blueprint(api_bp)
+app.register_blueprint(api_doctor)
+app.register_blueprint(api_patient)
