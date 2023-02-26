@@ -2,6 +2,8 @@
 Models for entities
 """
 import enum
+import json
+
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
@@ -34,6 +36,16 @@ class Doctor(db.Model):
     def __repr__(self):
         return f"({self.full_name}, {self.seniority}, {self.specialty}, " \
                f"{self.phone_number}, {self.email})"
+
+    def to_json(self):
+        return json.dumps({
+            "doctor_id": self.doctor_id,
+            "full_name": self.full_name,
+            "seniority": self.seniority,
+            "specialty": self.specialty.__str__(),
+            "phone_number": self.phone_number,
+            "email": self.email,
+        })
 
 
 class KindOfAche(enum.Enum):
