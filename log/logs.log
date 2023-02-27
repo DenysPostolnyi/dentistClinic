@@ -93,3 +93,8 @@ INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 11:52:03] "GET /doctor-api HTTP/1.1" 20
 2023-02-27 12:33:51,620 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2023 12:33:51] "GET /doctor-api HTTP/1.1" 200 -
 2023-02-27 12:33:51,929 - root - DEBUG - Doctor by id - 23 was updated, new doctor: (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)
 2023-02-27 12:33:51,930 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2023 12:33:51] "PUT /doctor-api/23 HTTP/1.1" 200 -
+2023-02-27 18:20:14,986 - root - DEBUG - Doctor for delete by id - 24 was not found
+2023-02-27 18:20:15,000 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2023 18:20:15] "[33mDELETE /doctor-api/24 HTTP/1.1[0m" 404 -
+2023-02-27 18:20:52,010 - root - DEBUG - Doctor by id - 24 was not found
+2023-02-27 18:20:52,011 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2023 18:20:52] "[33mGET /doctor-api/24 HTTP/1.1[0m" 404 -
+2023-02-27 18:22:46,858 - root - DEBUG - Doctor by id - 24 was not found

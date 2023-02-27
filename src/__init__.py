@@ -4,7 +4,6 @@ Init file for app
 import logging
 
 from flask import Flask
-from flask_restful import Api
 from src.models.models import db, migrate
 from src.config import DBSettings
 from src.rest.doctor_api import api_doctor
@@ -15,7 +14,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
 # create a file handler that logs messages to a file
-file_handler = logging.FileHandler('logs.log')
+file_handler = logging.FileHandler('log/logs.log')
 file_handler.setLevel(logging.DEBUG)
 
 # create a console handler that logs messages to the console
@@ -41,6 +40,5 @@ db.init_app(app)
 migrate.init_app(app, db)
 from src.models.models import Doctor, Patient
 
-api = Api()
 app.register_blueprint(api_doctor)
 app.register_blueprint(api_patient)
