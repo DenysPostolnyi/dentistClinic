@@ -1,14 +1,29 @@
+"""
+Module for doctor's tests
+"""
 import unittest
 import requests
 
 
 class DoctorApiTestCase(unittest.TestCase):
+    """
+    Doctor API test case
+    """
+
     def test_get_all(self):
+        """
+        Test getting all doctors
+        :return:
+        """
         response = requests.get("http://127.0.0.1:5000/doctor-api")
         self.assertEqual(response.status_code, 200)
         self.assertIsNotNone(response.json())
 
     def test_get_one(self):
+        """
+        Test getting one doctor
+        :return:
+        """
         response_all = requests.get("http://127.0.0.1:5000/doctor-api")
         id = response_all.json()[len(response_all.json()) - 1].get("doctor_id")
         response_one = requests.get(f"http://127.0.0.1:5000/doctor-api/{id}")
@@ -16,6 +31,10 @@ class DoctorApiTestCase(unittest.TestCase):
         self.assertEqual(response_one.json(), response_all.json()[len(response_all.json()) - 1])
 
     def test_create(self):
+        """
+        Test creating doctor
+        :return:
+        """
         amount_before = len(requests.get("http://127.0.0.1:5000/doctor-api").json())
         var = amount_before + 1
         doctor_attrs = {
@@ -35,6 +54,10 @@ class DoctorApiTestCase(unittest.TestCase):
         self.assertEqual(new_in_db['email'], doctor_attrs['email'])
 
     def test_update(self):
+        """
+        Test update doctor
+        :return:
+        """
         take_all = requests.get("http://127.0.0.1:5000/doctor-api")
         var = len(take_all.json())
         doctor_attrs = {
@@ -51,6 +74,10 @@ class DoctorApiTestCase(unittest.TestCase):
         self.assertEqual(doctor_attrs['seniority'], response.json()['seniority'])
 
     def test_delete(self):
+        """
+        Test delete doctor
+        :return:
+        """
         take_all = requests.get("http://127.0.0.1:5000/doctor-api")
         doctor_id = take_all.json()[len(take_all.json()) - 1].get('doctor_id')
         response = requests.delete(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")

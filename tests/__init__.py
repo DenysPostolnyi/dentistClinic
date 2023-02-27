@@ -1,1 +1,3 @@
-from tests import doctor_tests
+"""
+Init for tests
+"""

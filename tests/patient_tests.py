@@ -1,14 +1,29 @@
+"""
+Module for patient's tests
+"""
 import unittest
 import requests
 
 
 class PatientApiTestCase(unittest.TestCase):
+    """
+    Patient API test case
+    """
+
     def test_get_all(self):
+        """
+        Test getting all patients
+        :return:
+        """
         response = requests.get("http://127.0.0.1:5000/patient-api")
         self.assertEqual(response.status_code, 200)
         self.assertIsNotNone(response.json())
 
     def test_get_one(self):
+        """
+        Test getting one patient
+        :return:
+        """
         response_all = requests.get("http://127.0.0.1:5000/patient-api")
         id = response_all.json()[len(response_all.json()) - 1].get("patient_id")
         response_one = requests.get(f"http://127.0.0.1:5000/patient-api/{id}")
@@ -16,6 +31,10 @@ class PatientApiTestCase(unittest.TestCase):
         self.assertEqual(response_one.json(), response_all.json()[len(response_all.json()) - 1])
 
     def test_create(self):
+        """
+        Test creating patient
+        :return:
+        """
         amount_before = len(requests.get("http://127.0.0.1:5000/patient-api").json())
         var = amount_before + 1
         patient_attrs = {
@@ -35,6 +54,10 @@ class PatientApiTestCase(unittest.TestCase):
         self.assertEqual(new_in_db['email'], patient_attrs['email'])
 
     def test_update(self):
+        """
+        Test update patient
+        :return:
+        """
         take_all = requests.get("http://127.0.0.1:5000/patient-api")
         var = len(take_all.json())
         patient_attrs = {
@@ -51,6 +74,10 @@ class PatientApiTestCase(unittest.TestCase):
         self.assertEqual(patient_attrs['year_of_birth'], response.json()['year_of_birth'])
 
     def test_delete(self):
+        """
+        Test delete patient
+        :return:
+        """
         take_all = requests.get("http://127.0.0.1:5000/patient-api")
         patient_id = take_all.json()[len(take_all.json()) - 1].get('patient_id')
         response = requests.delete(f"http://127.0.0.1:5000/patient-api/{patient_id}")

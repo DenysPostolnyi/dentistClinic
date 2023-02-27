@@ -38,13 +38,17 @@ class Doctor(db.Model):
                f"{self.phone_number}, {self.email})"
 
     def to_json(self):
+        """
+        Method for returning object in JSON type
+        :return json:
+        """
         return json.dumps({
             "doctor_id": self.doctor_id,
             "full_name": self.full_name,
             "seniority": self.seniority,
-            "specialty": self.specialty.__str__(),
+            "specialty": str(self.specialty),
             "phone_number": self.phone_number,
-            "email": self.email,
+            "email": self.email
         })
 
 
@@ -76,12 +80,16 @@ class Patient(db.Model):
                f"{self.phone_number}, {self.email})"
 
     def to_json(self):
+        """
+        Method for returning object in JSON type
+        :return json:
+        """
         return json.dumps({
             "patient_id": self.patient_id,
             "doctor_id": self.doctor_id,
             "full_name": self.full_name,
             "year_of_birth": self.year_of_birth,
-            "kind_of_ache": self.kind_of_ache.__str__(),
+            "kind_of_ache": str(self.kind_of_ache),
             "phone_number": self.phone_number,
-            "email": self.email,
+            "email": self.email
         })
