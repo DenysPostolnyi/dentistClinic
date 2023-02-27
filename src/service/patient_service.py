@@ -30,8 +30,7 @@ def get_one_by_id(patient_id):
     patient = Patient.query.get(patient_id)
     if patient:
         return patient
-    else:
-        raise RuntimeError(f"Patient with id: {patient_id} was not found")
+    raise RuntimeError(f"Patient with id: {patient_id} was not found")
 
 
 def update(patient_id, patient):

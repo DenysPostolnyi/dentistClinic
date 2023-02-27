@@ -22,7 +22,7 @@ def adding():
                           phone_number="0682748592",
                           email="email@gmail.com")
         patient_service.add_patient(patient)
-        return render_template(f'good.html')
+        return render_template('good.html')
     except TemplateNotFound:
         abort(404)
 
@@ -38,7 +38,7 @@ def get_all():
         print(patient_service.get_all())
         print("<---------------->")
         print(patient_service.get_one_by_id("1"))
-        return render_template(f'good.html')
+        return render_template('good.html')
     except TemplateNotFound:
         abort(404)
 
@@ -55,7 +55,7 @@ def edit():
                           phone_number="0682748592",
                           email="email@gmail.com")
         patient_service.update(1, patient)
-        return render_template(f'good.html')
+        return render_template('good.html')
     except TemplateNotFound:
         abort(404)
 
@@ -69,6 +69,6 @@ def delete():
     """
     try:
         patient_service.delete(1)
-        return render_template(f'good.html')
+        return render_template('good.html')
     except TemplateNotFound:
         abort(404)

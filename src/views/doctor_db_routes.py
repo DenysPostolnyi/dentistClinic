@@ -21,7 +21,7 @@ def adding():
         doctor = Doctor(full_name="Derek", seniority=4, specialty=Specialty.THERAPIST,
                         phone_number="0636582647", email="email2@gmail.com")
         doctor_service.add_doctors(doctor)
-        return render_template(f'good.html')
+        return render_template('good.html')
     except TemplateNotFound:
         abort(404)
 
@@ -37,7 +37,7 @@ def get_all():
         print(doctor_service.get_all())
         print("<---------------->")
         print(doctor_service.get_one_by_id("1"))
-        return render_template(f'good.html')
+        return render_template('good.html')
     except TemplateNotFound:
         abort(404)
 
@@ -53,7 +53,7 @@ def edit():
         doctor = Doctor(full_name="Chak", seniority=2, specialty=Specialty.ORTHOPEDIST, phone_number="0682748592",
                         email="email@gmail.com")
         doctor_service.update(1, doctor)
-        return render_template(f'good.html')
+        return render_template('good.html')
     except TemplateNotFound:
         abort(404)
 
@@ -67,6 +67,6 @@ def delete():
     """
     try:
         doctor_service.delete(1)
-        return render_template(f'good.html')
+        return render_template('good.html')
     except TemplateNotFound:
         abort(404)

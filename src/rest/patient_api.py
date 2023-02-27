@@ -28,9 +28,8 @@ class PatientAPIGetPost(Resource):
         if patients:
             logging.debug("All patients was gotten: %s", patients)
             return [json.loads(obj.to_json()) for obj in patients]
-        else:
-            logging.debug("Tried get all patients but patients list is empty")
-            abort(404, "Patients were not found")
+        logging.debug("Tried get all patients but patients list is empty")
+        abort(404, "Patients were not found")
 
     def post(self):
         """
