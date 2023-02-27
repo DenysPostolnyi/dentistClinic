@@ -23,6 +23,6 @@ before_script:
 
 # command to run tests
 script:
-#  - pylint src/
+  - pylint src/
   - flask --app=src/ db upgrade
   - coverage run -m pytest && coverage report
