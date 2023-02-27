@@ -1,0 +1,26 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+DEBUG:root:Doctor by id - 3 was not found
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 11:50:22] "[33mGET /doctor-api/3 HTTP/1.1[0m" 404 -
+DEBUG:root:All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 937328178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 937328179, testemail9@gmail.com)]
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 11:52:03] "GET /doctor-api HTTP/1.1" 200 -
+2023-02-27 12:16:27,169 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-27 12:16:27,169 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-02-27 12:16:54,370 - root - DEBUG - All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 937328178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 937328179, testemail9@gmail.com)]
+2023-02-27 12:16:54,372 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2023 12:16:54] "GET /doctor-api HTTP/1.1" 200 -
+2023-02-27 12:20:35,209 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-02-27 12:20:35,209 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-02-27 12:20:40,785 - root - DEBUG - Doctor by id - 2 was gotten, doctor: (Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com)
+2023-02-27 12:20:40,786 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2023 12:20:40] "GET /doctor-api/2 HTTP/1.1" 200 -
+2023-02-27 12:20:46,626 - root - DEBUG - Doctor by id - 1 was not found
+2023-02-27 12:20:46,627 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2023 12:20:46] "[33mGET /doctor-api/1 HTTP/1.1[0m" 404 -
+2023-02-27 12:21:04,447 - root - DEBUG - Doctor for delete by id - 7 was not found
+2023-02-27 12:21:04,449 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2023 12:21:04] "[33mDELETE /doctor-api/7 HTTP/1.1[0m" 404 -
+2023-02-27 12:22:01,346 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2023 12:22:01] "[31m[1mDELETE /doctor-api HTTP/1.1[0m" 405 -
+2023-02-27 12:22:07,147 - root - DEBUG - All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 937328178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 937328179, testemail9@gmail.com)]
+2023-02-27 12:22:07,149 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2023 12:22:07] "GET /doctor-api HTTP/1.1" 200 -
+2023-02-27 12:22:21,067 - root - DEBUG - Doctor by id - 24 was deleted
+2023-02-27 12:22:21,068 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2023 12:22:21] "DELETE /doctor-api/24 HTTP/1.1" 200 -
