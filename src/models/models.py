@@ -30,7 +30,7 @@ class Doctor(db.Model):
     full_name = db.Column(db.String(100), unique=True)
     seniority = db.Column(db.Integer)
     specialty = db.Column(db.Enum(Specialty))
-    phone_number = db.Column(db.Integer, unique=True)
+    phone_number = db.Column(db.String(10), unique=True)
     email = db.Column(db.String(100), unique=True)
 
     def __repr__(self):
@@ -68,7 +68,7 @@ class Patient(db.Model):
     full_name = db.Column(db.String(100), unique=True)
     year_of_birth = db.Column(db.Integer)
     kind_of_ache = db.Column(db.Enum(KindOfAche))
-    phone_number = db.Column(db.Integer, unique=True)
+    phone_number = db.Column(db.String(10), unique=True)
     email = db.Column(db.String(100), unique=True)
 
     def __repr__(self):

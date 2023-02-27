@@ -1,1 +1,1 @@
-from tests import test_app
+from tests import doctor_tests
