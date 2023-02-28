@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <body>
+    <form method="POST" action="#" class="selector">
+        <div class="selector-items">
+            <label for="sorting-patients"></label>
+            <select name="select" id="sorting-patients">
+                <option selected disabled>Sorting by</option>
+                <option value="ache">Kind of ache</option>
+                <option value="name">Full name</option>
+                <option value="year">Year of birth</option>
+            </select>
+
+            <input type="radio" id="contactChoice1"
+                   name="contact" value="email">
+            <label for="contactChoice1">Appointed</label>
+            <input type="radio" id="contactChoice2"
+                   name="contact" value="phone">
+            <label for="contactChoice2">Not appointed</label>
+
+        </div>
+
+        <div>
+            <input type="submit" value="Submit" class="submit-button">
+        </div>
+    </form>
+
+    <div class="patients-list">
+        {% for patient in patients %}
+            <div class="patient-in-list">
+                <p class="full-name-in-list">{{ patient["full_name"] }}, {{ patient["year_of_birth"] }}</p>
+                <div class="item-buttons-in-list">
+                    <a href="#" class="open-button">Open</a>
+                    <a href="{{ url_for('patient_routes.delete_patient', patient_id=patient['patient_id']) }}" class="delete-button">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </body>
+{% endblock %}
