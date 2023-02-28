@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<body>
+<div class="person-info-window">
+  <div class="doctor-info">
+    <div class="left-info-doc-part">
+      <p>{{ doctor['full_name'] }}, {{ doctor['specialty'] }}</p>
+      <p>Seniority: {{ doctor['seniority'] }} years</p>
+      <p>Email: {{ doctor['email'] }}</p>
+      <p>Phone number: +38{{ doctor['phone_number'] }}</p>
+      <label for="date-for-making-appointment"></label>
+      <input id="date-for-making-appointment" type="date" class="kalendar" data-date-inline-picker="true">
+      
+    </div>
+
+    <div class="right-info-doc-part">
+      <p>Amount of patients: 1</p>
+      <div class="appointed-patients-list">
+        <a href="#">Jack Herer</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="control-panel buttons-doctor-info">
+    <a href="{{ url_for('doctor_routes.doctor_index') }}" class="back-button">Back</a>
+    <a href="#" class="edit-button">Edit</a>
+    <a href="{{ url_for('doctor_routes.delete', doctor_id=doctor['doctor_id']) }}" class="delete-button delete-info">Delete</a>
+  </div>
+</div>
+</body>
+{% endblock %}
