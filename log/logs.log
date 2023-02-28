@@ -1636,3 +1636,324 @@ Traceback (most recent call last):
 AttributeError: 'NoneType' object has no attribute 'drivername'
 2023-02-28 09:39:01,066 - root - DEBUG - Doctor by id - 24 was not found
 2023-02-28 09:52:03,441 - root - DEBUG - Doctor by id - 24 was not found
+2023-02-28 10:17:07,181 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7fb361380500 (otid=0x7fb36173fd50) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 10:17:07,194 - src - ERROR - Exception on /doctor-api [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7fb361380500 (otid=0x7fb36173fd50) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 40, in post
+    doctor_service.add_doctors(doctor)
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 12, in add_doctors
+    db.session.add(doctor)
+  File "<string>", line 2, in add
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 24, in _proxied
+    return self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 10:17:07,207 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7fb361380500 (otid=0x7fb36173fd50) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 10:19:40,278 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7fb361380500 (otid=0x7fb36173fd50) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 10:19:53,526 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7fb361380500 (otid=0x7fb36173fd50) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 10:19:53,532 - src - ERROR - Exception on /doctor-api [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7fb361380500 (otid=0x7fb36173fd50) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 40, in post
+    doctor_service.add_doctors(doctor)
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 12, in add_doctors
+    db.session.add(doctor)
+  File "<string>", line 2, in add
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 24, in _proxied
+    return self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 10:19:53,537 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7fb361380500 (otid=0x7fb36173fd50) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 10:21:15,315 - root - DEBUG - All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)]
+2023-02-28 10:21:15,602 - root - DEBUG - New doctor was added to DB: (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)
+2023-02-28 10:21:15,611 - root - DEBUG - All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-02-28 10:21:15,616 - root - DEBUG - All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-02-28 10:21:33,249 - root - DEBUG - All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-02-28 10:21:33,323 - root - DEBUG - New doctor was added to DB: (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com)
+2023-02-28 10:21:33,329 - root - DEBUG - All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com)]
+2023-02-28 10:21:33,333 - root - DEBUG - All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com)]
+2023-02-28 10:21:33,343 - root - DEBUG - All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com)]
+2023-02-28 10:21:33,499 - root - DEBUG - Doctor by id - 32 was deleted
+2023-02-28 10:21:33,507 - root - DEBUG - All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-02-28 10:21:33,513 - root - DEBUG - All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-02-28 10:21:33,517 - root - DEBUG - Doctor by id - 31 was gotten, doctor: (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)
+2023-02-28 10:21:33,525 - root - DEBUG - All doctors was gotten: [(Chak, 2, Specialty.ORTHOPEDIST, 682748592, email@gmail.com), (Derek, 4, Specialty.THERAPIST, 636582647, email2@gmail.com), (Rafael Piastry, 2, Specialty.THERAPIST, 675395625, rafael@gmail.com), (Test Doctor, 3, Specialty.ORTHOPEDIST, 937352817, testemail@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 937328172, testemail2@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 937328176, testemail6@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 937328177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-02-28 10:21:33,633 - root - DEBUG - Doctor by id - 31 was updated, new doctor: (Test Doctor9, 4, Specialty.ORTHOPEDIST, 094728179, my_testemail9@gmail.com)

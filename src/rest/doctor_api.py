@@ -28,7 +28,7 @@ class DoctorAPIGetPost(Resource):
             logging.debug("All doctors was gotten: %s", doctors)
             return [json.loads(obj.to_json()) for obj in doctors]
         logging.debug("Tried get all doctors but doctors list is empty")
-        abort(404, "Doctors were not found")
+        return {"message": "Doctor list is empty"}
 
     def post(self):
         """
