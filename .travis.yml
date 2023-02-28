@@ -16,10 +16,12 @@ install: # command to install dependencies
   - pip install coverage
   - pip install Flask-Migrate
   - pip install mysqlclient
+  - pip install gunicorn
 
 #running unit tests
 before_script:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS travis_db;'
+  - gunicorn wsgi:app
 
 # command to run tests
 script:
