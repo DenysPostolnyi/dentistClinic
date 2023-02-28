@@ -25,20 +25,26 @@ class DoctorApiTestCase(unittest.TestCase):
         :return:
         """
         response_all = requests.get("http://127.0.0.1:5000/doctor-api")
-        if "doctor_id" in response_all.json()[0].keys():
+        if isinstance(response_all.json(), dict) and "message" in response_all.json().keys():
+            self.assertEqual(response_all.json().get("message"), "Doctor list is empty")
+        else:
             id = response_all.json()[len(response_all.json()) - 1].get("doctor_id")
             response_one = requests.get(f"http://127.0.0.1:5000/doctor-api/{id}")
             self.assertEqual(response_one.status_code, 200)
             self.assertEqual(response_one.json(), response_all.json()[len(response_all.json()) - 1])
-        else:
-            self.assertEqual(response_all.json().get("message"), "Doctor list is empty")
 
     def test_create(self):
         """
         Test creating doctor
         :return:
         """
-        amount_before = len(requests.get("http://127.0.0.1:5000/doctor-api").json())
+        response_all = requests.get("http://127.0.0.1:5000/doctor-api")
+        if isinstance(response_all.json(), dict) and "message" in response_all.json().keys():
+            self.assertEqual(response_all.json().get("message"), "Doctor list is empty")
+            amount_before = 0
+        else:
+            amount_before = len(response_all.json())
+
         var = amount_before + 1
         doctor_attrs = {
             "full_name": f"Test Doctor{var}",
@@ -62,19 +68,22 @@ class DoctorApiTestCase(unittest.TestCase):
         :return:
         """
         take_all = requests.get("http://127.0.0.1:5000/doctor-api")
-        var = len(take_all.json())
-        doctor_attrs = {
-            "full_name": f"Test Doctor{var}",
-            "seniority": 4,
-            "specialty": "ORTHOPEDIST",
-            "phone_number": f"09472817{var}",
-            "email": f"my_testemail{var}@gmail.com"
-        }
-        doctor_id = take_all.json()[len(take_all.json()) - 1].get('doctor_id')
-        response = requests.put(f"http://127.0.0.1:5000/doctor-api/{doctor_id}", json=doctor_attrs)
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(doctor_attrs['phone_number'], response.json()['phone_number'])
-        self.assertEqual(doctor_attrs['seniority'], response.json()['seniority'])
+        if isinstance(take_all.json(), dict) and "message" in take_all.json().keys():
+            self.assertEqual(take_all.json().get("message"), "Doctor list is empty")
+        else:
+            var = len(take_all.json())
+            doctor_attrs = {
+                "full_name": f"Test Doctor{var}",
+                "seniority": 4,
+                "specialty": "ORTHOPEDIST",
+                "phone_number": f"09472817{var}",
+                "email": f"my_testemail{var}@gmail.com"
+            }
+            doctor_id = take_all.json()[len(take_all.json()) - 1].get('doctor_id')
+            response = requests.put(f"http://127.0.0.1:5000/doctor-api/{doctor_id}", json=doctor_attrs)
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(doctor_attrs['phone_number'], response.json()['phone_number'])
+            self.assertEqual(doctor_attrs['seniority'], response.json()['seniority'])
 
     def test_delete(self):
         """
@@ -82,6 +91,9 @@ class DoctorApiTestCase(unittest.TestCase):
         :return:
         """
         take_all = requests.get("http://127.0.0.1:5000/doctor-api")
-        doctor_id = take_all.json()[len(take_all.json()) - 1].get('doctor_id')
-        response = requests.delete(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
-        self.assertEqual(response.status_code, 200)
+        if isinstance(take_all.json(), dict) and "message" in take_all.json().keys():
+            self.assertEqual(take_all.json().get("message"), "Doctor list is empty")
+        else:
+            doctor_id = take_all.json()[len(take_all.json()) - 1].get('doctor_id')
+            response = requests.delete(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
+            self.assertEqual(response.status_code, 200)

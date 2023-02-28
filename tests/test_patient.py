@@ -25,20 +25,26 @@ class PatientApiTestCase(unittest.TestCase):
         :return:
         """
         response_all = requests.get("http://127.0.0.1:5000/patient-api")
-        if "patient_id" in response_all.json()[0].keys():
+        if isinstance(response_all.json(), dict) and "message" in response_all.json().keys():
+            self.assertEqual(response_all.json().get("message"), "Patient list is empty")
+        else:
             id = response_all.json()[len(response_all.json()) - 1].get("patient_id")
             response_one = requests.get(f"http://127.0.0.1:5000/patient-api/{id}")
             self.assertEqual(response_one.status_code, 200)
             self.assertEqual(response_one.json(), response_all.json()[len(response_all.json()) - 1])
-        else:
-            self.assertEqual(response_all.json().get("message"), "Patient list is empty")
 
     def test_create(self):
         """
         Test creating patient
         :return:
         """
-        amount_before = len(requests.get("http://127.0.0.1:5000/patient-api").json())
+        response_all = requests.get("http://127.0.0.1:5000/patient-api")
+        if isinstance(response_all.json(), dict) and "message" in response_all.json().keys():
+            self.assertEqual(response_all.json().get("message"), "Patient list is empty")
+            amount_before = 0
+        else:
+            amount_before = len(response_all.json())
+
         var = amount_before + 1
         patient_attrs = {
             "full_name": f"Test Patient{var}",
@@ -62,19 +68,22 @@ class PatientApiTestCase(unittest.TestCase):
         :return:
         """
         take_all = requests.get("http://127.0.0.1:5000/patient-api")
-        var = len(take_all.json())
-        patient_attrs = {
-            "full_name": f"Test Patient{var}",
-            "year_of_birth": 2004,
-            "kind_of_ache": "MILD",
-            "phone_number": f"06377817{var}",
-            "email": f"testemail{var}@gmail.com"
-        }
-        patient_id = take_all.json()[len(take_all.json()) - 1].get('patient_id')
-        response = requests.put(f"http://127.0.0.1:5000/patient-api/{patient_id}", json=patient_attrs)
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(patient_attrs['phone_number'], response.json()['phone_number'])
-        self.assertEqual(patient_attrs['year_of_birth'], response.json()['year_of_birth'])
+        if isinstance(take_all.json(), dict) and "message" in take_all.json().keys():
+            self.assertEqual(take_all.json().get("message"), "Patient list is empty")
+        else:
+            var = len(take_all.json())
+            patient_attrs = {
+                "full_name": f"Test Patient{var}",
+                "year_of_birth": 2004,
+                "kind_of_ache": "MILD",
+                "phone_number": f"06377817{var}",
+                "email": f"testemail{var}@gmail.com"
+            }
+            patient_id = take_all.json()[len(take_all.json()) - 1].get('patient_id')
+            response = requests.put(f"http://127.0.0.1:5000/patient-api/{patient_id}", json=patient_attrs)
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(patient_attrs['phone_number'], response.json()['phone_number'])
+            self.assertEqual(patient_attrs['year_of_birth'], response.json()['year_of_birth'])
 
     def test_delete(self):
         """
@@ -82,6 +91,9 @@ class PatientApiTestCase(unittest.TestCase):
         :return:
         """
         take_all = requests.get("http://127.0.0.1:5000/patient-api")
-        patient_id = take_all.json()[len(take_all.json()) - 1].get('patient_id')
-        response = requests.delete(f"http://127.0.0.1:5000/patient-api/{patient_id}")
-        self.assertEqual(response.status_code, 200)
+        if isinstance(take_all.json(), dict) and "message" in take_all.json().keys():
+            self.assertEqual(take_all.json().get("message"), "Patient list is empty")
+        else:
+            patient_id = take_all.json()[len(take_all.json()) - 1].get('patient_id')
+            response = requests.delete(f"http://127.0.0.1:5000/patient-api/{patient_id}")
+            self.assertEqual(response.status_code, 200)
