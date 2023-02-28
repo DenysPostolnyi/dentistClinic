@@ -98,3 +98,1541 @@ INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 11:52:03] "GET /doctor-api HTTP/1.1" 20
 2023-02-27 18:20:52,010 - root - DEBUG - Doctor by id - 24 was not found
 2023-02-27 18:20:52,011 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2023 18:20:52] "[33mGET /doctor-api/24 HTTP/1.1[0m" 404 -
 2023-02-27 18:22:46,858 - root - DEBUG - Doctor by id - 24 was not found
+2023-02-28 09:27:07,261 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,341 - src - ERROR - Exception on /doctor-api [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 40, in post
+    doctor_service.add_doctors(doctor)
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 12, in add_doctors
+    db.session.add(doctor)
+  File "<string>", line 2, in add
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 24, in _proxied
+    return self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,343 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,377 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,382 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,388 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,394 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,401 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,409 - src - ERROR - Exception on /patient-api [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 41, in post
+    patient_service.add_patient(patient)
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 12, in add_patient
+    db.session.add(patient)
+  File "<string>", line 2, in add
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 24, in _proxied
+    return self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,411 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,418 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,423 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,428 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:07,433 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:27:15,611 - src - ERROR - Exception on /doctor-api/24 [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 57, in get
+    doctor = doctor_service.get_one_by_id(doctor_id)
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 30, in get_one_by_id
+    doctor = Doctor.query.get(doctor_id)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,709 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,712 - src - ERROR - Exception on /doctor-api [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 40, in post
+    doctor_service.add_doctors(doctor)
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 12, in add_doctors
+    db.session.add(doctor)
+  File "<string>", line 2, in add
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 24, in _proxied
+    return self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,715 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,743 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,748 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,753 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,758 - src - ERROR - Exception on /doctor-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 26, in get
+    doctors = doctor_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 21, in get_all
+    return Doctor.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,764 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,766 - src - ERROR - Exception on /patient-api [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 41, in post
+    patient_service.add_patient(patient)
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 12, in add_patient
+    db.session.add(patient)
+  File "<string>", line 2, in add
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 24, in _proxied
+    return self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,768 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,775 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,779 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,785 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8e300 (otid=0x7f5a07c73030) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:28:06,790 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f5a07c8dec0 (otid=0x7f5a07c72fa0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:32:13,340 - src - ERROR - Exception on /doctor-api/24 [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f7c51a55180 (otid=0x7f7c51a25cb0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 57, in get
+    doctor = doctor_service.get_one_by_id(doctor_id)
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 30, in get_one_by_id
+    doctor = Doctor.query.get(doctor_id)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:32:13,344 - src - ERROR - Exception on /patient-api [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f7c51a55180 (otid=0x7f7c51a25cb0) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 27, in get
+    patients = patient_service.get_all()
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 21, in get_all
+    return Patient.query.all()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:36:18,669 - src - ERROR - Exception on /doctor-api/24 [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7fa17737ccc0 (otid=0x7fa17771ff00) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 57, in get
+    doctor = doctor_service.get_one_by_id(doctor_id)
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 30, in get_one_by_id
+    doctor = Doctor.query.get(doctor_id)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:36:36,321 - src - ERROR - Exception on /doctor-api/24 [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7fa17737ccc0 (otid=0x7fa17771ff00) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 57, in get
+    doctor = doctor_service.get_one_by_id(doctor_id)
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 30, in get_one_by_id
+    doctor = Doctor.query.get(doctor_id)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:38:19,315 - src - ERROR - Exception on /doctor-api/24 [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7fa17737ccc0 (otid=0x7fa17771ff00) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 57, in get
+    doctor = doctor_service.get_one_by_id(doctor_id)
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 30, in get_one_by_id
+    doctor = Doctor.query.get(doctor_id)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:38:54,715 - src - ERROR - Exception on /doctor-api/24 [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7fa17737ccc0 (otid=0x7fa17771ff00) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 57, in get
+    doctor = doctor_service.get_one_by_id(doctor_id)
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 30, in get_one_by_id
+    doctor = Doctor.query.get(doctor_id)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4274, in __call__
+    return self.class_(**local_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 593, in get_engine
+    sa_url, options = self.get_options(sa_url, echo)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 608, in get_options
+    sa_url, options = self._sa.apply_driver_hacks(self._app, sa_url, options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_sqlalchemy/__init__.py", line 933, in apply_driver_hacks
+    if sa_url.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2023-02-28 09:39:01,066 - root - DEBUG - Doctor by id - 24 was not found
+2023-02-28 09:52:03,441 - root - DEBUG - Doctor by id - 24 was not found
