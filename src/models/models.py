@@ -46,7 +46,7 @@ class Doctor(db.Model):
             "doctor_id": self.doctor_id,
             "full_name": self.full_name,
             "seniority": self.seniority,
-            "specialty": str(self.specialty),
+            "specialty": str(self.specialty).split('.')[1].lower(),
             "phone_number": self.phone_number,
             "email": self.email
         })
@@ -89,7 +89,7 @@ class Patient(db.Model):
             "doctor_id": self.doctor_id,
             "full_name": self.full_name,
             "year_of_birth": self.year_of_birth,
-            "kind_of_ache": str(self.kind_of_ache),
+            "kind_of_ache": str(self.kind_of_ache).split('.')[1].lower(),
             "phone_number": self.phone_number,
             "email": self.email
         })
