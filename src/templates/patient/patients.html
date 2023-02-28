@@ -31,7 +31,7 @@
             <div class="patient-in-list">
                 <p class="full-name-in-list">{{ patient["full_name"] }}, {{ patient["year_of_birth"] }}</p>
                 <div class="item-buttons-in-list">
-                    <a href="#" class="open-button">Open</a>
+                    <a href="{{ url_for('patient_routes.info', patient_id=patient['patient_id']) }}" class="open-button">Open</a>
                     <a href="{{ url_for('patient_routes.delete_patient', patient_id=patient['patient_id']) }}" class="delete-button">Delete</a>
                 </div>
             </div>
