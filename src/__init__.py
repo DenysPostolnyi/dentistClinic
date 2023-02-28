@@ -9,6 +9,7 @@ from src.config import DBSettings
 from src.rest.doctor_api import api_doctor
 from src.rest.patient_api import api_patient
 from src.views.doctor_routes import doctor_routes
+from src.views.patient_routes import patient_routes
 
 # create a logger instance
 logger = logging.getLogger()
@@ -44,3 +45,4 @@ from src.models.models import Doctor, Patient
 app.register_blueprint(api_doctor)
 app.register_blueprint(api_patient)
 app.register_blueprint(doctor_routes)
+app.register_blueprint(patient_routes)
