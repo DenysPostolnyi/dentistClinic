@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<body>
+
+<form class="main-field-for-entering-data" action="" method="POST">
+
+  <div class="full-name">
+    <label for="full_name">Full name</label> <br>
+    <input type="text" name="full_name" id="full_name" class="field-for-full-name" placeholder="Full name">
+  </div>
+
+  <div class="general-info">
+    <div class="left-info-enter-part">
+      <label for="specialty" class="label-for-general-info">Specialty</label><br>
+      <select name="specialty" id="specialty" class="field-for-general-info">
+        <option selected disabled>Specialty</option>
+        <option value="THERAPIST">therapist</option>
+        <option value="ORTHOPEDIST">orthopedist</option>
+        <option value="SURGEON">surgeon</option>
+        <option value="RADIOLOGIST">radiologist</option>
+      </select>
+      <label for="email" class="label-for-general-info">Email</label> <br>
+      <input type="text" name="email" id="email" class="field-for-general-info" placeholder="Email">
+      <br>
+    </div>
+    <div class="right-info-enter-part">
+      <label for="seniority" class="label-for-general-info">Seniority</label> <br>
+      <input type="text" name="seniority" id="seniority" class="field-for-general-info" placeholder="Seniority">
+      <label for="phone_number" class="label-for-general-info">Phone number</label> <br>
+      <input type="text" name="phone_number" id="phone_number" class="field-for-general-info" placeholder="Phone number"><br>
+
+    </div>
+  </div>
+
+  <div class="buttons-appointment color-from-field">
+    <input class="submit-button" type="submit" value="Submit">
+    <input class="cancel-entering" type="button" value="Cancel">
+  </div>
+</form>
+
+</body>
+{% endblock %}
