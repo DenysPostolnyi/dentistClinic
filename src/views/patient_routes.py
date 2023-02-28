@@ -28,3 +28,13 @@ def patient_index():
 def delete_patient(patient_id):
     request = requests.delete(f"http://127.0.0.1:5000/patient-api/{patient_id}")
     return redirect(url_for('patient_routes.patient_index'))
+
+
+@patient_routes.route("/patients/<int:patient_id>")
+def info(patient_id):
+    request = requests.get(f"http://127.0.0.1:5000/patient-api/{patient_id}")
+    if request.status_code == 200:
+        patient = request.json()
+        patient['kind_of_ache'] = patient['kind_of_ache']
+        return render_template("patient/patientInfo.html", patient=patient)
+    return redirect(url_for('patient_routes.patient_index'))
