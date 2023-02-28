@@ -12,19 +12,18 @@ env:
 #src dependencies installation
 install: # command to install dependencies
   - pip install -r requirements.txt
-  - pip install pylint
-  - pip install coverage
-  - pip install Flask-Migrate
   - pip install mysqlclient
-  - pip install gunicorn
 
 #running unit tests
 before_script:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS travis_db;'
-  - gunicorn wsgi:app
+  - gunicorn wsgi:app -w 2 --threads 2 -b 127.0.0.1:5000
 
 # command to run tests
 script:
   - pylint src/
   - flask --app=src/ db upgrade
   - coverage run -m pytest && coverage report
+
+after_script:
+  - killall -SIGTERM gunicorn
