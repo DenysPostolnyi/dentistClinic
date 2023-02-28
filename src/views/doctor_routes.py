@@ -28,3 +28,13 @@ def doctor_index():
 def delete(doctor_id):
     request = requests.delete(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
     return redirect(url_for('doctor_routes.doctor_index'))
+
+
+@doctor_routes.route("/doctors/<int:doctor_id>")
+def info(doctor_id):
+    request = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
+    if request.status_code == 200:
+        doctor = request.json()
+        doctor['specialty'] = doctor['specialty'].split('.')[1].lower()
+        return render_template("doctor/doctorInfo.html", doctor = doctor)
+    return redirect(url_for('doctor_routes.doctor_index'))
