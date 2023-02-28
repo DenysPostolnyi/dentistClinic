@@ -24,7 +24,7 @@ def doctor_index():
         abort(404)
 
 
-@doctor_routes.route("/delete/<int:doctor_id>")
+@doctor_routes.route("/doctors/delete/<int:doctor_id>")
 def delete(doctor_id):
     request = requests.delete(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
     return redirect(url_for('doctor_routes.doctor_index'))
