@@ -16,7 +16,7 @@ def doctor_index():
         if isinstance(doctors, list):
             return render_template('doctor/doctors.html', doctors=[
                 {"doctor_id": doctor['doctor_id'], "full_name": doctor['full_name'],
-                 "specialty": doctor['specialty'].split('.')[1].lower()} for doctor in doctors
+                 "specialty": doctor['specialty']} for doctor in doctors
             ])
         else:
             return render_template('doctor/doctors.html', doctors=[])
@@ -35,6 +35,6 @@ def info(doctor_id):
     request = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
     if request.status_code == 200:
         doctor = request.json()
-        doctor['specialty'] = doctor['specialty'].split('.')[1].lower()
+        doctor['specialty'] = doctor['specialty']
         return render_template("doctor/doctorInfo.html", doctor = doctor)
     return redirect(url_for('doctor_routes.doctor_index'))
