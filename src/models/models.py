@@ -2,6 +2,8 @@
 Models for entities
 """
 import enum
+import json
+
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
@@ -28,12 +30,26 @@ class Doctor(db.Model):
     full_name = db.Column(db.String(100), unique=True)
     seniority = db.Column(db.Integer)
     specialty = db.Column(db.Enum(Specialty))
-    phone_number = db.Column(db.Integer, unique=True)
+    phone_number = db.Column(db.String(10), unique=True)
     email = db.Column(db.String(100), unique=True)
 
     def __repr__(self):
         return f"({self.full_name}, {self.seniority}, {self.specialty}, " \
                f"{self.phone_number}, {self.email})"
+
+    def to_json(self):
+        """
+        Method for returning object in JSON type
+        :return json:
+        """
+        return json.dumps({
+            "doctor_id": self.doctor_id,
+            "full_name": self.full_name,
+            "seniority": self.seniority,
+            "specialty": str(self.specialty),
+            "phone_number": self.phone_number,
+            "email": self.email
+        })
 
 
 class KindOfAche(enum.Enum):
@@ -56,9 +72,24 @@ class Patient(db.Model):
     full_name = db.Column(db.String(100), unique=True)
     year_of_birth = db.Column(db.Integer)
     kind_of_ache = db.Column(db.Enum(KindOfAche))
-    phone_number = db.Column(db.Integer, unique=True)
+    phone_number = db.Column(db.String(10), unique=True)
     email = db.Column(db.String(100), unique=True)
 
     def __repr__(self):
         return f"({self.full_name}, {self.year_of_birth}, {self.kind_of_ache}, " \
                f"{self.phone_number}, {self.email})"
+
+    def to_json(self):
+        """
+        Method for returning object in JSON type
+        :return json:
+        """
+        return json.dumps({
+            "patient_id": self.patient_id,
+            "doctor_id": self.doctor_id,
+            "full_name": self.full_name,
+            "year_of_birth": self.year_of_birth,
+            "kind_of_ache": str(self.kind_of_ache),
+            "phone_number": self.phone_number,
+            "email": self.email
+        })
