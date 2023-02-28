@@ -11,6 +11,8 @@ def add_doctors(doctor):
     """
     db.session.add(doctor)
     db.session.commit()
+    all = get_all()
+    return all[len(all) - 1]
 
 
 def get_all():

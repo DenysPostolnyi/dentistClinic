@@ -37,9 +37,10 @@ class DoctorAPIGetPost(Resource):
         """
         new_doctor = request.get_json(force=True)
         doctor = doctor_mapper.json_to_doctor(new_doctor)
-        doctor_service.add_doctors(doctor)
+        answer = doctor_service.add_doctors(doctor)
         logging.debug("New doctor was added to DB: %s", doctor)
-        return {"message": "Doctor was added successfully"}
+
+        return {"message": "Doctor was added successfully", "doctor": json.loads(answer.to_json())}
 
 
 class DoctorAPIGetUpdateDelete(Resource):
