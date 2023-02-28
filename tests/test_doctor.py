@@ -25,7 +25,7 @@ class DoctorApiTestCase(unittest.TestCase):
         :return:
         """
         response_all = requests.get("http://127.0.0.1:5000/doctor-api")
-        if response_all.json()[0].get("doctor_id"):
+        if "doctor_id" in response_all.json()[0].keys():
             id = response_all.json()[len(response_all.json()) - 1].get("doctor_id")
             response_one = requests.get(f"http://127.0.0.1:5000/doctor-api/{id}")
             self.assertEqual(response_one.status_code, 200)

@@ -25,14 +25,13 @@ class PatientApiTestCase(unittest.TestCase):
         :return:
         """
         response_all = requests.get("http://127.0.0.1:5000/patient-api")
-        if response_all.json()[0].get("patient_id"):
+        if "patient_id" in response_all.json()[0].keys():
             id = response_all.json()[len(response_all.json()) - 1].get("patient_id")
             response_one = requests.get(f"http://127.0.0.1:5000/patient-api/{id}")
             self.assertEqual(response_one.status_code, 200)
             self.assertEqual(response_one.json(), response_all.json()[len(response_all.json()) - 1])
         else:
             self.assertEqual(response_all.json().get("message"), "Patient list is empty")
-
 
     def test_create(self):
         """
