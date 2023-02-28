@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<body>
+<div class="person-info-window">
+  <div class="info">
+    <p>{{ patient['full_name'] }}, {{ patient['year_of_birth'] }}</p>
+    <p>Kind of ache: {{ patient['kind_of_ache'] }}</p>
+    <p>Email: {{ patient['email'] }}</p>
+    <p>Phone number: +38{{ patient['phone_number'] }}</p>
+    <!--  <div class="appointment">-->
+    <!--    <p>Appointed to: therapist <a href="#">Alexandr Evtushenko</a></p>-->
+    <!--    <p>Date of appointment: 12.03.2023</p>-->
+    <!--    <form action="#" class="cancel-in-form">-->
+    <!--      <input type="submit" class="submit-button" value="Cancel">-->
+    <!--    </form>-->
+    <!--  </div>-->
+    <div class="not-appointed">
+      <p>Patient is not appointed</p>
+      <form action="#" class="cancel-in-form">
+        <input type="submit" class="make-appointment" value="Make an appointment">
+      </form>
+    </div>
+  </div>
+  <div class="control-panel">
+    <a href="{{ url_for('patient_routes.patient_index') }}" class="back-button">Back</a>
+    <a href="#" class="edit-button">Edit</a>
+    <a href="{{ url_for('patient_routes.delete_patient', patient_id=patient['patient_id']) }}" class="delete-button delete-info">Delete</a>
+  </div>
+</div>
+</body>
+{% endblock %}
