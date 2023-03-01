@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<body>
+
+<form class="main-field-for-entering-data" action="" method="POST">
+
+  <div class="full-name">
+    <label for="full_name">Full name</label> <br>
+    <input type="text" name="full_name" id="full_name" class="field-for-full-name" value="{{ patient['full_name'] }}">
+  </div>
+
+  <div class="general-info">
+    <div class="left-info-enter-part">
+      <label for="email" class="label-for-general-info">Email</label> <br>
+      <input type="text" name="email" id="email" class="field-for-general-info" value="{{ patient['email'] }}">
+      <br>
+      <label for="kind_of_ache" class="label-for-general-info">Kind of ache</label><br>
+      <select name="kind_of_ache" id="kind_of_ache" class="field-for-general-info">
+          <option {% if patient['kind_of_ache'] == "none" %} selected {% endif %} value="NONE">None</option>
+          <option {% if patient['kind_of_ache'] == "mild" %} selected {% endif %} value="MILD">Mild</option>
+          <option {% if patient['kind_of_ache'] == "middle" %} selected {% endif %} value="MIDDLE">Middle</option>
+        <option {% if patient['kind_of_ache'] == "strong" %} selected {% endif %} value="STRONG">Strong</option>
+      </select>
+    </div>
+    <div class="right-info-enter-part">
+      <label for="phone_number" class="label-for-general-info">Phone number</label> <br>
+      <input type="text" name="phone_number" id="phone_number" class="field-for-general-info" value="{{ patient['phone_number'] }}"><br>
+      <label for="year_of_birth" class="label-for-general-info">Year of birth</label> <br>
+      <input type="text" name="year_of_birth" id="year_of_birth" class="field-for-general-info" value="{{ patient['year_of_birth'] }}">
+
+    </div>
+  </div>
+
+  <div class="buttons-appointment color-from-field">
+    <input class="submit-button" type="submit" value="Submit">
+    <a class="cancel-entering" href="{{ url_for('patient_routes.info', patient_id=patient['patient_id']) }}">Cancel</a>
+  </div>
+</form>
+
+</body>
+{% endblock %}

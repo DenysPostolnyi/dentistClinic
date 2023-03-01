@@ -56,3 +56,18 @@ def add():
         return redirect(url_for('patient_routes.patient_index'))
     except TemplateNotFound:
         abort(404)
+
+
+@patient_routes.route("/patients-edit/<int:patient_id>", methods=['GET', 'POST'])
+def edit(patient_id):
+    try:
+        patient_from_db = requests.get(f"http://127.0.0.1:5000/patient-api/{patient_id}")
+        if patient_from_db.status_code == 200:
+            if request.method == 'GET':
+                return render_template("patient/patientEdit.html", patient=patient_from_db.json())
+            new_patient = request.form
+            req = requests.put(f"http://127.0.0.1:5000/patient-api/{patient_id}", json=new_patient).json()
+            return redirect(url_for('patient_routes.info', patient_id=req['patient_id']))
+        return redirect(url_for('patient_routes.patient_index'))
+    except TemplateNotFound:
+        abort(404)
