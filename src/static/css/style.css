@@ -574,6 +574,9 @@ header {
     text-decoration: none;
     border: hidden;
     border-radius: 0.8rem;
+        display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cancel-entering:hover, .cancel-entering:active {
@@ -581,6 +584,8 @@ header {
     color: #e03131;
     box-shadow: inset 0 0 0 3px #e03131;
 }
+
+
 
 /**************************/
 /* delete dialog box */
