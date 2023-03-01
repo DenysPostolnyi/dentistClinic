@@ -39,7 +39,6 @@ def info(doctor_id):
         request = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
         if request.status_code == 200:
             doctor = request.json()
-            doctor['specialty'] = doctor['specialty']
             return render_template("doctor/doctorInfo.html", doctor=doctor)
         return redirect(url_for('doctor_routes.doctor_index'))
     except TemplateNotFound:
@@ -53,7 +52,25 @@ def add():
             return render_template("doctor/doctorAdd.html")
         new_doctor = request.form
         req = requests.post("http://127.0.0.1:5000/doctor-api", json=new_doctor).json()
-        print(req)
         return redirect(url_for('doctor_routes.info', doctor_id=req['doctor']['doctor_id']))
+    except TemplateNotFound:
+        abort(404)
+
+
+@doctor_routes.route("/doctors-edit/<int:doctor_id>", methods=['GET', 'POST'])
+def edit(doctor_id):
+    try:
+        doctor_from_db = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
+        if doctor_from_db.status_code == 200:
+            if request.method == 'GET':
+                return render_template("doctor/doctorsEdit.html", doctor=doctor_from_db.json())
+            new_doctor = request.form
+            print("<==================++>")
+            print(new_doctor)
+            print("<==================++>")
+
+            req = requests.put(f"http://127.0.0.1:5000/doctor-api/{doctor_id}", json=new_doctor).json()
+            return redirect(url_for('doctor_routes.info', doctor_id=req['doctor_id']))
+        return redirect(url_for('doctor_routes.doctor_index'))
     except TemplateNotFound:
         abort(404)
