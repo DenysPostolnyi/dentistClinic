@@ -8476,3 +8476,306 @@ sqlalchemy.exc.DataError: (pymysql.err.DataError) (1366, "Incorrect integer valu
 2023-03-01 14:16:21,326 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:16:21] "GET /doctors HTTP/1.1" 200 -
 2023-03-01 14:16:21,397 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:16:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2023-03-01 14:16:21,453 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:16:21] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:28:32,952 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 14:28:32,952 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 14:28:34,268 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:28:34] "GET /doctors/add HTTP/1.1" 200 -
+2023-03-01 14:28:34,343 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:28:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:28:34,408 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:28:34] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:37:58,089 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 14:37:58,089 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 14:38:08,601 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:38:08,642 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv), (JUnvffFDV, 2000, KindOfAche.MIDDLE, 4385773FV, fgfddfv@knvj.dfkvF), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf)]
+2023-03-01 14:38:08,643 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:08] "GET /patient-api HTTP/1.1" 200 -
+2023-03-01 14:38:08,644 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api HTTP/1.1" 200 1728
+2023-03-01 14:38:08,664 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:08] "GET /patients HTTP/1.1" 200 -
+2023-03-01 14:38:08,755 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:38:08,820 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:08] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:38:11,196 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:38:11,199 - root - DEBUG - Patient by id - 35 was gotten, patient: (JUnvffFDV, 2000, KindOfAche.MIDDLE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:38:11,200 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:11] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:38:11,200 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 173
+2023-03-01 14:38:11,204 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:11] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:38:11,272 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:38:11,297 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:11] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:38:21,010 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:38:21,013 - root - DEBUG - Patient by id - 35 was gotten, patient: (JUnvffFDV, 2000, KindOfAche.MIDDLE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:38:21,014 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:21] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:38:21,015 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 173
+2023-03-01 14:38:21,020 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:21] "GET /patients-edit/35 HTTP/1.1" 200 -
+2023-03-01 14:38:21,104 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:38:21,128 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:21] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:38:53,088 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 14:38:53,088 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 14:38:54,942 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:38:54,972 - root - DEBUG - Patient by id - 35 was gotten, patient: (JUnvffFDV, 2000, KindOfAche.MIDDLE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:38:54,973 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:54] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:38:54,974 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 173
+2023-03-01 14:38:54,984 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:54] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:38:55,053 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:38:55,097 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:55] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:38:55,782 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:38:55,785 - root - DEBUG - Patient by id - 35 was gotten, patient: (JUnvffFDV, 2000, KindOfAche.MIDDLE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:38:55,786 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:55] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:38:55,787 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 173
+2023-03-01 14:38:55,792 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:55] "GET /patients-edit/35 HTTP/1.1" 200 -
+2023-03-01 14:38:55,874 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:38:55,928 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:38:55] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:39:10,217 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:39:10,220 - root - DEBUG - Patient by id - 35 was gotten, patient: (JUnvffFDV, 2000, KindOfAche.MIDDLE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:39:10,221 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:10] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:39:10,221 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 173
+2023-03-01 14:39:10,222 - src - ERROR - Exception on /patients-edit/35 [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/src/views/patient_routes.py", line 67, in edit
+    return render_template("patient/patientEdit.html", patient=patient_from_db.json())
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/denys/python/dentistClinic/src/templates/patient/patientEdit.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "/home/denys/python/dentistClinic/src/templates/layout.html", line 10, in top-level template code
+    {% include "includes/header.html" %}
+  File "/home/denys/python/dentistClinic/src/templates/includes/header.html", line 10, in top-level template code
+    <a href=" {% if url_for(request.endpoint) == '/doctors' %} {{ url_for('doctor_routes.add') }}
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/werkzeug/routing/map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'patient_routes.edit'. Did you forget to specify values ['patient_id']?
+2023-03-01 14:39:10,225 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:10] "[35m[1mGET /patients-edit/35?full_name=Denchik&email=fgfddfv%40knvj.d&kind_of_ache=MIDDLE&phone_number=4385773FV&year_of_birth=2000 HTTP/1.1[0m" 500 -
+2023-03-01 14:39:49,472 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 14:39:49,472 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 14:39:53,747 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:39:53,779 - root - DEBUG - Patient by id - 35 was gotten, patient: (JUnvffFDV, 2000, KindOfAche.MIDDLE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:39:53,780 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:53] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:39:53,781 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 173
+2023-03-01 14:39:53,792 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:53] "GET /patients-edit/35 HTTP/1.1" 200 -
+2023-03-01 14:39:53,877 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:39:53,929 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:53] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:39:57,940 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:39:57,942 - root - DEBUG - Patient by id - 35 was gotten, patient: (JUnvffFDV, 2000, KindOfAche.MIDDLE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:39:57,943 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:57] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:39:57,943 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 173
+2023-03-01 14:39:57,945 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:39:58,050 - root - DEBUG - Patient by id - 35 was updated, new patient: (Denchik, 2000, KindOfAche.MIDDLE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:39:58,050 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:58] "PUT /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:39:58,051 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "PUT /patient-api/35 HTTP/1.1" 200 175
+2023-03-01 14:39:58,051 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:58] "[32mPOST /patients-edit/35 HTTP/1.1[0m" 302 -
+2023-03-01 14:39:58,055 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:39:58,057 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2000, KindOfAche.MIDDLE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:39:58,058 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:58] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:39:58,058 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 171
+2023-03-01 14:39:58,063 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:58] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:39:58,134 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:39:58,198 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:39:58] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:00,067 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:00,069 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2000, KindOfAche.MIDDLE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:40:00,070 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:00] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:00,070 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 171
+2023-03-01 14:40:00,072 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:00] "GET /patients-edit/35 HTTP/1.1" 200 -
+2023-03-01 14:40:00,157 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:00,216 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:00] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:02,110 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:02,112 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2000, KindOfAche.MIDDLE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:40:02,113 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:02] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:02,113 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 171
+2023-03-01 14:40:02,115 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:02,169 - root - DEBUG - Patient by id - 35 was updated, new patient: (Denchik, 2000, KindOfAche.NONE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:40:02,170 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:02] "PUT /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:02,171 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "PUT /patient-api/35 HTTP/1.1" 200 173
+2023-03-01 14:40:02,172 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:02] "[32mPOST /patients-edit/35 HTTP/1.1[0m" 302 -
+2023-03-01 14:40:02,177 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:02,179 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2000, KindOfAche.NONE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:40:02,180 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:02] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:02,180 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 169
+2023-03-01 14:40:02,182 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:02] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:40:02,259 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:02,314 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:02] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:04,731 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:04,733 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2000, KindOfAche.NONE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:40:04,734 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:04] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:04,734 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 169
+2023-03-01 14:40:04,735 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:04] "GET /patients-edit/35 HTTP/1.1" 200 -
+2023-03-01 14:40:04,819 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:04,882 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:04] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:07,384 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:07,386 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2000, KindOfAche.NONE, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:40:07,387 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:07] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:07,387 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 169
+2023-03-01 14:40:07,388 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:07,460 - root - DEBUG - Patient by id - 35 was updated, new patient: (Denchik, 2000, KindOfAche.MILD, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:40:07,460 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:07] "PUT /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:07,461 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "PUT /patient-api/35 HTTP/1.1" 200 173
+2023-03-01 14:40:07,461 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:07] "[32mPOST /patients-edit/35 HTTP/1.1[0m" 302 -
+2023-03-01 14:40:07,465 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:07,467 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2000, KindOfAche.MILD, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:40:07,468 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:07] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:07,468 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 169
+2023-03-01 14:40:07,469 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:07] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:40:07,537 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:07,584 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:07] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:34,244 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 14:40:34,244 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 14:40:36,424 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:36,462 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2000, KindOfAche.MILD, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:40:36,462 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:36] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:36,463 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 169
+2023-03-01 14:40:36,473 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:36] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:40:36,559 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:36,612 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:36] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:37,693 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:37,696 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2000, KindOfAche.MILD, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:40:37,697 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:37] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:37,697 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 169
+2023-03-01 14:40:37,701 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:37] "GET /patients-edit/35 HTTP/1.1" 200 -
+2023-03-01 14:40:37,771 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:37,823 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:37] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:51,341 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:51,343 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2000, KindOfAche.MILD, 4385773FV, fgfddfv@knvj.dfkvF)
+2023-03-01 14:40:51,344 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:51] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:51,344 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 169
+2023-03-01 14:40:51,346 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:51,525 - root - DEBUG - Patient by id - 35 was updated, new patient: (Denchik, 2004, KindOfAche.NONE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:51,526 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:51] "PUT /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:51,526 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "PUT /patient-api/35 HTTP/1.1" 200 167
+2023-03-01 14:40:51,527 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:51] "[32mPOST /patients-edit/35 HTTP/1.1[0m" 302 -
+2023-03-01 14:40:51,532 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:51,535 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.NONE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:51,535 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:51] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:51,536 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 163
+2023-03-01 14:40:51,537 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:51] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:40:51,628 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:51,678 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:51] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:52,665 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:52,668 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.NONE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:52,669 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:52] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:52,669 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 163
+2023-03-01 14:40:52,671 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:52] "GET /patients-edit/35 HTTP/1.1" 200 -
+2023-03-01 14:40:52,739 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:52,798 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:52] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:53,323 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:53,325 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.NONE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:53,326 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:53] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:53,327 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 163
+2023-03-01 14:40:53,328 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:53] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:40:53,425 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:53,482 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:53] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:53,980 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:53,982 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.NONE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:53,983 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:53] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:53,983 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 163
+2023-03-01 14:40:53,984 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:53] "GET /patients-edit/35 HTTP/1.1" 200 -
+2023-03-01 14:40:54,055 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:54,115 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:54] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:54,508 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:54,511 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.NONE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:54,512 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:54] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:54,512 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 163
+2023-03-01 14:40:54,513 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:54,518 - root - DEBUG - Patient by id - 35 was updated, new patient: (Denchik, 2004, KindOfAche.NONE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:54,519 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:54] "PUT /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:54,519 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "PUT /patient-api/35 HTTP/1.1" 200 167
+2023-03-01 14:40:54,520 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:54] "[32mPOST /patients-edit/35 HTTP/1.1[0m" 302 -
+2023-03-01 14:40:54,525 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:54,527 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.NONE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:54,528 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:54] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:54,529 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 163
+2023-03-01 14:40:54,529 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:54] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:40:54,614 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:54,671 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:54] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:55,624 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:55,627 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.NONE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:55,627 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:55] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:55,628 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 163
+2023-03-01 14:40:55,629 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:55] "GET /patients-edit/35 HTTP/1.1" 200 -
+2023-03-01 14:40:55,700 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:55,760 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:55] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:56,174 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:56,176 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.NONE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:56,177 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:56] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:56,177 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 163
+2023-03-01 14:40:56,178 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:56] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:40:56,256 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:56,305 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:56] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:57,315 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:57,318 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.NONE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:57,318 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:57] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:57,319 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 163
+2023-03-01 14:40:57,319 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:57] "GET /patients-edit/35 HTTP/1.1" 200 -
+2023-03-01 14:40:57,391 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:57,446 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:57] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:40:59,466 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:59,468 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.NONE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:59,469 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:59] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:59,469 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 163
+2023-03-01 14:40:59,471 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:59,554 - root - DEBUG - Patient by id - 35 was updated, new patient: (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:59,554 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:59] "PUT /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:59,555 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "PUT /patient-api/35 HTTP/1.1" 200 169
+2023-03-01 14:40:59,556 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:59] "[32mPOST /patients-edit/35 HTTP/1.1[0m" 302 -
+2023-03-01 14:40:59,559 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:40:59,561 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk)
+2023-03-01 14:40:59,562 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:59] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:40:59,563 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 165
+2023-03-01 14:40:59,564 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:59] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:40:59,649 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:40:59,700 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:40:59] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:41:00,190 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:41:00,192 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk)
+2023-03-01 14:41:00,193 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:00] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:41:00,193 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 165
+2023-03-01 14:41:00,194 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:00] "GET /patients-edit/35 HTTP/1.1" 200 -
+2023-03-01 14:41:00,269 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:41:00,333 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:00] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:41:02,970 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:41:02,973 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk)
+2023-03-01 14:41:02,974 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:02] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:41:02,975 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 165
+2023-03-01 14:41:02,976 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:02] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:41:03,058 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:41:03,105 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:03] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:41:09,630 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:41:09,632 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk)
+2023-03-01 14:41:09,633 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:09] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-01 14:41:09,633 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 165
+2023-03-01 14:41:09,634 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:09] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-01 14:41:09,700 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:41:09,757 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:09] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:41:12,193 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:41:12,196 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf)]
+2023-03-01 14:41:12,197 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:12] "GET /patient-api HTTP/1.1" 200 -
+2023-03-01 14:41:12,197 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api HTTP/1.1" 200 1720
+2023-03-01 14:41:12,200 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:12] "GET /patients HTTP/1.1" 200 -
+2023-03-01 14:41:12,286 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:41:12,339 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:12] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:41:14,498 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:41:14,501 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf)]
+2023-03-01 14:41:14,502 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:14] "GET /patient-api HTTP/1.1" 200 -
+2023-03-01 14:41:14,502 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api HTTP/1.1" 200 1720
+2023-03-01 14:41:14,503 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:14] "GET /patients HTTP/1.1" 200 -
+2023-03-01 14:41:14,589 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:41:14,644 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:14] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
