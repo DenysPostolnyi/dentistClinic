@@ -8779,3 +8779,59 @@ werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'patien
 2023-03-01 14:41:14,503 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:14] "GET /patients HTTP/1.1" 200 -
 2023-03-01 14:41:14,589 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2023-03-01 14:41:14,644 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:41:14] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-01 14:51:25,429 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 14:51:25,429 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 14:51:28,370 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:51:28] "GET / HTTP/1.1" 200 -
+2023-03-01 14:52:45,046 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 14:52:45,046 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 14:52:46,703 - src - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/src/views/__init__.py", line 13, in index
+    return render_template('index.html')
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/denys/python/dentistClinic/src/templates/index.html", line 8, in top-level template code
+    <a href="{{ url_for('doctor_routes.index') }}">Doctor</a>
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/werkzeug/routing/map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'doctor_routes.index'. Did you mean 'doctor_routes.info' instead?
+2023-03-01 14:52:46,707 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:52:46] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2023-03-01 14:53:15,980 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 14:53:15,981 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 14:53:17,612 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:53:17] "GET / HTTP/1.1" 200 -
+2023-03-01 14:53:26,182 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-01 14:53:26,182 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-01 14:53:27,849 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:53:27] "GET / HTTP/1.1" 200 -
+2023-03-01 14:53:28,946 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-01 14:53:28,985 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Chack, 2, Specialty.RADIOLOGIST, 362375643, fdbvj@fjnv.fdkn), (FGU, 4, Specialty.ORTHOPEDIST, 3463546, GBFG), (vdsfvdf, 23, Specialty.ORTHOPEDIST, 234235423, dfvdf@fsdf.dsd)]
+2023-03-01 14:53:28,987 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:53:28] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-01 14:53:28,987 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1625
+2023-03-01 14:53:28,996 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:53:28] "GET /doctors HTTP/1.1" 200 -
+2023-03-01 14:53:29,085 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:53:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-01 14:53:29,138 - werkzeug - INFO - 127.0.0.1 - - [01/Mar/2023 14:53:29] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
