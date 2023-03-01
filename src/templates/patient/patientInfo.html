@@ -24,7 +24,7 @@
   </div>
   <div class="control-panel">
     <a href="{{ url_for('patient_routes.patient_index') }}" class="back-button">Back</a>
-    <a href="#" class="edit-button">Edit</a>
+    <a href="{{ url_for('patient_routes.edit', patient_id=patient['patient_id']) }}" class="edit-button">Edit</a>
     <a href="{{ url_for('patient_routes.delete_patient', patient_id=patient['patient_id']) }}" class="delete-button delete-info">Delete</a>
   </div>
 </div>
