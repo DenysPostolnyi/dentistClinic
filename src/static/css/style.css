@@ -356,12 +356,28 @@ header {
 
 /*general form*/
 .making-appointment {
+    position: fixed;
+    z-index: 999;
+    overflow: auto;
+
     margin: 10rem;
     border: solid white 0;
     border-radius: 0.8rem;
     background-color: white;
-    overflow: hidden;
     width: 45rem;
+    left: 42%;
+    top: 32%;
+    height: 27%;
+
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease-in-out;
+    /* 1) Hide it visually */
+    opacity: 0;
+
+    /* 2) Make it inaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    visibility: hidden;
 }
 
 /*head*/
@@ -473,6 +489,12 @@ header {
     transition: 0.2s;
 }
 
+.open-modal[name="modal-window"] {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+
 /**************************/
 /* edit/add form */
 /**************************/
@@ -574,7 +596,7 @@ header {
     text-decoration: none;
     border: hidden;
     border-radius: 0.8rem;
-        display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -584,7 +606,6 @@ header {
     color: #e03131;
     box-shadow: inset 0 0 0 3px #e03131;
 }
-
 
 
 /**************************/
