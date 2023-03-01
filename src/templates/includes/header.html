@@ -1,9 +1,17 @@
 <header>
-  <div class="nav">
-    <object data="../static/images/lightbulb.svg" width="45"></object>
-    <a href="#" class="nav-link active-link">Doctors</a>
-    <a href="#" class="nav-link">Patients</a>
-  </div>
+    <div class="nav">
+        <object data="../static/images/lightbulb.svg" width="45"></object>
+        <a href="#" class="nav-link active-link">Doctors</a>
+        <a href="#" class="nav-link">Patients</a>
+    </div>
+{#    <h1>{{ request.url.split("/")[request.url.split("/") | length - 1]|int }}</h1>#}
+    {% if request.url.split("/")[request.url.split("/") | length - 1] != 'add' %}
+        {% if request.url.split("/")[request.url.split("/") | length - 1]|int == 0 %}
+            <a href=" {% if url_for(request.endpoint) == '/doctors' %} {{ url_for('doctor_routes.add') }}
+{% elif url_for(request.endpoint) == '/patients' %} {{ url_for('patient_routes.add') }} {% endif %}"
+               class="add nav-link">Add</a>
 
-  <a href="{{ url_for('doctor_routes.add') }}" class="add nav-link">Add</a>
+        {% endif %}
+    {% endif %}
+
 </header>
