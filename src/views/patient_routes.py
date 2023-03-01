@@ -34,10 +34,6 @@ def delete_patient(patient_id):
 def info(patient_id):
     req = requests.get(f"http://127.0.0.1:5000/patient-api/{patient_id}")
     if req.status_code == 200:
-        print("<===============+++>")
-        # print(url_for(request.endpoint, patient_id=request.args.get('patient_id')))
-
-        print("<===============+++>")
         patient = req.json()
         patient['kind_of_ache'] = patient['kind_of_ache']
         return render_template("patient/patientInfo.html", patient=patient)
