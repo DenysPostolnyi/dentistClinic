@@ -1,6 +1,8 @@
 """
 Doctor services for working with DB
 """
+import datetime
+
 from src.models.models import db, Doctor, Patient
 
 
@@ -72,5 +74,16 @@ def get_list_of_patients(doctor_id):
     doctor = Doctor.query.get(doctor_id)
     if doctor:
         result = db.session.query(Patient).join(Doctor).filter(Patient.doctor_id == doctor_id).all()
+        return result
+    raise RuntimeError(f"Doctor with id: {doctor_id} was not found")
+
+
+def get_filtered_list_of_patients(doctor_id, date):
+    doctor = Doctor.query.get(doctor_id)
+    if doctor:
+        result = db.session.query(Patient).join(Doctor).filter(Patient.doctor_id == doctor_id).filter(
+            Patient.date_of_appointment >= date['date_from']).filter(
+            Patient.date_of_appointment <= date['date_to']).all()
+        print(result)
         return result
     raise RuntimeError(f"Doctor with id: {doctor_id} was not found")

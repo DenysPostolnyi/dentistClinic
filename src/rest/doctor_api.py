@@ -106,6 +106,14 @@ class DoctorAPIClients(Resource):
             logging.debug("Doctor by id - %s was not found", doctor_id)
             abort(404, str(error))
 
+    def post(self, doctor_id):
+        try:
+            date = request.get_json(force=True)
+            return [json.loads(obj.to_json()) for obj in doctor_service.get_filtered_list_of_patients(doctor_id, date)]
+        except RuntimeError as error:
+            logging.debug("Doctor by id - %s was not found", doctor_id)
+            abort(404, str(error))
+
 
 api.add_resource(DoctorAPIGetPost, '/doctor-api')
 api.add_resource(DoctorAPIGetUpdateDelete, '/doctor-api/<doctor_id>')
