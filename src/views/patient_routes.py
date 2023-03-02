@@ -1,9 +1,6 @@
 """
 Routes for testing DB services
 """
-import datetime
-import json
-
 import requests
 from flask import Blueprint, render_template, abort, redirect, url_for, request
 from jinja2 import TemplateNotFound
@@ -38,6 +35,12 @@ def info(patient_id):
     req = requests.get(f"http://127.0.0.1:5000/patient-api/{patient_id}")
     if req.status_code == 200:
         patient = req.json()
+        if patient['doctor_id']:
+            doctor = requests.get(f"http://127.0.0.1:5000/doctor-api/{patient['doctor_id']}")
+            if doctor.status_code == 200:
+                return render_template("patient/patientInfo.html", patient=patient, appointed_doctor=doctor.json())
+            patient['doctor_id'] = None
+
         take_doctors = requests.get("http://127.0.0.1:5000/doctor-api")
         all_doctors = None
         if take_doctors.status_code == 200:

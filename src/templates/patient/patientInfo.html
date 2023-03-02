@@ -8,19 +8,23 @@
             <p>Kind of ache: {{ patient['kind_of_ache'] }}</p>
             <p>Email: {{ patient['email'] }}</p>
             <p>Phone number: +38{{ patient['phone_number'] }}</p>
-            <!--  <div class="appointment">-->
-            <!--    <p>Appointed to: therapist <a href="#">Alexandr Evtushenko</a></p>-->
-            <!--    <p>Date of appointment: 12.03.2023</p>-->
-            <!--    <form action="#" class="cancel-in-form">-->
-            <!--      <input type="submit" class="submit-button" value="Cancel">-->
-            <!--    </form>-->
-            <!--  </div>-->
-            <div class="not-appointed">
-                <p>Patient is not appointed</p>
-                <div class="cancel-in-form">
-                    <button class="make-appointment">Make an appointment</button>
+            {% if patient['doctor_id'] is not none %}
+                <div class="appointment">
+                    <p>Appointed to: {{ appointed_doctor['specialty'] }} <a
+                            href="{{ url_for('doctor_routes.info', doctor_id=appointed_doctor['doctor_id']) }}">{{ appointed_doctor['full_name'] }}</a></p>
+                    <p>Date of appointment: {{ patient['date_of_appointment'] }}</p>
+                    <form action="#" class="cancel-in-form">
+                        <input type="submit" class="submit-button" value="Cancel">
+                    </form>
                 </div>
-            </div>
+            {% else %}
+                <div class="not-appointed">
+                    <p>Patient is not appointed</p>
+                    <div class="cancel-in-form">
+                        <button class="make-appointment">Make an appointment</button>
+                    </div>
+                </div>
+            {% endif %}
         </div>
         <div class="control-panel">
             <a href="{{ url_for('patient_routes.patient_index') }}" class="back-button">Back</a>
@@ -31,7 +35,8 @@
         </div>
     </div>
 
-    <form method="POST" action="/patients-appoint/{{ patient['patient_id'] }}" class="making-appointment" name="modal-window">
+    <form method="POST" action="/patients-appoint/{{ patient['patient_id'] }}" class="making-appointment"
+          name="modal-window">
         <h3>Making an appointment</h3>
         <hr>
         <div class="form-of-appointment">
@@ -52,7 +57,8 @@
             </div>
             <div class="right-part">
                 <label for="date_of_appointment"></label>
-                <input id="date_of_appointment" name="date_of_appointment" type="date" class="kalendar" data-date-inline-picker="true">
+                <input id="date_of_appointment" name="date_of_appointment" type="date" class="kalendar"
+                       data-date-inline-picker="true">
             </div>
         </div>
         <div class="buttons-appointment">
@@ -62,44 +68,46 @@
     </form>
     <script>
         // Array containing options data
-        let all_doctors = {{ doctors|tojson }};
+        {% if doctors is defined %}
+            let all_doctors = {{ doctors|tojson }};
 
-        // Get a reference to the select element
-        let select = document.getElementById('doctor_id');
+            // Get a reference to the select element
+            let select = document.getElementById('doctor_id');
 
-        // Loop through the options array and create an option element for each one
-        for (let i = 0; i < all_doctors.length; i++) {
-            let option = document.createElement('option');
-            option.value = all_doctors[i]['doctor_id'];
-            option.text = all_doctors[i]['full_name'] + ', ' + all_doctors[i]['specialty'];
-            select.add(option);
-        }
+            // Loop through the options array and create an option element for each one
+            for (let i = 0; i < all_doctors.length; i++) {
+                let option = document.createElement('option');
+                option.value = all_doctors[i]['doctor_id'];
+                option.text = all_doctors[i]['full_name'] + ', ' + all_doctors[i]['specialty'];
+                select.add(option);
+            }
 
-        let select_spec = document.getElementById("kind_of_doc");
-        select_spec.addEventListener('click', function () {
-            // delete all from select
-            let choose = select_spec.options[select_spec.selectedIndex];
-            if (choose.disabled === false) {
-                clearSelect();
-                var option = document.createElement('option');
-                option.value = 'default';
-                option.text = 'Choose doctor';
-                option.selected = true;
-                option.disabled = true;
+            let select_spec = document.getElementById("kind_of_doc");
+            select_spec.addEventListener('click', function () {
+                // delete all from select
+                let choose = select_spec.options[select_spec.selectedIndex];
+                if (choose.disabled === false) {
+                    clearSelect();
+                    var option = document.createElement('option');
+                    option.value = 'default';
+                    option.text = 'Choose doctor';
+                    option.selected = true;
+                    option.disabled = true;
 
-                // Add the new option element to the select element
-                select.add(option, 0);
+                    // Add the new option element to the select element
+                    select.add(option, 0);
 
-                for (let i = 0; i < all_doctors.length; i++) {
-                    if (all_doctors[i]["specialty"] === choose.value) {
-                        let option = document.createElement('option');
-                        option.value = all_doctors[i]['doctor_id'];
-                        option.text = all_doctors[i]['full_name'] + ' ' + all_doctors[i]['specialty'];
-                        select.add(option);
+                    for (let i = 0; i < all_doctors.length; i++) {
+                        if (all_doctors[i]["specialty"] === choose.value) {
+                            let option = document.createElement('option');
+                            option.value = all_doctors[i]['doctor_id'];
+                            option.text = all_doctors[i]['full_name'] + ' ' + all_doctors[i]['specialty'];
+                            select.add(option);
+                        }
                     }
                 }
-            }
-        });
+            });
+        {% endif %}
     </script>
     </body>
 {% endblock %}
