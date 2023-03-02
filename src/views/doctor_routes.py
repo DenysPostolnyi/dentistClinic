@@ -14,10 +14,11 @@ def doctor_index():
     try:
         doctors = requests.get("http://127.0.0.1:5000/doctor-api").json()
         if isinstance(doctors, list):
+            amount = requests.get("http://127.0.0.1:5000/doctor-api/count").json()['amount']
             return render_template('doctor/doctors.html', doctors=[
                 {"doctor_id": doctor['doctor_id'], "full_name": doctor['full_name'],
                  "specialty": doctor['specialty']} for doctor in doctors
-            ])
+            ], amount=amount)
         else:
             return render_template('doctor/doctors.html', doctors=[])
     except TemplateNotFound:

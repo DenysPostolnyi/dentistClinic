@@ -216,6 +216,11 @@ header {
     box-shadow: inset 0 0 0 3px rgb(0, 133, 2523);
 }
 
+.amount {
+    color: blue;
+    font-size: 1.8rem;
+}
+
 /**************************/
 /* List of patients/doctors */
 /**************************/

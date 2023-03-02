@@ -44,6 +44,16 @@ class DoctorAPIGetPost(Resource):
         return {"message": "Doctor was added successfully", "doctor": json.loads(answer.to_json())}
 
 
+class DoctorAPICount(Resource):
+    def get(self):
+        doctors = doctor_service.get_all()
+        if doctors:
+            return {
+                "amount": doctor_service.count_all()
+            }
+        return {"message": "Doctor list is empty"}
+
+
 class DoctorAPIGetUpdateDelete(Resource):
     """
     Class for receiving GET and PUT DELETE methods with parameter id
@@ -116,5 +126,6 @@ class DoctorAPIClients(Resource):
 
 
 api.add_resource(DoctorAPIGetPost, '/doctor-api')
+api.add_resource(DoctorAPICount, '/doctor-api/count')
 api.add_resource(DoctorAPIGetUpdateDelete, '/doctor-api/<doctor_id>')
 api.add_resource(DoctorAPIClients, '/doctor-api/clients/<doctor_id>')

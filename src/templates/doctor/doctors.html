@@ -25,15 +25,19 @@
         <div>
             <input type="submit" value="Submit" class="submit-button">
         </div>
-    </form>
 
+        <div>
+            <h3 class="amount">Amount: {{ amount }}</h3>
+        </div>
+    </form>
     <div class="patients-list">
         {% for doctor in doctors %}
             <div class="patient-in-list">
                 <p class="full-name-in-list">{{ doctor["full_name"] }}, {{ doctor["specialty"] }}</p>
                 <div class="item-buttons-in-list">
                     <a href="{{ url_for('doctor_routes.info', doctor_id=doctor['doctor_id']) }}" class="open-button">Open</a>
-                    <a href="{{ url_for('doctor_routes.delete', doctor_id=doctor['doctor_id']) }}" class="delete-button">Delete</a>
+                    <a href="{{ url_for('doctor_routes.delete', doctor_id=doctor['doctor_id']) }}"
+                       class="delete-button">Delete</a>
                 </div>
             </div>
         {% endfor %}

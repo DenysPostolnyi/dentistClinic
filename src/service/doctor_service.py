@@ -25,6 +25,10 @@ def get_all():
     return Doctor.query.all()
 
 
+def count_all():
+    return Doctor.query.count()
+
+
 def get_one_by_id(doctor_id):
     """
     Function for getting doctor from DB by id
