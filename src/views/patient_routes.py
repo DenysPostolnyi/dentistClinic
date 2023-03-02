@@ -1,6 +1,9 @@
 """
 Routes for testing DB services
 """
+import datetime
+import json
+
 import requests
 from flask import Blueprint, render_template, abort, redirect, url_for, request
 from jinja2 import TemplateNotFound
@@ -35,8 +38,11 @@ def info(patient_id):
     req = requests.get(f"http://127.0.0.1:5000/patient-api/{patient_id}")
     if req.status_code == 200:
         patient = req.json()
-        patient['kind_of_ache'] = patient['kind_of_ache']
-        return render_template("patient/patientInfo.html", patient=patient)
+        take_doctors = requests.get("http://127.0.0.1:5000/doctor-api")
+        all_doctors = None
+        if take_doctors.status_code == 200:
+            all_doctors = take_doctors.json()
+        return render_template("patient/patientInfo.html", patient=patient, doctors=all_doctors)
     return redirect(url_for('patient_routes.patient_index'))
 
 
@@ -65,5 +71,20 @@ def edit(patient_id):
             req = requests.put(f"http://127.0.0.1:5000/patient-api/{patient_id}", json=new_patient).json()
             return redirect(url_for('patient_routes.info', patient_id=req['patient_id']))
         return redirect(url_for('patient_routes.patient_index'))
+    except TemplateNotFound:
+        abort(404)
+
+
+@patient_routes.route("/patients-appoint/<int:patient_id>", methods=['POST'])
+def appointment(patient_id):
+    try:
+        date_from_form = request.form['date_of_appointment']
+        doctor_id = request.form['doctor_id']
+        data = {
+            'doctor_id': int(doctor_id),
+            'date_of_appointment': date_from_form
+        }
+        appoint = requests.post(f"http://127.0.0.1:5000/patient-api/appoint/{patient_id}", json=data)
+        return redirect(url_for('patient_routes.info', patient_id=patient_id))
     except TemplateNotFound:
         abort(404)
