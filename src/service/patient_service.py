@@ -1,7 +1,8 @@
 """
 Patient services for working with DB
 """
-from src.models.models import db, Patient
+from src.models.models import db, Patient, Doctor
+from src.service import doctor_service
 
 
 def add_patient(patient):
@@ -66,3 +67,18 @@ def delete(patient_id):
         db.session.commit()
     else:
         raise RuntimeError(f"Patient with id: {patient_id} was not found")
+
+
+def make_appointment(patient_id, data):
+    patient_for_appoint = Patient.query.get(patient_id)
+    if patient_for_appoint:
+        try:
+            doctor_service.get_one_by_id(int(data['doctor_id']))
+            patient_for_appoint.doctor_id = int(data['doctor_id'])
+            patient_for_appoint.date_of_appointment = data['date_of_appointment']
+            db.session.add(patient_for_appoint)
+            db.session.commit()
+            return patient_for_appoint
+        except RuntimeError as error:
+            raise error
+    raise RuntimeError(f"Patient with id: {patient_id} was not found")
