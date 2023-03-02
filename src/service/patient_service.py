@@ -82,3 +82,14 @@ def make_appointment(patient_id, data):
         except RuntimeError as error:
             raise error
     raise RuntimeError(f"Patient with id: {patient_id} was not found")
+
+
+def cancel_appointment(patient_id):
+    patient_for_unappoint = Patient.query.get(patient_id)
+    if patient_for_unappoint:
+        patient_for_unappoint.doctor_id = None
+        patient_for_unappoint.date_of_appointment = None
+        db.session.add(patient_for_unappoint)
+        db.session.commit()
+        return patient_for_unappoint
+    raise RuntimeError(f"Patient with id: {patient_id} was not found")

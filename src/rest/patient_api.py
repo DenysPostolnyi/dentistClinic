@@ -109,6 +109,16 @@ class PatientAPIAppoint(Resource):
             logging.debug("Patient for appointment by id - %s was not appointed", patient_id)
             abort(404, str(error))
 
+    def delete(self, patient_id):
+        try:
+            answer = patient_service.cancel_appointment(patient_id)
+            logging.debug("Patient with id: %s was unappointed", patient_id)
+            return {"message": "Patient with id: %s was unappointed successfully",
+                    "patient": json.loads(answer.to_json())}
+        except RuntimeError as error:
+            logging.debug("Patient for unappoint by id - %s was not found", patient_id)
+            abort(404, str(error))
+
 
 api.add_resource(PatientAPIGetPost, '/patient-api')
 api.add_resource(PatientAPIGetUpdateDelete, '/patient-api/<patient_id>')

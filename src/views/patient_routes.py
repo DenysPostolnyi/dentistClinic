@@ -88,6 +88,19 @@ def appointment(patient_id):
             'date_of_appointment': date_from_form
         }
         appoint = requests.post(f"http://127.0.0.1:5000/patient-api/appoint/{patient_id}", json=data)
-        return redirect(url_for('patient_routes.info', patient_id=patient_id))
+        if appoint.status_code == 200:
+            return redirect(url_for('patient_routes.info', patient_id=patient_id))
+        return redirect(url_for('patient_routes.patient_index'))
+    except TemplateNotFound:
+        abort(404)
+
+
+@patient_routes.route("/patients-unappoint/<int:patient_id>")
+def cancel_appointment(patient_id):
+    try:
+        unappoint = requests.delete(f"http://127.0.0.1:5000/patient-api/appoint/{patient_id}")
+        if unappoint.status_code == 200:
+            return redirect(url_for('patient_routes.info', patient_id=patient_id))
+        return redirect(url_for('patient_routes.patient_index'))
     except TemplateNotFound:
         abort(404)
