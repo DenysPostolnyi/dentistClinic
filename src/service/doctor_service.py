@@ -1,7 +1,7 @@
 """
 Doctor services for working with DB
 """
-from src.models.models import db, Doctor
+from src.models.models import db, Doctor, Patient
 
 
 def add_doctors(doctor):
@@ -66,3 +66,11 @@ def delete(doctor_id):
         db.session.commit()
     else:
         raise RuntimeError(f"Doctor with id: {doctor_id} was not found")
+
+
+def get_list_of_patients(doctor_id):
+    doctor = Doctor.query.get(doctor_id)
+    if doctor:
+        result = db.session.query(Patient).join(Doctor).filter(Patient.doctor_id == doctor_id).all()
+        return result
+    raise RuntimeError(f"Doctor with id: {doctor_id} was not found")

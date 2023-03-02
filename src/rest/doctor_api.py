@@ -18,6 +18,7 @@ class DoctorAPIGetPost(Resource):
     """
     Class for receiving GET and POST methods without params
     """
+
     def get(self):
         """
         Get method for getting all doctors from DB
@@ -47,6 +48,7 @@ class DoctorAPIGetUpdateDelete(Resource):
     """
     Class for receiving GET and PUT DELETE methods with parameter id
     """
+
     def get(self, doctor_id):
         """
          Get method for getting doctor from DB by id
@@ -96,5 +98,15 @@ class DoctorAPIGetUpdateDelete(Resource):
             abort(404, str(error))
 
 
+class DoctorAPIClients(Resource):
+    def get(self, doctor_id):
+        try:
+            return [json.loads(obj.to_json()) for obj in doctor_service.get_list_of_patients(doctor_id)]
+        except RuntimeError as error:
+            logging.debug("Doctor by id - %s was not found", doctor_id)
+            abort(404, str(error))
+
+
 api.add_resource(DoctorAPIGetPost, '/doctor-api')
 api.add_resource(DoctorAPIGetUpdateDelete, '/doctor-api/<doctor_id>')
+api.add_resource(DoctorAPIClients, '/doctor-api/clients/<doctor_id>')

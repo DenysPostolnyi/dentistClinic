@@ -37,9 +37,11 @@ def delete(doctor_id):
 def info(doctor_id):
     try:
         request = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
-        if request.status_code == 200:
+        take_patients = requests.get(f"http://127.0.0.1:5000//doctor-api/clients/{doctor_id}")
+        if request.status_code == 200 and take_patients.status_code == 200:
             doctor = request.json()
-            return render_template("doctor/doctorInfo.html", doctor=doctor)
+            patients = take_patients.json()
+            return render_template("doctor/doctorInfo.html", doctor=doctor, patients=patients)
         return redirect(url_for('doctor_routes.doctor_index'))
     except TemplateNotFound:
         abort(404)
