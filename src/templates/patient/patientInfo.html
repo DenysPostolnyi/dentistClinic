@@ -14,7 +14,7 @@
                             href="{{ url_for('doctor_routes.info', doctor_id=appointed_doctor['doctor_id']) }}">{{ appointed_doctor['full_name'] }}</a></p>
                     <p>Date of appointment: {{ patient['date_of_appointment'] }}</p>
                     <div class="cancel-in-form">
-                        <a type="submit" class="submit-button" href="{{ url_for('patient_routes.cancel_appointment', patient_id=patient['patient_id']) }}">Cancel</a>
+                        <a type="submit" class="submit-button cancel-appoint" href="{{ url_for('patient_routes.cancel_appointment', patient_id=patient['patient_id']) }}">Cancel</a>
                     </div>
                 </div>
             {% else %}

@@ -277,6 +277,17 @@ header {
     margin-bottom: 1.2rem;
     background-color: inherit;
     text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.cancel-appoint{
+    display: flex;
+    text-decoration: none;
+    width: 7.4rem;
+    height: 3.6rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .not-appointed {
