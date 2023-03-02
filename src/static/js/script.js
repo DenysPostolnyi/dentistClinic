@@ -21,11 +21,17 @@ document.addEventListener('DOMContentLoaded', function () {
         modal.classList.toggle('open-modal');
     });
 
-// When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target === modal) {
-            modal.classList.toggle('open-modal');
-        }
-    }
+// // When the user clicks anywhere outside of the modal, close it
+//     window.onclick = function (event) {
+//         if (event.target === modal) {
+//             modal.classList.toggle('open-modal');
+//         }
+//     }
 });
 
+
+// for appointment(modal)
+function clearSelect() {
+    var select = document.getElementById('doctor_id');
+    select.innerHTML = '';
+}
