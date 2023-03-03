@@ -9,6 +9,10 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def index():
+    """
+    Rout for start page
+    :return:
+    """
     try:
         return render_template('index.html')
     except TemplateNotFound:

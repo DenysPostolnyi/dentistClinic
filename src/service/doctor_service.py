@@ -5,6 +5,9 @@ from src.models.models import db, Doctor, Patient
 from src.service import patient_service
 
 
+# from src.service import patient_service
+
+
 def add_doctors(doctor):
     """
     Function for adding doctor to DB
@@ -12,8 +15,8 @@ def add_doctors(doctor):
     """
     db.session.add(doctor)
     db.session.commit()
-    all = get_all()
-    return all[len(all) - 1]
+    all_doctors = get_all()
+    return all_doctors[len(all_doctors) - 1]
 
 
 def get_all():
@@ -25,6 +28,10 @@ def get_all():
 
 
 def count_all():
+    """
+    Function for counting all doctors
+    :return:
+    """
     return Doctor.query.count()
 
 
@@ -77,6 +84,11 @@ def delete(doctor_id):
 
 
 def get_list_of_patients(doctor_id):
+    """
+    Function for getting all appointed patients to the doctor
+    :param doctor_id:
+    :return: list of appointed patients
+    """
     doctor = Doctor.query.get(doctor_id)
     if doctor:
         result = db.session.query(Patient).join(Doctor).filter(Patient.doctor_id == doctor_id).all()
@@ -85,6 +97,12 @@ def get_list_of_patients(doctor_id):
 
 
 def get_filtered_list_of_patients(doctor_id, date):
+    """
+    Function for getting appointed patients to the doctor searched by date
+    :param doctor_id:
+    :param date:
+    :return: list of appointed patients
+    """
     doctor = Doctor.query.get(doctor_id)
     if doctor:
         result = db.session.query(Patient).join(Doctor).filter(Patient.doctor_id == doctor_id).filter(

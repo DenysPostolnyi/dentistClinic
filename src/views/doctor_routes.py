@@ -11,24 +11,32 @@ doctor_routes = Blueprint('doctor_routes', __name__,
 
 @doctor_routes.route('/doctors', methods=['GET'])
 def doctor_index():
+    """
+    Rout for page with list of doctors
+    :return:
+    """
     try:
-        doctors = requests.get("http://127.0.0.1:5000/doctor-api").json()
+        doctors = requests.get("http://127.0.0.1:5000/doctor-api", timeout=1000).json()
         if isinstance(doctors, list):
-            amount = requests.get("http://127.0.0.1:5000/doctor-api/count").json()['amount']
+            amount = requests.get("http://127.0.0.1:5000/doctor-api/count", timeout=1000).json()['amount']
             return render_template('doctor/doctors.html', doctors=[
                 {"doctor_id": doctor['doctor_id'], "full_name": doctor['full_name'],
                  "specialty": doctor['specialty']} for doctor in doctors
             ], amount=amount)
-        else:
-            return render_template('doctor/doctors.html', doctors=[])
+        return render_template('doctor/doctors.html', doctors=[])
     except TemplateNotFound:
         abort(404)
 
 
 @doctor_routes.route("/doctors/delete/<int:doctor_id>", methods=['GET'])
 def delete(doctor_id):
+    """
+    Rout for delete doctor
+    :param doctor_id:
+    :return:
+    """
     try:
-        request = requests.delete(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
+        requests.delete(f"http://127.0.0.1:5000/doctor-api/{doctor_id}", timeout=1000)
         return redirect(url_for('doctor_routes.doctor_index'))
     except TemplateNotFound:
         abort(404)
@@ -36,11 +44,16 @@ def delete(doctor_id):
 
 @doctor_routes.route("/doctors/<int:doctor_id>", methods=['GET'])
 def info(doctor_id):
+    """
+    Rout for page with info about doctor
+    :param doctor_id:
+    :return:
+    """
     try:
-        request = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
-        take_patients = requests.get(f"http://127.0.0.1:5000/doctor-api/clients/{doctor_id}")
-        if request.status_code == 200 and take_patients.status_code == 200:
-            doctor = request.json()
+        req = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}", timeout=1000)
+        take_patients = requests.get(f"http://127.0.0.1:5000/doctor-api/clients/{doctor_id}", timeout=1000)
+        if req.status_code == 200 and take_patients.status_code == 200:
+            doctor = req.json()
             patients = take_patients.json()
             return render_template("doctor/doctorInfo.html", doctor=doctor, patients=patients)
         return redirect(url_for('doctor_routes.doctor_index'))
@@ -50,6 +63,11 @@ def info(doctor_id):
 
 @doctor_routes.route("/doctors-filter/<int:doctor_id>", methods=['GET', 'POST'])
 def info_filter(doctor_id):
+    """
+    Rout for page with info about doctor where list appointed patients filtered by date of appointment
+    :param doctor_id:
+    :return:
+    """
     try:
         date_from = request.form['date_from']
         date_to = request.form['date_to']
@@ -57,8 +75,8 @@ def info_filter(doctor_id):
             "date_from": date_from,
             "date_to": date_to,
         }
-        req = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
-        take_patients = requests.post(f"http://127.0.0.1:5000/doctor-api/clients/{doctor_id}", json=date)
+        req = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}", timeout=1000)
+        take_patients = requests.post(f"http://127.0.0.1:5000/doctor-api/clients/{doctor_id}", json=date, timeout=1000)
         if req.status_code == 200 and take_patients.status_code == 200:
             doctor = req.json()
             patients = take_patients.json()
@@ -70,28 +88,36 @@ def info_filter(doctor_id):
 
 @doctor_routes.route("/doctors/add", methods=['GET', 'POST'])
 def add():
+    """
+    Rout for page for adding new doctor
+    :return:
+    """
     try:
         if request.method == 'GET':
             return render_template("doctor/doctorAdd.html")
         new_doctor = request.form
-        req = requests.post("http://127.0.0.1:5000/doctor-api", json=new_doctor)
+        req = requests.post("http://127.0.0.1:5000/doctor-api", json=new_doctor, timeout=1000)
         if req.status_code == 200:
             return redirect(url_for('doctor_routes.info', doctor_id=req.json()['doctor']['doctor_id']))
-        else:
-            return redirect(url_for('doctor_routes.doctor_index'))
+        return redirect(url_for('doctor_routes.doctor_index'))
     except TemplateNotFound:
         abort(404)
 
 
 @doctor_routes.route("/doctors-edit/<int:doctor_id>", methods=['GET', 'POST'])
 def edit(doctor_id):
+    """
+    Rout for page for editing info about doctor
+    :param doctor_id:
+    :return:
+    """
     try:
-        doctor_from_db = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}")
+        doctor_from_db = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}", timeout=1000)
         if doctor_from_db.status_code == 200:
             if request.method == 'GET':
                 return render_template("doctor/doctorsEdit.html", doctor=doctor_from_db.json())
             new_doctor = request.form
-            req = requests.put(f"http://127.0.0.1:5000/doctor-api/{doctor_id}", json=new_doctor).json()
+            req = requests.put(f"http://127.0.0.1:5000/doctor-api/{doctor_id}", json=new_doctor, timeout=1000).json()
             return redirect(url_for('doctor_routes.info', doctor_id=req['doctor_id']))
         return redirect(url_for('doctor_routes.doctor_index'))
     except TemplateNotFound:

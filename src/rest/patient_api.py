@@ -98,7 +98,17 @@ class PatientAPIGetUpdateDelete(Resource):
 
 
 class PatientAPIAppoint(Resource):
+    """
+    Class for appoint or unappoint chosen person
+    """
+
     def post(self, patient_id):
+        """
+        Method for appoint person
+        :param patient_id:
+        :return: message that patient appointed successfully,
+        Person that was appointed
+        """
         try:
             data_of_appointment = request.get_json(force=True)
             answer = patient_service.make_appointment(patient_id, data_of_appointment)
@@ -110,6 +120,12 @@ class PatientAPIAppoint(Resource):
             abort(404, str(error))
 
     def delete(self, patient_id):
+        """
+        Method for unappoint person
+        :param patient_id:
+        :return: message that patient unappointed successfully,
+        Person that was unappointed
+        """
         try:
             answer = patient_service.cancel_appointment(patient_id)
             logging.debug("Patient with id: %s was unappointed", patient_id)

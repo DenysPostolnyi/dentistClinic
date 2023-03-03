@@ -45,7 +45,14 @@ class DoctorAPIGetPost(Resource):
 
 
 class DoctorAPICount(Resource):
+    """
+    Class for GET method that returns amount of doctors
+    """
     def get(self):
+        """
+        Method call service that counts amount of doctors
+        :return:
+        """
         doctors = doctor_service.get_all()
         if doctors:
             return {
@@ -109,7 +116,15 @@ class DoctorAPIGetUpdateDelete(Resource):
 
 
 class DoctorAPIClients(Resource):
+    """
+    Class for getting info about appointed patients
+    """
     def get(self, doctor_id):
+        """
+        Method for getting all appointed patients to the doctor
+        :param doctor_id:
+        :return: list of appointed patients
+        """
         try:
             ls = [json.loads(obj.to_json()) for obj in doctor_service.get_list_of_patients(doctor_id)]
             logging.debug("List of appointed patients to doctor with id: %s was gotten", doctor_id)
@@ -119,6 +134,11 @@ class DoctorAPIClients(Resource):
             abort(404, str(error))
 
     def post(self, doctor_id):
+        """
+        Method for getting all appointed patients to the doctor from one time to another
+        :param doctor_id:
+        :return: list of appointed patients searched by time
+        """
         try:
             date = request.get_json(force=True)
             ls = [json.loads(obj.to_json()) for obj in doctor_service.get_filtered_list_of_patients(doctor_id, date)]

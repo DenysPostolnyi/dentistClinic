@@ -15505,3 +15505,67 @@ sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1451, 'Cannot delet
 2023-03-03 10:37:40,855 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 10:37:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2023-03-03 10:37:40,856 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 10:37:40] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
 2023-03-03 10:37:40,948 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 10:37:40] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 11:16:02,541 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-03 11:16:02,541 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-03 11:16:07,123 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 11:16:07,170 - root - DEBUG - Doctor by id - 63 was gotten, doctor: (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com)
+2023-03-03 11:16:07,171 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:07] "GET /doctor-api/63 HTTP/1.1" 200 -
+2023-03-03 11:16:07,172 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/63 HTTP/1.1" 200 153
+2023-03-03 11:16:07,174 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 11:16:07,181 - root - DEBUG - List of appointed patients from date 2023-03-17, to 2023-03-15 to doctor with id: 63 was gotten
+2023-03-03 11:16:07,182 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:07] "POST /doctor-api/clients/63 HTTP/1.1" 200 -
+2023-03-03 11:16:07,182 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api/clients/63 HTTP/1.1" 200 3
+2023-03-03 11:16:07,202 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:07] "POST /doctors-filter/63 HTTP/1.1" 200 -
+2023-03-03 11:16:07,377 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 11:16:07,386 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:07] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 11:16:07,490 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:07] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 11:16:09,208 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 11:16:09,211 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, None)]
+2023-03-03 11:16:09,212 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:09] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 11:16:09,213 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api HTTP/1.1" 200 2050
+2023-03-03 11:16:09,220 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:09] "GET /patients HTTP/1.1" 200 -
+2023-03-03 11:16:09,386 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 11:16:09,388 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:09] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 11:16:09,509 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:09] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 11:16:10,828 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 11:16:10,831 - root - DEBUG - Patient by id - 36 was gotten, patient: (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, None)
+2023-03-03 11:16:10,832 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:10] "GET /patient-api/36 HTTP/1.1" 200 -
+2023-03-03 11:16:10,833 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/36 HTTP/1.1" 200 190
+2023-03-03 11:16:10,835 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 11:16:10,838 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)]
+2023-03-03 11:16:10,839 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:10] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 11:16:10,839 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 918
+2023-03-03 11:16:10,850 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:10] "GET /patients/36 HTTP/1.1" 200 -
+2023-03-03 11:16:11,013 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 11:16:11,015 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:11] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 11:16:11,142 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:11] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 11:16:19,225 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 11:16:19,380 - root - DEBUG - Patient with id: 36 was appointed
+2023-03-03 11:16:19,383 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:19] "POST /patient-api/appoint/36 HTTP/1.1" 200 -
+2023-03-03 11:16:19,383 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /patient-api/appoint/36 HTTP/1.1" 200 268
+2023-03-03 11:16:19,384 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:19] "[32mPOST /patients-appoint/36 HTTP/1.1[0m" 302 -
+2023-03-03 11:16:19,390 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 11:16:19,392 - root - DEBUG - Patient by id - 36 was gotten, patient: (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16)
+2023-03-03 11:16:19,393 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:19] "GET /patient-api/36 HTTP/1.1" 200 -
+2023-03-03 11:16:19,393 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/36 HTTP/1.1" 200 194
+2023-03-03 11:16:19,395 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 11:16:19,398 - root - DEBUG - Doctor by id - 53 was gotten, doctor: (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com)
+2023-03-03 11:16:19,399 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:19] "GET /doctor-api/53 HTTP/1.1" 200 -
+2023-03-03 11:16:19,399 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/53 HTTP/1.1" 200 153
+2023-03-03 11:16:19,401 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:19] "GET /patients/36 HTTP/1.1" 200 -
+2023-03-03 11:16:19,556 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 11:16:19,561 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:19] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 11:16:19,661 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:19] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 11:16:29,728 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 11:16:29,732 - root - DEBUG - Doctor by id - 53 was gotten, doctor: (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com)
+2023-03-03 11:16:29,733 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:29] "GET /doctor-api/53 HTTP/1.1" 200 -
+2023-03-03 11:16:29,733 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/53 HTTP/1.1" 200 153
+2023-03-03 11:16:29,736 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 11:16:29,740 - root - DEBUG - List of appointed patients to doctor with id: 53 was gotten
+2023-03-03 11:16:29,741 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:29] "GET /doctor-api/clients/53 HTTP/1.1" 200 -
+2023-03-03 11:16:29,742 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/53 HTTP/1.1" 200 409
+2023-03-03 11:16:29,743 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:29] "GET /doctors/53 HTTP/1.1" 200 -
+2023-03-03 11:16:29,902 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 11:16:29,903 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:29] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 11:16:29,979 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:29] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
