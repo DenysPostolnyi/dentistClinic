@@ -68,7 +68,7 @@ class Patient(db.Model):
     """
     __tablename__ = "Patients"
     patient_id = db.Column(db.Integer, primary_key=True)
-    doctor_id = db.Column(db.ForeignKey("Doctors.doctor_id"))
+    doctor_id = db.Column(db.ForeignKey("Doctors.doctor_id", ondelete='SET NULL'))
     full_name = db.Column(db.String(100), unique=True)
     year_of_birth = db.Column(db.Integer)
     kind_of_ache = db.Column(db.Enum(KindOfAche))

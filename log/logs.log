@@ -14621,3 +14621,510 @@ sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1451, 'Cannot delet
 2023-03-02 22:05:19,479 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2023 22:05:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2023-03-02 22:05:19,480 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2023 22:05:19] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
 2023-03-02 22:05:19,536 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2023 22:05:19] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 08:43:37,190 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-03 08:43:37,203 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-03 08:43:38,798 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 08:43:39,087 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (FGU, 4, Specialty.ORTHOPEDIST, 3463546, GBFG)]
+2023-03-03 08:43:39,089 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:39] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 08:43:39,089 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1339
+2023-03-03 08:43:39,090 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 08:43:39,097 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:39] "GET /doctor-api/count HTTP/1.1" 200 -
+2023-03-03 08:43:39,097 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 14
+2023-03-03 08:43:39,141 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:39] "GET /doctors HTTP/1.1" 200 -
+2023-03-03 08:43:39,265 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 08:43:39,266 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:39] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 08:43:39,320 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:39] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 08:43:39,334 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-03-03 08:43:48,514 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 08:43:48,520 - root - DEBUG - Doctor by id - 60 was gotten, doctor: (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com)
+2023-03-03 08:43:48,521 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:48] "GET /doctor-api/60 HTTP/1.1" 200 -
+2023-03-03 08:43:48,522 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/60 HTTP/1.1" 200 153
+2023-03-03 08:43:48,523 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 08:43:48,537 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:48] "GET /doctor-api/clients/60 HTTP/1.1" 200 -
+2023-03-03 08:43:48,537 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/60 HTTP/1.1" 200 427
+2023-03-03 08:43:48,561 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:48] "GET /doctors/60 HTTP/1.1" 200 -
+2023-03-03 08:43:48,665 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 08:43:48,667 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:48] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 08:43:48,726 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:48] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 08:43:51,017 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 08:43:51,046 - src - ERROR - Exception on /doctor-api/60 [DELETE]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1451, 'Cannot delete or update a parent row: a foreign key constraint fails (`db`.`Patients`, CONSTRAINT `Patients_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `Doctors` (`doctor_id`))')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 103, in delete
+    doctor_service.delete(doctor_id)
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 72, in delete
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3444, in flush
+    self._flush(objects)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3544, in _flush
+    flush_context.execute()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 667, in execute
+    util.preloaded.orm_persistence.delete_obj(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 343, in delete_obj
+    _emit_delete_statements(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1468, in _emit_delete_statements
+    c = connection._execute_20(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1451, 'Cannot delete or update a parent row: a foreign key constraint fails (`db`.`Patients`, CONSTRAINT `Patients_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `Doctors` (`doctor_id`))')
+[SQL: DELETE FROM `Doctors` WHERE `Doctors`.doctor_id = %(doctor_id)s]
+[parameters: {'doctor_id': 60}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2023-03-03 08:43:51,185 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:51] "[35m[1mDELETE /doctor-api/60 HTTP/1.1[0m" 500 -
+2023-03-03 08:43:51,186 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/60 HTTP/1.1" 500 37
+2023-03-03 08:43:51,186 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:51] "[32mGET /doctors/delete/60 HTTP/1.1[0m" 302 -
+2023-03-03 08:43:51,190 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 08:43:51,192 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (FGU, 4, Specialty.ORTHOPEDIST, 3463546, GBFG)]
+2023-03-03 08:43:51,193 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:51] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 08:43:51,194 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1339
+2023-03-03 08:43:51,195 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 08:43:51,198 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:51] "GET /doctor-api/count HTTP/1.1" 200 -
+2023-03-03 08:43:51,199 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 14
+2023-03-03 08:43:51,200 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:51] "GET /doctors HTTP/1.1" 200 -
+2023-03-03 08:43:51,285 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 08:43:51,286 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:51] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 08:43:51,341 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 08:43:51] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:00:29,258 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-03 09:00:29,258 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-03 09:00:34,742 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:00:34,804 - root - DEBUG - Doctor by id - 68 was gotten, doctor: (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com)
+2023-03-03 09:00:34,806 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:34] "GET /doctor-api/68 HTTP/1.1" 200 -
+2023-03-03 09:00:34,806 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/68 HTTP/1.1" 200 156
+2023-03-03 09:00:34,808 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:00:34,816 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:34] "GET /doctor-api/clients/68 HTTP/1.1" 200 -
+2023-03-03 09:00:34,817 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/68 HTTP/1.1" 200 3
+2023-03-03 09:00:34,831 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:34] "GET /doctors/68 HTTP/1.1" 200 -
+2023-03-03 09:00:34,944 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:00:34,945 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:34] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:00:35,059 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:35] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:00:36,936 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:00:36,939 - root - DEBUG - Doctor by id - 75 was gotten, doctor: (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)
+2023-03-03 09:00:36,940 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:36] "GET /doctor-api/75 HTTP/1.1" 200 -
+2023-03-03 09:00:36,940 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/75 HTTP/1.1" 200 146
+2023-03-03 09:00:36,942 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:00:36,946 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:36] "GET /doctor-api/clients/75 HTTP/1.1" 200 -
+2023-03-03 09:00:36,947 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/75 HTTP/1.1" 200 417
+2023-03-03 09:00:36,948 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:36] "GET /doctors/75 HTTP/1.1" 200 -
+2023-03-03 09:00:37,083 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:00:37,085 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:37] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:00:37,166 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:37] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:00:38,708 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:00:38,710 - root - DEBUG - Doctor by id - 77 was gotten, doctor: (FGU, 4, Specialty.ORTHOPEDIST, 3463546, GBFG)
+2023-03-03 09:00:38,711 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:38] "GET /doctor-api/77 HTTP/1.1" 200 -
+2023-03-03 09:00:38,711 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/77 HTTP/1.1" 200 126
+2023-03-03 09:00:38,713 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:00:38,718 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:38] "GET /doctor-api/clients/77 HTTP/1.1" 200 -
+2023-03-03 09:00:38,719 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/77 HTTP/1.1" 200 202
+2023-03-03 09:00:38,720 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:38] "GET /doctors/77 HTTP/1.1" 200 -
+2023-03-03 09:00:38,806 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:00:38,807 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:38] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:00:38,903 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:38] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:00:40,762 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:00:40,799 - src - ERROR - Exception on /doctor-api/77 [DELETE]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1451, 'Cannot delete or update a parent row: a foreign key constraint fails (`db`.`Patients`, CONSTRAINT `Patients_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `Doctors` (`doctor_id`))')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 103, in delete
+    doctor_service.delete(doctor_id)
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 72, in delete
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3444, in flush
+    self._flush(objects)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3544, in _flush
+    flush_context.execute()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 667, in execute
+    util.preloaded.orm_persistence.delete_obj(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 343, in delete_obj
+    _emit_delete_statements(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1468, in _emit_delete_statements
+    c = connection._execute_20(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1451, 'Cannot delete or update a parent row: a foreign key constraint fails (`db`.`Patients`, CONSTRAINT `Patients_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `Doctors` (`doctor_id`))')
+[SQL: DELETE FROM `Doctors` WHERE `Doctors`.doctor_id = %(doctor_id)s]
+[parameters: {'doctor_id': 77}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2023-03-03 09:00:40,805 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:40] "[35m[1mDELETE /doctor-api/77 HTTP/1.1[0m" 500 -
+2023-03-03 09:00:40,805 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/77 HTTP/1.1" 500 37
+2023-03-03 09:00:40,806 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:40] "[32mGET /doctors/delete/77 HTTP/1.1[0m" 302 -
+2023-03-03 09:00:40,809 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:00:40,812 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (FGU, 4, Specialty.ORTHOPEDIST, 3463546, GBFG)]
+2023-03-03 09:00:40,813 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:40] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 09:00:40,813 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1339
+2023-03-03 09:00:40,815 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:00:40,823 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:40] "GET /doctor-api/count HTTP/1.1" 200 -
+2023-03-03 09:00:40,823 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 14
+2023-03-03 09:00:40,828 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:40] "GET /doctors HTTP/1.1" 200 -
+2023-03-03 09:00:40,911 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:00:40,912 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:40] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:00:40,980 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:00:40] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:01:19,107 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-03 09:01:19,107 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-03 09:01:21,148 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:21,192 - root - DEBUG - Doctor by id - 77 was gotten, doctor: (FGU, 4, Specialty.ORTHOPEDIST, 3463546, GBFG)
+2023-03-03 09:01:21,193 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:21] "GET /doctor-api/77 HTTP/1.1" 200 -
+2023-03-03 09:01:21,193 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/77 HTTP/1.1" 200 126
+2023-03-03 09:01:21,194 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:21,200 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:21] "GET /doctor-api/clients/77 HTTP/1.1" 200 -
+2023-03-03 09:01:21,200 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/77 HTTP/1.1" 200 202
+2023-03-03 09:01:21,218 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:21] "GET /doctors/77 HTTP/1.1" 200 -
+2023-03-03 09:01:21,297 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:01:21,301 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:21] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:01:21,350 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:21] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:01:22,873 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:22,876 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (FGU, 4, Specialty.ORTHOPEDIST, 3463546, GBFG)]
+2023-03-03 09:01:22,877 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:22] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 09:01:22,877 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1339
+2023-03-03 09:01:22,879 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:22,884 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:22] "GET /doctor-api/count HTTP/1.1" 200 -
+2023-03-03 09:01:22,884 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 14
+2023-03-03 09:01:22,889 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:22] "GET /doctors HTTP/1.1" 200 -
+2023-03-03 09:01:22,981 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:01:22,981 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:22] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:01:23,067 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:23] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:01:24,599 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:24,656 - root - DEBUG - Doctor by id - 77 was deleted
+2023-03-03 09:01:24,656 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:24] "DELETE /doctor-api/77 HTTP/1.1" 200 -
+2023-03-03 09:01:24,657 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/77 HTTP/1.1" 200 47
+2023-03-03 09:01:24,658 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:24] "[32mGET /doctors/delete/77 HTTP/1.1[0m" 302 -
+2023-03-03 09:01:24,662 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:24,665 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)]
+2023-03-03 09:01:24,666 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:24] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 09:01:24,666 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1212
+2023-03-03 09:01:24,668 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:24,671 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:24] "GET /doctor-api/count HTTP/1.1" 200 -
+2023-03-03 09:01:24,672 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 14
+2023-03-03 09:01:24,673 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:24] "GET /doctors HTTP/1.1" 200 -
+2023-03-03 09:01:24,753 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:01:24,754 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:24] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:01:24,815 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:24] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:01:32,201 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:32,204 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, 2023-09-12), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, None)]
+2023-03-03 09:01:32,205 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:32] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 09:01:32,205 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api HTTP/1.1" 200 2056
+2023-03-03 09:01:32,219 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:32] "GET /patients HTTP/1.1" 200 -
+2023-03-03 09:01:32,332 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:01:32,334 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:32] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:01:32,421 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:32] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:01:34,341 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:34,344 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, 2023-09-12)
+2023-03-03 09:01:34,345 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:34] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-03 09:01:34,346 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 202
+2023-03-03 09:01:34,348 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:34,350 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)]
+2023-03-03 09:01:34,351 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:34] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 09:01:34,351 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1212
+2023-03-03 09:01:34,373 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:34] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-03 09:01:34,507 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:01:34,508 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:34] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:01:34,617 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:34] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:01:40,413 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:40,416 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)]
+2023-03-03 09:01:40,418 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:40] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 09:01:40,418 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1212
+2023-03-03 09:01:40,420 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:40,425 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:40] "GET /doctor-api/count HTTP/1.1" 200 -
+2023-03-03 09:01:40,426 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 14
+2023-03-03 09:01:40,428 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:40] "GET /doctors HTTP/1.1" 200 -
+2023-03-03 09:01:40,546 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:01:40,551 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:40] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:01:40,647 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:40] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:01:42,828 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:42,830 - root - DEBUG - Doctor by id - 75 was gotten, doctor: (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)
+2023-03-03 09:01:42,831 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:42] "GET /doctor-api/75 HTTP/1.1" 200 -
+2023-03-03 09:01:42,831 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/75 HTTP/1.1" 200 146
+2023-03-03 09:01:42,833 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:42,840 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:42] "GET /doctor-api/clients/75 HTTP/1.1" 200 -
+2023-03-03 09:01:42,841 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/75 HTTP/1.1" 200 417
+2023-03-03 09:01:42,842 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:42] "GET /doctors/75 HTTP/1.1" 200 -
+2023-03-03 09:01:42,973 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:01:42,975 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:42] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:01:43,056 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:43] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:01:44,715 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:44,717 - root - DEBUG - Doctor by id - 68 was gotten, doctor: (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com)
+2023-03-03 09:01:44,718 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:44] "GET /doctor-api/68 HTTP/1.1" 200 -
+2023-03-03 09:01:44,718 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/68 HTTP/1.1" 200 156
+2023-03-03 09:01:44,720 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:44,726 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:44] "GET /doctor-api/clients/68 HTTP/1.1" 200 -
+2023-03-03 09:01:44,726 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/68 HTTP/1.1" 200 3
+2023-03-03 09:01:44,727 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:44] "GET /doctors/68 HTTP/1.1" 200 -
+2023-03-03 09:01:44,813 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:01:44,814 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:44] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:01:44,882 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:44] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:01:47,645 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:47,648 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, 2023-09-12), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, None)]
+2023-03-03 09:01:47,649 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:47] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 09:01:47,649 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api HTTP/1.1" 200 2056
+2023-03-03 09:01:47,650 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:47] "GET /patients HTTP/1.1" 200 -
+2023-03-03 09:01:47,755 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:01:47,756 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:47] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:01:47,815 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:47] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:01:49,544 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:49,547 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, 2023-09-12)
+2023-03-03 09:01:49,548 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:49] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-03 09:01:49,548 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 202
+2023-03-03 09:01:49,549 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:49,551 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)]
+2023-03-03 09:01:49,552 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:49] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 09:01:49,552 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1212
+2023-03-03 09:01:49,554 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:49] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-03 09:01:49,634 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:01:49,635 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:49] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:01:49,696 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:49] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:01:56,411 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:56,544 - root - DEBUG - Patient with id: 35 was appointed
+2023-03-03 09:01:56,547 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:56] "POST /patient-api/appoint/35 HTTP/1.1" 200 -
+2023-03-03 09:01:56,547 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /patient-api/appoint/35 HTTP/1.1" 200 274
+2023-03-03 09:01:56,548 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:56] "[32mPOST /patients-appoint/35 HTTP/1.1[0m" 302 -
+2023-03-03 09:01:56,552 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:56,554 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, 2023-03-31)
+2023-03-03 09:01:56,555 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:56] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-03 09:01:56,556 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 200
+2023-03-03 09:01:56,557 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:56,559 - root - DEBUG - Doctor by id - 68 was gotten, doctor: (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com)
+2023-03-03 09:01:56,560 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:56] "GET /doctor-api/68 HTTP/1.1" 200 -
+2023-03-03 09:01:56,560 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/68 HTTP/1.1" 200 156
+2023-03-03 09:01:56,561 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:56] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-03 09:01:56,643 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:01:56,644 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:56] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:01:56,707 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:56] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:01:59,306 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:59,308 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)]
+2023-03-03 09:01:59,309 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:59] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 09:01:59,309 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1212
+2023-03-03 09:01:59,311 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:01:59,315 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:59] "GET /doctor-api/count HTTP/1.1" 200 -
+2023-03-03 09:01:59,316 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 14
+2023-03-03 09:01:59,317 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:59] "GET /doctors HTTP/1.1" 200 -
+2023-03-03 09:01:59,422 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:01:59,425 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:01:59,469 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:01:59] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:02:03,009 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:02:03,011 - root - DEBUG - Doctor by id - 68 was gotten, doctor: (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com)
+2023-03-03 09:02:03,012 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:03] "GET /doctor-api/68 HTTP/1.1" 200 -
+2023-03-03 09:02:03,013 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/68 HTTP/1.1" 200 156
+2023-03-03 09:02:03,014 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:02:03,018 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:03] "GET /doctor-api/clients/68 HTTP/1.1" 200 -
+2023-03-03 09:02:03,018 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/68 HTTP/1.1" 200 202
+2023-03-03 09:02:03,019 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:03] "GET /doctors/68 HTTP/1.1" 200 -
+2023-03-03 09:02:03,123 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:02:03,126 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:03] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:02:03,186 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:03] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:02:05,686 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:02:05,689 - root - DEBUG - Doctor by id - 68 was gotten, doctor: (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com)
+2023-03-03 09:02:05,690 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:05] "GET /doctor-api/68 HTTP/1.1" 200 -
+2023-03-03 09:02:05,690 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/68 HTTP/1.1" 200 156
+2023-03-03 09:02:05,692 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:02:05,696 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:05] "GET /doctor-api/clients/68 HTTP/1.1" 200 -
+2023-03-03 09:02:05,696 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/68 HTTP/1.1" 200 202
+2023-03-03 09:02:05,697 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:05] "GET /doctors/68 HTTP/1.1" 200 -
+2023-03-03 09:02:05,784 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:02:05,786 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:05] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:02:05,844 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:05] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:02:06,821 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:02:06,917 - root - DEBUG - Doctor by id - 68 was deleted
+2023-03-03 09:02:06,917 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:06] "DELETE /doctor-api/68 HTTP/1.1" 200 -
+2023-03-03 09:02:06,918 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/68 HTTP/1.1" 200 47
+2023-03-03 09:02:06,918 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:06] "[32mGET /doctors/delete/68 HTTP/1.1[0m" 302 -
+2023-03-03 09:02:06,923 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:02:06,925 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)]
+2023-03-03 09:02:06,926 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:06] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 09:02:06,926 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1055
+2023-03-03 09:02:06,927 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:02:06,932 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:06] "GET /doctor-api/count HTTP/1.1" 200 -
+2023-03-03 09:02:06,933 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 14
+2023-03-03 09:02:06,934 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:06] "GET /doctors HTTP/1.1" 200 -
+2023-03-03 09:02:07,031 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:07] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:02:07,032 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:02:07,079 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:07] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:02:08,887 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:02:08,890 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, 2023-03-31), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, None)]
+2023-03-03 09:02:08,891 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:08] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 09:02:08,891 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api HTTP/1.1" 200 2056
+2023-03-03 09:02:08,892 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:08] "GET /patients HTTP/1.1" 200 -
+2023-03-03 09:02:08,973 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:02:08,974 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:08] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:02:09,035 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:09] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:02:11,387 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:02:11,390 - root - DEBUG - Patient by id - 35 was gotten, patient: (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, 2023-03-31)
+2023-03-03 09:02:11,391 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:11] "GET /patient-api/35 HTTP/1.1" 200 -
+2023-03-03 09:02:11,391 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /patient-api/35 HTTP/1.1" 200 202
+2023-03-03 09:02:11,392 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:02:11,394 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)]
+2023-03-03 09:02:11,395 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:11] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 09:02:11,395 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1055
+2023-03-03 09:02:11,396 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:11] "GET /patients/35 HTTP/1.1" 200 -
+2023-03-03 09:02:11,485 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:11] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:02:11,489 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:02:11,544 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:11] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 09:02:13,695 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:02:13,698 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (None, 3, Specialty.ORTHOPEDIST, None, testemail7@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)]
+2023-03-03 09:02:13,699 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:13] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 09:02:13,699 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 1055
+2023-03-03 09:02:13,700 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-03 09:02:13,704 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:13] "GET /doctor-api/count HTTP/1.1" 200 -
+2023-03-03 09:02:13,704 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 14
+2023-03-03 09:02:13,705 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:13] "GET /doctors HTTP/1.1" 200 -
+2023-03-03 09:02:13,794 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-03 09:02:13,795 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:13] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2023-03-03 09:02:13,869 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 09:02:13] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
