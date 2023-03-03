@@ -111,7 +111,9 @@ class DoctorAPIGetUpdateDelete(Resource):
 class DoctorAPIClients(Resource):
     def get(self, doctor_id):
         try:
-            return [json.loads(obj.to_json()) for obj in doctor_service.get_list_of_patients(doctor_id)]
+            ls = [json.loads(obj.to_json()) for obj in doctor_service.get_list_of_patients(doctor_id)]
+            logging.debug("List of appointed patients to doctor with id: %s was gotten", doctor_id)
+            return ls
         except RuntimeError as error:
             logging.debug("Doctor by id - %s was not found", doctor_id)
             abort(404, str(error))
@@ -119,7 +121,10 @@ class DoctorAPIClients(Resource):
     def post(self, doctor_id):
         try:
             date = request.get_json(force=True)
-            return [json.loads(obj.to_json()) for obj in doctor_service.get_filtered_list_of_patients(doctor_id, date)]
+            ls = [json.loads(obj.to_json()) for obj in doctor_service.get_filtered_list_of_patients(doctor_id, date)]
+            logging.debug("List of appointed patients from date %s, to %s to doctor with id: %s was gotten",
+                          date["date_from"], date["date_to"], doctor_id)
+            return ls
         except RuntimeError as error:
             logging.debug("Doctor by id - %s was not found", doctor_id)
             abort(404, str(error))

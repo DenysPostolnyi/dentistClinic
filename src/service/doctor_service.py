@@ -90,6 +90,5 @@ def get_filtered_list_of_patients(doctor_id, date):
         result = db.session.query(Patient).join(Doctor).filter(Patient.doctor_id == doctor_id).filter(
             Patient.date_of_appointment >= date['date_from']).filter(
             Patient.date_of_appointment <= date['date_to']).all()
-        print(result)
         return result
     raise RuntimeError(f"Doctor with id: {doctor_id} was not found")
