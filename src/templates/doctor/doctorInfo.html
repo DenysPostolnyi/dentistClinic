@@ -10,12 +10,20 @@
                 <p>Email: {{ doctor['email'] }}</p>
                 <p>Phone number: +38{{ doctor['phone_number'] }}</p>
                 <form action="{{ url_for('doctor_routes.info_filter', doctor_id=doctor['doctor_id']) }}" method="POST">
-                    <label for="date_from"></label>
-                    <input id="date_from" name="date_from" type="date" class="kalendar" data-date-inline-picker="true">
+                    <div class="kalendar-block">
+                        <label for="date_from">Choose date from:</label>
+                        <input id="date_from" name="date_from" type="date" class="kalendar"
+                               data-date-inline-picker="true">
+                    </div>
+
                     <br>
-                    <label for="date_to"></label>
-                    <input id="date_to" name="date_to" type="date" class="kalendar" style="margin-top: 2.4rem;" data-date-inline-picker="true">
-                    <input class="submit-button" type="submit" value="Search">
+                    <div class="kalendar-block" style="margin-top: -0.2rem;">
+                        <label for="date_to">Choose date to:</label>
+                        <input id="date_to" name="date_to" type="date" class="kalendar"
+                               data-date-inline-picker="true">
+                        <input class="submit-button" type="submit" value="Search">
+
+                    </div>
                 </form>
 
             </div>

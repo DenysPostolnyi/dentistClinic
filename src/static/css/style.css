@@ -492,11 +492,20 @@ header {
     background-color: white;
 }
 
+.kalendar-block{
+    margin-top: 2rem;
+    margin-left: 4.4rem;
+}
+
+.kalendar-block label {
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
 .kalendar {
     height: 3.4rem;
     width: 18.4rem;
     border-radius: 0.8rem;
-    margin-top: 4.4rem;
     border-width: 0.1rem;
 }
 
@@ -695,10 +704,6 @@ header {
 
 .buttons-doctor-info {
     width: 58rem;
-}
-
-.left-info-doc-part .kalendar {
-    margin-left: 4.4rem;
 }
 
 .appointed-patients-list {
