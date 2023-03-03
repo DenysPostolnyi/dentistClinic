@@ -15569,3 +15569,1362 @@ sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1451, 'Cannot delet
 2023-03-03 11:16:29,902 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2023-03-03 11:16:29,903 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:29] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
 2023-03-03 11:16:29,979 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 11:16:29] "[36mGET /static/images/lightbulb.svg HTTP/1.1[0m" 304 -
+2023-03-03 12:33:03,684 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-03 12:33:03,684 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-03 12:33:09,847 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)]
+2023-03-03 12:33:09,848 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 12:33:09] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 12:33:09,869 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 12:33:09] "GET /doctor-api/count HTTP/1.1" 200 -
+2023-03-03 14:50:11,377 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com)]
+2023-03-03 14:50:11,378 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:50:11] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:50:11,575 - root - DEBUG - New doctor was added to DB: (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com)
+2023-03-03 14:50:11,576 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:50:11] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:50:11,581 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16)]
+2023-03-03 14:50:11,583 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:50:11] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 14:50:11,676 - root - DEBUG - New patient was added to DB: (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None)
+2023-03-03 14:50:11,677 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:50:11] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 14:50:11,708 - src - ERROR - Exception on /patient-api/appoint/38 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 114, in post
+    answer = patient_service.make_appointment(patient_id, data_of_appointment)
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 86, in make_appointment
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3444, in flush
+    self._flush(objects)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3544, in _flush
+    flush_context.execute()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 237, in save_obj
+    _emit_update_statements(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1001, in _emit_update_statements
+    c = connection._execute_20(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+[SQL: UPDATE `Patients` SET doctor_id=%(doctor_id)s, date_of_appointment=%(date_of_appointment)s WHERE `Patients`.patient_id = %(Patients_patient_id)s]
+[parameters: {'doctor_id': 79, 'date_of_appointment': "<class 'datetime.date'>", 'Patients_patient_id': 38}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-03-03 14:50:11,804 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:50:11] "[35m[1mPOST /patient-api/appoint/38 HTTP/1.1[0m" 500 -
+2023-03-03 14:50:11,809 - root - DEBUG - List of appointed patients to doctor with id: 79 was gotten
+2023-03-03 14:50:11,810 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:50:11] "GET /doctor-api/clients/79 HTTP/1.1" 200 -
+2023-03-03 14:50:34,890 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com)]
+2023-03-03 14:50:34,891 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:50:34] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:50:34,957 - root - DEBUG - New doctor was added to DB: (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com)
+2023-03-03 14:50:34,958 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:50:34] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:50:34,962 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None)]
+2023-03-03 14:50:34,963 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:50:34] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 14:50:35,050 - root - DEBUG - New patient was added to DB: (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None)
+2023-03-03 14:50:35,051 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:50:35] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 14:50:35,058 - src - ERROR - Exception on /patient-api/appoint/39 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 114, in post
+    answer = patient_service.make_appointment(patient_id, data_of_appointment)
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 86, in make_appointment
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3444, in flush
+    self._flush(objects)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3544, in _flush
+    flush_context.execute()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 237, in save_obj
+    _emit_update_statements(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1001, in _emit_update_statements
+    c = connection._execute_20(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+[SQL: UPDATE `Patients` SET doctor_id=%(doctor_id)s, date_of_appointment=%(date_of_appointment)s WHERE `Patients`.patient_id = %(Patients_patient_id)s]
+[parameters: {'doctor_id': 80, 'date_of_appointment': "<class 'datetime.date'>", 'Patients_patient_id': 39}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-03-03 14:50:35,060 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:50:35] "[35m[1mPOST /patient-api/appoint/39 HTTP/1.1[0m" 500 -
+2023-03-03 14:50:35,065 - root - DEBUG - List of appointed patients to doctor with id: 80 was gotten
+2023-03-03 14:50:35,066 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:50:35] "GET /doctor-api/clients/80 HTTP/1.1" 200 -
+2023-03-03 14:52:25,219 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com)]
+2023-03-03 14:52:25,220 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:52:25] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:52:25,308 - root - DEBUG - New doctor was added to DB: (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)
+2023-03-03 14:52:25,309 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:52:25] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:52:25,315 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None)]
+2023-03-03 14:52:25,316 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:52:25] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 14:52:25,400 - root - DEBUG - New patient was added to DB: (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None)
+2023-03-03 14:52:25,401 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:52:25] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 14:52:25,406 - src - ERROR - Exception on /patient-api/appoint/40 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 114, in post
+    answer = patient_service.make_appointment(patient_id, data_of_appointment)
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 86, in make_appointment
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3444, in flush
+    self._flush(objects)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3544, in _flush
+    flush_context.execute()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 237, in save_obj
+    _emit_update_statements(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1001, in _emit_update_statements
+    c = connection._execute_20(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+[SQL: UPDATE `Patients` SET doctor_id=%(doctor_id)s, date_of_appointment=%(date_of_appointment)s WHERE `Patients`.patient_id = %(Patients_patient_id)s]
+[parameters: {'doctor_id': 81, 'date_of_appointment': "<class 'datetime.date'>", 'Patients_patient_id': 40}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-03-03 14:52:25,407 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:52:25] "[35m[1mPOST /patient-api/appoint/40 HTTP/1.1[0m" 500 -
+2023-03-03 14:52:25,412 - root - DEBUG - List of appointed patients to doctor with id: 81 was gotten
+2023-03-03 14:52:25,412 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:52:25] "GET /doctor-api/clients/81 HTTP/1.1" 200 -
+2023-03-03 14:53:06,240 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-03-03 14:53:06,241 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:06] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:53:06,309 - root - DEBUG - New doctor was added to DB: (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com)
+2023-03-03 14:53:06,310 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:06] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:53:06,315 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None)]
+2023-03-03 14:53:06,316 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:06] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 14:53:06,394 - root - DEBUG - New patient was added to DB: (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None)
+2023-03-03 14:53:06,395 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:06] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 14:53:06,403 - src - ERROR - Exception on /patient-api/appoint/41 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 114, in post
+    answer = patient_service.make_appointment(patient_id, data_of_appointment)
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 86, in make_appointment
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3444, in flush
+    self._flush(objects)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3544, in _flush
+    flush_context.execute()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 237, in save_obj
+    _emit_update_statements(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1001, in _emit_update_statements
+    c = connection._execute_20(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+[SQL: UPDATE `Patients` SET doctor_id=%(doctor_id)s, date_of_appointment=%(date_of_appointment)s WHERE `Patients`.patient_id = %(Patients_patient_id)s]
+[parameters: {'doctor_id': 82, 'date_of_appointment': "<class 'datetime.date'>", 'Patients_patient_id': 41}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-03-03 14:53:06,405 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:06] "[35m[1mPOST /patient-api/appoint/41 HTTP/1.1[0m" 500 -
+2023-03-03 14:53:06,410 - root - DEBUG - List of appointed patients to doctor with id: 82 was gotten
+2023-03-03 14:53:06,411 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:06] "GET /doctor-api/clients/82 HTTP/1.1" 200 -
+2023-03-03 14:53:21,237 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com)]
+2023-03-03 14:53:21,239 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:21] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:53:21,314 - root - DEBUG - New doctor was added to DB: (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com)
+2023-03-03 14:53:21,315 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:21] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:53:21,320 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None)]
+2023-03-03 14:53:21,321 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:21] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 14:53:21,390 - root - DEBUG - New patient was added to DB: (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None)
+2023-03-03 14:53:21,391 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:21] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 14:53:21,398 - src - ERROR - Exception on /patient-api/appoint/42 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 114, in post
+    answer = patient_service.make_appointment(patient_id, data_of_appointment)
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 86, in make_appointment
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3444, in flush
+    self._flush(objects)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3544, in _flush
+    flush_context.execute()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 237, in save_obj
+    _emit_update_statements(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1001, in _emit_update_statements
+    c = connection._execute_20(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+[SQL: UPDATE `Patients` SET doctor_id=%(doctor_id)s, date_of_appointment=%(date_of_appointment)s WHERE `Patients`.patient_id = %(Patients_patient_id)s]
+[parameters: {'doctor_id': 83, 'date_of_appointment': "<class 'datetime.date'>", 'Patients_patient_id': 42}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-03-03 14:53:21,399 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:21] "[35m[1mPOST /patient-api/appoint/42 HTTP/1.1[0m" 500 -
+2023-03-03 14:53:37,973 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com)]
+2023-03-03 14:53:37,975 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:37] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:53:38,079 - root - DEBUG - New doctor was added to DB: (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com)
+2023-03-03 14:53:38,080 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:38] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:53:38,085 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None)]
+2023-03-03 14:53:38,086 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:38] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 14:53:38,179 - root - DEBUG - New patient was added to DB: (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None)
+2023-03-03 14:53:38,180 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:38] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 14:53:38,186 - src - ERROR - Exception on /patient-api/appoint/43 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 114, in post
+    answer = patient_service.make_appointment(patient_id, data_of_appointment)
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 86, in make_appointment
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3444, in flush
+    self._flush(objects)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3544, in _flush
+    flush_context.execute()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 237, in save_obj
+    _emit_update_statements(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1001, in _emit_update_statements
+    c = connection._execute_20(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+[SQL: UPDATE `Patients` SET doctor_id=%(doctor_id)s, date_of_appointment=%(date_of_appointment)s WHERE `Patients`.patient_id = %(Patients_patient_id)s]
+[parameters: {'doctor_id': 84, 'date_of_appointment': "<class 'datetime.date'>", 'Patients_patient_id': 43}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-03-03 14:53:38,187 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:38] "[35m[1mPOST /patient-api/appoint/43 HTTP/1.1[0m" 500 -
+2023-03-03 14:53:38,191 - root - DEBUG - List of appointed patients to doctor with id: 84 was gotten
+2023-03-03 14:53:38,192 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:53:38] "GET /doctor-api/clients/84 HTTP/1.1" 200 -
+2023-03-03 14:54:20,211 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com)]
+2023-03-03 14:54:20,212 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:54:20] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:54:20,273 - root - DEBUG - New doctor was added to DB: (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com)
+2023-03-03 14:54:20,274 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:54:20] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 14:54:20,278 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None)]
+2023-03-03 14:54:20,279 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:54:20] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 14:54:20,415 - root - DEBUG - New patient was added to DB: (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None)
+2023-03-03 14:54:20,415 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:54:20] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 14:54:20,421 - src - ERROR - Exception on /patient-api/appoint/44 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 114, in post
+    answer = patient_service.make_appointment(patient_id, data_of_appointment)
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 86, in make_appointment
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3444, in flush
+    self._flush(objects)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3544, in _flush
+    flush_context.execute()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 237, in save_obj
+    _emit_update_statements(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1001, in _emit_update_statements
+    c = connection._execute_20(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+[SQL: UPDATE `Patients` SET doctor_id=%(doctor_id)s, date_of_appointment=%(date_of_appointment)s WHERE `Patients`.patient_id = %(Patients_patient_id)s]
+[parameters: {'doctor_id': 85, 'date_of_appointment': "<class 'datetime.date'>", 'Patients_patient_id': 44}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-03-03 14:54:20,423 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:54:20] "[35m[1mPOST /patient-api/appoint/44 HTTP/1.1[0m" 500 -
+2023-03-03 14:54:20,428 - root - DEBUG - List of appointed patients to doctor with id: 85 was gotten
+2023-03-03 14:54:20,429 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 14:54:20] "GET /doctor-api/clients/85 HTTP/1.1" 200 -
+2023-03-03 15:02:35,933 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com)]
+2023-03-03 15:02:35,935 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:02:35] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:02:36,020 - root - DEBUG - New doctor was added to DB: (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com)
+2023-03-03 15:02:36,021 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:02:36] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:02:36,026 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None)]
+2023-03-03 15:02:36,028 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:02:36] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:02:36,120 - root - DEBUG - New patient was added to DB: (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None)
+2023-03-03 15:02:36,121 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:02:36] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:02:36,127 - src - ERROR - Exception on /patient-api/appoint/45 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 114, in post
+    answer = patient_service.make_appointment(patient_id, data_of_appointment)
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 86, in make_appointment
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3444, in flush
+    self._flush(objects)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3544, in _flush
+    flush_context.execute()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 237, in save_obj
+    _emit_update_statements(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1001, in _emit_update_statements
+    c = connection._execute_20(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+[SQL: UPDATE `Patients` SET doctor_id=%(doctor_id)s, date_of_appointment=%(date_of_appointment)s WHERE `Patients`.patient_id = %(Patients_patient_id)s]
+[parameters: {'doctor_id': 86, 'date_of_appointment': "<class 'datetime.date'>", 'Patients_patient_id': 45}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-03-03 15:02:36,128 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:02:36] "[35m[1mPOST /patient-api/appoint/45 HTTP/1.1[0m" 500 -
+2023-03-03 15:02:36,132 - root - DEBUG - List of appointed patients to doctor with id: 86 was gotten
+2023-03-03 15:02:36,133 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:02:36] "GET /doctor-api/clients/86 HTTP/1.1" 200 -
+2023-03-03 15:07:02,542 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com), (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com)]
+2023-03-03 15:07:02,543 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:07:02] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:07:02,637 - root - DEBUG - New doctor was added to DB: (Test Doctor15, 3, Specialty.ORTHOPEDIST, 0937781715, testemail15@gmail.com)
+2023-03-03 15:07:02,638 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:07:02] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:07:02,644 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None), (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None)]
+2023-03-03 15:07:02,646 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:07:02] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:07:02,721 - root - DEBUG - New patient was added to DB: (Test Patient19, 2000, KindOfAche.MILD, 0937781719, testemail19@gmail.com, None)
+2023-03-03 15:07:02,722 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:07:02] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:08:19,024 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-03 15:08:19,024 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-03 15:08:21,833 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com), (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com), (Test Doctor15, 3, Specialty.ORTHOPEDIST, 0937781715, testemail15@gmail.com)]
+2023-03-03 15:08:21,835 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:08:21] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:08:21,910 - root - DEBUG - New doctor was added to DB: (Test Doctor16, 3, Specialty.ORTHOPEDIST, 0937781716, testemail16@gmail.com)
+2023-03-03 15:08:21,911 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:08:21] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:08:21,916 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None), (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None), (Test Patient19, 2000, KindOfAche.MILD, 0937781719, testemail19@gmail.com, None)]
+2023-03-03 15:08:21,918 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:08:21] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:08:22,003 - root - DEBUG - New patient was added to DB: (Test Patient20, 2000, KindOfAche.MILD, 0937781720, testemail20@gmail.com, None)
+2023-03-03 15:08:22,004 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:08:22] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:08:22,015 - src - ERROR - Exception on /patient-api/appoint/47 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/patient_api.py", line 114, in post
+    answer = patient_service.make_appointment(patient_id, data_of_appointment)
+  File "/home/denys/python/dentistClinic/src/service/patient_service.py", line 86, in make_appointment
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3444, in flush
+    self._flush(objects)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3583, in _flush
+    with util.safe_reraise():
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 3544, in _flush
+    flush_context.execute()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 237, in save_obj
+    _emit_update_statements(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1001, in _emit_update_statements
+    c = connection._execute_20(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: '<class 'datetime.date'>' for column 'date_of_appointment' at row 1")
+[SQL: UPDATE `Patients` SET doctor_id=%(doctor_id)s, date_of_appointment=%(date_of_appointment)s WHERE `Patients`.patient_id = %(Patients_patient_id)s]
+[parameters: {'doctor_id': 88, 'date_of_appointment': "<class 'datetime.date'>", 'Patients_patient_id': 47}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-03-03 15:08:22,021 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:08:22] "[35m[1mPOST /patient-api/appoint/47 HTTP/1.1[0m" 500 -
+2023-03-03 15:08:22,028 - root - DEBUG - List of appointed patients to doctor with id: 88 was gotten
+2023-03-03 15:08:22,029 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:08:22] "GET /doctor-api/clients/88 HTTP/1.1" 200 -
+2023-03-03 15:08:45,180 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com), (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com), (Test Doctor15, 3, Specialty.ORTHOPEDIST, 0937781715, testemail15@gmail.com), (Test Doctor16, 3, Specialty.ORTHOPEDIST, 0937781716, testemail16@gmail.com)]
+2023-03-03 15:08:45,181 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:08:45] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:08:45,255 - root - DEBUG - New doctor was added to DB: (Test Doctor17, 3, Specialty.ORTHOPEDIST, 0937781717, testemail17@gmail.com)
+2023-03-03 15:08:45,256 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:08:45] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:08:45,260 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None), (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None), (Test Patient19, 2000, KindOfAche.MILD, 0937781719, testemail19@gmail.com, None), (Test Patient20, 2000, KindOfAche.MILD, 0937781720, testemail20@gmail.com, None)]
+2023-03-03 15:08:45,262 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:08:45] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:08:45,505 - root - DEBUG - New patient was added to DB: (Test Patient21, 2000, KindOfAche.MILD, 0937781721, testemail21@gmail.com, None)
+2023-03-03 15:08:45,506 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:08:45] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:08:45,637 - root - DEBUG - Patient with id: 48 was appointed
+2023-03-03 15:08:45,639 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:08:45] "POST /patient-api/appoint/48 HTTP/1.1" 200 -
+2023-03-03 15:08:45,644 - root - DEBUG - List of appointed patients to doctor with id: 89 was gotten
+2023-03-03 15:08:45,644 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:08:45] "GET /doctor-api/clients/89 HTTP/1.1" 200 -
+2023-03-03 15:10:02,184 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-03 15:10:02,184 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-03 15:10:04,698 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com), (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com), (Test Doctor15, 3, Specialty.ORTHOPEDIST, 0937781715, testemail15@gmail.com), (Test Doctor16, 3, Specialty.ORTHOPEDIST, 0937781716, testemail16@gmail.com), (Test Doctor17, 3, Specialty.ORTHOPEDIST, 0937781717, testemail17@gmail.com)]
+2023-03-03 15:10:04,700 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:10:04] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:10:04,800 - root - DEBUG - New doctor was added to DB: (Test Doctor18, 3, Specialty.ORTHOPEDIST, 0937781718, testemail18@gmail.com)
+2023-03-03 15:10:04,802 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:10:04] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:10:04,808 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None), (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None), (Test Patient19, 2000, KindOfAche.MILD, 0937781719, testemail19@gmail.com, None), (Test Patient20, 2000, KindOfAche.MILD, 0937781720, testemail20@gmail.com, None), (Test Patient21, 2000, KindOfAche.MILD, 0937781721, testemail21@gmail.com, 2023-03-03)]
+2023-03-03 15:10:04,810 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:10:04] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:10:04,888 - root - DEBUG - New patient was added to DB: (Test Patient22, 2000, KindOfAche.MILD, 0937781722, testemail22@gmail.com, None)
+2023-03-03 15:10:04,889 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:10:04] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:12:40,158 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com), (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com), (Test Doctor15, 3, Specialty.ORTHOPEDIST, 0937781715, testemail15@gmail.com), (Test Doctor16, 3, Specialty.ORTHOPEDIST, 0937781716, testemail16@gmail.com), (Test Doctor17, 3, Specialty.ORTHOPEDIST, 0937781717, testemail17@gmail.com), (Test Doctor18, 3, Specialty.ORTHOPEDIST, 0937781718, testemail18@gmail.com)]
+2023-03-03 15:12:40,159 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:12:40] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:12:40,223 - root - DEBUG - New doctor was added to DB: (Test Doctor19, 3, Specialty.ORTHOPEDIST, 0937781719, testemail19@gmail.com)
+2023-03-03 15:12:40,224 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:12:40] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:12:40,230 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None), (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None), (Test Patient19, 2000, KindOfAche.MILD, 0937781719, testemail19@gmail.com, None), (Test Patient20, 2000, KindOfAche.MILD, 0937781720, testemail20@gmail.com, None), (Test Patient21, 2000, KindOfAche.MILD, 0937781721, testemail21@gmail.com, 2023-03-03), (Test Patient22, 2000, KindOfAche.MILD, 0937781722, testemail22@gmail.com, None)]
+2023-03-03 15:12:40,232 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:12:40] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:12:40,301 - root - DEBUG - New patient was added to DB: (Test Patient23, 2000, KindOfAche.MILD, 0937781723, testemail23@gmail.com, None)
+2023-03-03 15:12:40,302 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:12:40] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:12:40,424 - root - DEBUG - Patient with id: 50 was appointed
+2023-03-03 15:12:40,428 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:12:40] "POST /patient-api/appoint/50 HTTP/1.1" 200 -
+2023-03-03 15:12:40,434 - root - DEBUG - List of appointed patients to doctor with id: 91 was gotten
+2023-03-03 15:12:40,435 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:12:40] "GET /doctor-api/clients/91 HTTP/1.1" 200 -
+2023-03-03 15:13:07,094 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com), (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com), (Test Doctor15, 3, Specialty.ORTHOPEDIST, 0937781715, testemail15@gmail.com), (Test Doctor16, 3, Specialty.ORTHOPEDIST, 0937781716, testemail16@gmail.com), (Test Doctor17, 3, Specialty.ORTHOPEDIST, 0937781717, testemail17@gmail.com), (Test Doctor18, 3, Specialty.ORTHOPEDIST, 0937781718, testemail18@gmail.com), (Test Doctor19, 3, Specialty.ORTHOPEDIST, 0937781719, testemail19@gmail.com)]
+2023-03-03 15:13:07,096 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:07] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:13:07,173 - root - DEBUG - New doctor was added to DB: (Test Doctor20, 3, Specialty.ORTHOPEDIST, 0937781720, testemail20@gmail.com)
+2023-03-03 15:13:07,173 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:07] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:13:07,178 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None), (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None), (Test Patient19, 2000, KindOfAche.MILD, 0937781719, testemail19@gmail.com, None), (Test Patient20, 2000, KindOfAche.MILD, 0937781720, testemail20@gmail.com, None), (Test Patient21, 2000, KindOfAche.MILD, 0937781721, testemail21@gmail.com, 2023-03-03), (Test Patient22, 2000, KindOfAche.MILD, 0937781722, testemail22@gmail.com, None), (Test Patient23, 2000, KindOfAche.MILD, 0937781723, testemail23@gmail.com, 2023-02-02)]
+2023-03-03 15:13:07,180 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:07] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:13:07,264 - root - DEBUG - New patient was added to DB: (Test Patient24, 2000, KindOfAche.MILD, 0937781724, testemail24@gmail.com, None)
+2023-03-03 15:13:07,265 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:07] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:13:07,350 - root - DEBUG - Patient with id: 51 was appointed
+2023-03-03 15:13:07,352 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:07] "POST /patient-api/appoint/51 HTTP/1.1" 200 -
+2023-03-03 15:13:07,360 - root - DEBUG - List of appointed patients to doctor with id: 92 was gotten
+2023-03-03 15:13:07,361 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:07] "GET /doctor-api/clients/92 HTTP/1.1" 200 -
+2023-03-03 15:13:26,896 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com), (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com), (Test Doctor15, 3, Specialty.ORTHOPEDIST, 0937781715, testemail15@gmail.com), (Test Doctor16, 3, Specialty.ORTHOPEDIST, 0937781716, testemail16@gmail.com), (Test Doctor17, 3, Specialty.ORTHOPEDIST, 0937781717, testemail17@gmail.com), (Test Doctor18, 3, Specialty.ORTHOPEDIST, 0937781718, testemail18@gmail.com), (Test Doctor19, 3, Specialty.ORTHOPEDIST, 0937781719, testemail19@gmail.com), (Test Doctor20, 3, Specialty.ORTHOPEDIST, 0937781720, testemail20@gmail.com)]
+2023-03-03 15:13:26,898 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:26] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:13:26,958 - root - DEBUG - New doctor was added to DB: (Test Doctor21, 3, Specialty.ORTHOPEDIST, 0937781721, testemail21@gmail.com)
+2023-03-03 15:13:26,959 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:26] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:13:26,964 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None), (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None), (Test Patient19, 2000, KindOfAche.MILD, 0937781719, testemail19@gmail.com, None), (Test Patient20, 2000, KindOfAche.MILD, 0937781720, testemail20@gmail.com, None), (Test Patient21, 2000, KindOfAche.MILD, 0937781721, testemail21@gmail.com, 2023-03-03), (Test Patient22, 2000, KindOfAche.MILD, 0937781722, testemail22@gmail.com, None), (Test Patient23, 2000, KindOfAche.MILD, 0937781723, testemail23@gmail.com, 2023-02-02), (Test Patient24, 2000, KindOfAche.MILD, 0937781724, testemail24@gmail.com, 2023-02-02)]
+2023-03-03 15:13:26,966 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:26] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:13:27,032 - root - DEBUG - New patient was added to DB: (Test Patient25, 2000, KindOfAche.MILD, 0937781725, testemail25@gmail.com, None)
+2023-03-03 15:13:27,033 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:27] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:13:27,115 - root - DEBUG - Patient with id: 52 was appointed
+2023-03-03 15:13:27,118 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:27] "POST /patient-api/appoint/52 HTTP/1.1" 200 -
+2023-03-03 15:13:27,124 - root - DEBUG - List of appointed patients to doctor with id: 93 was gotten
+2023-03-03 15:13:27,125 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:27] "GET /doctor-api/clients/93 HTTP/1.1" 200 -
+2023-03-03 15:13:41,870 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com), (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com), (Test Doctor15, 3, Specialty.ORTHOPEDIST, 0937781715, testemail15@gmail.com), (Test Doctor16, 3, Specialty.ORTHOPEDIST, 0937781716, testemail16@gmail.com), (Test Doctor17, 3, Specialty.ORTHOPEDIST, 0937781717, testemail17@gmail.com), (Test Doctor18, 3, Specialty.ORTHOPEDIST, 0937781718, testemail18@gmail.com), (Test Doctor19, 3, Specialty.ORTHOPEDIST, 0937781719, testemail19@gmail.com), (Test Doctor20, 3, Specialty.ORTHOPEDIST, 0937781720, testemail20@gmail.com), (Test Doctor21, 3, Specialty.ORTHOPEDIST, 0937781721, testemail21@gmail.com)]
+2023-03-03 15:13:41,872 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:41] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:13:41,956 - root - DEBUG - New doctor was added to DB: (Test Doctor22, 3, Specialty.ORTHOPEDIST, 0937781722, testemail22@gmail.com)
+2023-03-03 15:13:41,957 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:41] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:13:41,961 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None), (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None), (Test Patient19, 2000, KindOfAche.MILD, 0937781719, testemail19@gmail.com, None), (Test Patient20, 2000, KindOfAche.MILD, 0937781720, testemail20@gmail.com, None), (Test Patient21, 2000, KindOfAche.MILD, 0937781721, testemail21@gmail.com, 2023-03-03), (Test Patient22, 2000, KindOfAche.MILD, 0937781722, testemail22@gmail.com, None), (Test Patient23, 2000, KindOfAche.MILD, 0937781723, testemail23@gmail.com, 2023-02-02), (Test Patient24, 2000, KindOfAche.MILD, 0937781724, testemail24@gmail.com, 2023-02-02), (Test Patient25, 2000, KindOfAche.MILD, 0937781725, testemail25@gmail.com, 2023-02-02)]
+2023-03-03 15:13:41,962 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:41] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:13:42,040 - root - DEBUG - New patient was added to DB: (Test Patient26, 2000, KindOfAche.MILD, 0937781726, testemail26@gmail.com, None)
+2023-03-03 15:13:42,041 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:42] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:13:42,138 - root - DEBUG - Patient with id: 53 was appointed
+2023-03-03 15:13:42,140 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:42] "POST /patient-api/appoint/53 HTTP/1.1" 200 -
+2023-03-03 15:13:42,145 - root - DEBUG - List of appointed patients to doctor with id: 94 was gotten
+2023-03-03 15:13:42,146 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:42] "GET /doctor-api/clients/94 HTTP/1.1" 200 -
+2023-03-03 15:13:42,230 - root - DEBUG - Patient by id - 53 was deleted
+2023-03-03 15:13:42,230 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:13:42] "DELETE /patient-api/53 HTTP/1.1" 200 -
+2023-03-03 15:14:07,627 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com), (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com), (Test Doctor15, 3, Specialty.ORTHOPEDIST, 0937781715, testemail15@gmail.com), (Test Doctor16, 3, Specialty.ORTHOPEDIST, 0937781716, testemail16@gmail.com), (Test Doctor17, 3, Specialty.ORTHOPEDIST, 0937781717, testemail17@gmail.com), (Test Doctor18, 3, Specialty.ORTHOPEDIST, 0937781718, testemail18@gmail.com), (Test Doctor19, 3, Specialty.ORTHOPEDIST, 0937781719, testemail19@gmail.com), (Test Doctor20, 3, Specialty.ORTHOPEDIST, 0937781720, testemail20@gmail.com), (Test Doctor21, 3, Specialty.ORTHOPEDIST, 0937781721, testemail21@gmail.com), (Test Doctor22, 3, Specialty.ORTHOPEDIST, 0937781722, testemail22@gmail.com)]
+2023-03-03 15:14:07,628 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:14:07] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:14:07,698 - root - DEBUG - New doctor was added to DB: (Test Doctor23, 3, Specialty.ORTHOPEDIST, 0937781723, testemail23@gmail.com)
+2023-03-03 15:14:07,699 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:14:07] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:14:07,704 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None), (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None), (Test Patient19, 2000, KindOfAche.MILD, 0937781719, testemail19@gmail.com, None), (Test Patient20, 2000, KindOfAche.MILD, 0937781720, testemail20@gmail.com, None), (Test Patient21, 2000, KindOfAche.MILD, 0937781721, testemail21@gmail.com, 2023-03-03), (Test Patient22, 2000, KindOfAche.MILD, 0937781722, testemail22@gmail.com, None), (Test Patient23, 2000, KindOfAche.MILD, 0937781723, testemail23@gmail.com, 2023-02-02), (Test Patient24, 2000, KindOfAche.MILD, 0937781724, testemail24@gmail.com, 2023-02-02), (Test Patient25, 2000, KindOfAche.MILD, 0937781725, testemail25@gmail.com, 2023-02-02)]
+2023-03-03 15:14:07,705 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:14:07] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:14:07,782 - root - DEBUG - New patient was added to DB: (Test Patient26, 2000, KindOfAche.MILD, 0937781726, testemail26@gmail.com, None)
+2023-03-03 15:14:07,784 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:14:07] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:14:07,864 - root - DEBUG - Patient with id: 54 was appointed
+2023-03-03 15:14:07,866 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:14:07] "POST /patient-api/appoint/54 HTTP/1.1" 200 -
+2023-03-03 15:14:07,871 - root - DEBUG - List of appointed patients to doctor with id: 95 was gotten
+2023-03-03 15:14:07,871 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:14:07] "GET /doctor-api/clients/95 HTTP/1.1" 200 -
+2023-03-03 15:14:07,939 - root - DEBUG - Patient by id - 54 was deleted
+2023-03-03 15:14:07,939 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:14:07] "DELETE /patient-api/54 HTTP/1.1" 200 -
+2023-03-03 15:14:08,014 - root - DEBUG - Doctor by id - 95 was deleted
+2023-03-03 15:14:08,015 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:14:08] "DELETE /doctor-api/95 HTTP/1.1" 200 -
+2023-03-03 15:23:44,321 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com), (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com), (Test Doctor15, 3, Specialty.ORTHOPEDIST, 0937781715, testemail15@gmail.com), (Test Doctor16, 3, Specialty.ORTHOPEDIST, 0937781716, testemail16@gmail.com), (Test Doctor17, 3, Specialty.ORTHOPEDIST, 0937781717, testemail17@gmail.com), (Test Doctor18, 3, Specialty.ORTHOPEDIST, 0937781718, testemail18@gmail.com), (Test Doctor19, 3, Specialty.ORTHOPEDIST, 0937781719, testemail19@gmail.com), (Test Doctor20, 3, Specialty.ORTHOPEDIST, 0937781720, testemail20@gmail.com), (Test Doctor21, 3, Specialty.ORTHOPEDIST, 0937781721, testemail21@gmail.com), (Test Doctor22, 3, Specialty.ORTHOPEDIST, 0937781722, testemail22@gmail.com)]
+2023-03-03 15:23:44,322 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:23:44] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:23:44,389 - root - DEBUG - New doctor was added to DB: (Test Doctor23, 3, Specialty.ORTHOPEDIST, 0937781723, testemail23@gmail.com)
+2023-03-03 15:23:44,390 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:23:44] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:23:44,394 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None), (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None), (Test Patient19, 2000, KindOfAche.MILD, 0937781719, testemail19@gmail.com, None), (Test Patient20, 2000, KindOfAche.MILD, 0937781720, testemail20@gmail.com, None), (Test Patient21, 2000, KindOfAche.MILD, 0937781721, testemail21@gmail.com, 2023-03-03), (Test Patient22, 2000, KindOfAche.MILD, 0937781722, testemail22@gmail.com, None), (Test Patient23, 2000, KindOfAche.MILD, 0937781723, testemail23@gmail.com, 2023-02-02), (Test Patient24, 2000, KindOfAche.MILD, 0937781724, testemail24@gmail.com, 2023-02-02), (Test Patient25, 2000, KindOfAche.MILD, 0937781725, testemail25@gmail.com, 2023-02-02)]
+2023-03-03 15:23:44,395 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:23:44] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:23:44,472 - root - DEBUG - New patient was added to DB: (Test Patient26, 2000, KindOfAche.MILD, 0937781726, testemail26@gmail.com, None)
+2023-03-03 15:23:44,472 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:23:44] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:24:09,390 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com), (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com), (Test Doctor15, 3, Specialty.ORTHOPEDIST, 0937781715, testemail15@gmail.com), (Test Doctor16, 3, Specialty.ORTHOPEDIST, 0937781716, testemail16@gmail.com), (Test Doctor17, 3, Specialty.ORTHOPEDIST, 0937781717, testemail17@gmail.com), (Test Doctor18, 3, Specialty.ORTHOPEDIST, 0937781718, testemail18@gmail.com), (Test Doctor19, 3, Specialty.ORTHOPEDIST, 0937781719, testemail19@gmail.com), (Test Doctor20, 3, Specialty.ORTHOPEDIST, 0937781720, testemail20@gmail.com), (Test Doctor21, 3, Specialty.ORTHOPEDIST, 0937781721, testemail21@gmail.com), (Test Doctor22, 3, Specialty.ORTHOPEDIST, 0937781722, testemail22@gmail.com), (Test Doctor23, 3, Specialty.ORTHOPEDIST, 0937781723, testemail23@gmail.com)]
+2023-03-03 15:24:09,392 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:24:09] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:24:09,471 - root - DEBUG - New doctor was added to DB: (Test Doctor24, 3, Specialty.ORTHOPEDIST, 0937781724, testemail24@gmail.com)
+2023-03-03 15:24:09,472 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:24:09] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:24:09,477 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None), (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None), (Test Patient19, 2000, KindOfAche.MILD, 0937781719, testemail19@gmail.com, None), (Test Patient20, 2000, KindOfAche.MILD, 0937781720, testemail20@gmail.com, None), (Test Patient21, 2000, KindOfAche.MILD, 0937781721, testemail21@gmail.com, 2023-03-03), (Test Patient22, 2000, KindOfAche.MILD, 0937781722, testemail22@gmail.com, None), (Test Patient23, 2000, KindOfAche.MILD, 0937781723, testemail23@gmail.com, 2023-02-02), (Test Patient24, 2000, KindOfAche.MILD, 0937781724, testemail24@gmail.com, 2023-02-02), (Test Patient25, 2000, KindOfAche.MILD, 0937781725, testemail25@gmail.com, 2023-02-02), (Test Patient26, 2000, KindOfAche.MILD, 0937781726, testemail26@gmail.com, None)]
+2023-03-03 15:24:09,480 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:24:09] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:24:09,555 - root - DEBUG - New patient was added to DB: (Test Patient27, 2000, KindOfAche.MILD, 0937781727, testemail27@gmail.com, None)
+2023-03-03 15:24:09,556 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:24:09] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:24:09,653 - root - DEBUG - Patient with id: 56 was appointed
+2023-03-03 15:24:09,655 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:24:09] "POST /patient-api/appoint/56 HTTP/1.1" 200 -
+2023-03-03 15:24:09,661 - root - DEBUG - List of appointed patients to doctor with id: 97 was gotten
+2023-03-03 15:24:09,661 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:24:09] "GET /doctor-api/clients/97 HTTP/1.1" 200 -
+2023-03-03 15:24:09,737 - root - DEBUG - Patient by id - 56 was deleted
+2023-03-03 15:24:09,737 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:24:09] "DELETE /patient-api/56 HTTP/1.1" 200 -
+2023-03-03 15:24:09,804 - root - DEBUG - Doctor by id - 97 was deleted
+2023-03-03 15:24:09,805 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:24:09] "DELETE /doctor-api/97 HTTP/1.1" 200 -
+2023-03-03 15:33:59,195 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com), (Test Doctor10, 3, Specialty.ORTHOPEDIST, 0937781710, testemail10@gmail.com), (Test Doctor11, 3, Specialty.ORTHOPEDIST, 0937781711, testemail11@gmail.com), (Test Doctor12, 3, Specialty.ORTHOPEDIST, 0937781712, testemail12@gmail.com), (Test Doctor13, 3, Specialty.ORTHOPEDIST, 0937781713, testemail13@gmail.com), (Test Doctor14, 3, Specialty.ORTHOPEDIST, 0937781714, testemail14@gmail.com), (Test Doctor15, 3, Specialty.ORTHOPEDIST, 0937781715, testemail15@gmail.com), (Test Doctor16, 3, Specialty.ORTHOPEDIST, 0937781716, testemail16@gmail.com), (Test Doctor17, 3, Specialty.ORTHOPEDIST, 0937781717, testemail17@gmail.com), (Test Doctor18, 3, Specialty.ORTHOPEDIST, 0937781718, testemail18@gmail.com), (Test Doctor19, 3, Specialty.ORTHOPEDIST, 0937781719, testemail19@gmail.com), (Test Doctor20, 3, Specialty.ORTHOPEDIST, 0937781720, testemail20@gmail.com), (Test Doctor21, 3, Specialty.ORTHOPEDIST, 0937781721, testemail21@gmail.com), (Test Doctor22, 3, Specialty.ORTHOPEDIST, 0937781722, testemail22@gmail.com), (Test Doctor23, 3, Specialty.ORTHOPEDIST, 0937781723, testemail23@gmail.com)]
+2023-03-03 15:33:59,197 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:33:59] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:33:59,286 - root - DEBUG - New doctor was added to DB: (Test Doctor24, 3, Specialty.ORTHOPEDIST, 0937781724, testemail24@gmail.com)
+2023-03-03 15:33:59,286 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:33:59] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:33:59,290 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16), (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None), (Test Patient12, 2000, KindOfAche.MILD, 0937781712, testemail12@gmail.com, None), (Test Patient13, 2000, KindOfAche.MILD, 0937781713, testemail13@gmail.com, None), (Test Patient14, 2000, KindOfAche.MILD, 0937781714, testemail14@gmail.com, None), (Test Patient15, 2000, KindOfAche.MILD, 0937781715, testemail15@gmail.com, None), (Test Patient16, 2000, KindOfAche.MILD, 0937781716, testemail16@gmail.com, None), (Test Patient17, 2000, KindOfAche.MILD, 0937781717, testemail17@gmail.com, None), (Test Patient18, 2000, KindOfAche.MILD, 0937781718, testemail18@gmail.com, None), (Test Patient19, 2000, KindOfAche.MILD, 0937781719, testemail19@gmail.com, None), (Test Patient20, 2000, KindOfAche.MILD, 0937781720, testemail20@gmail.com, None), (Test Patient21, 2000, KindOfAche.MILD, 0937781721, testemail21@gmail.com, 2023-03-03), (Test Patient22, 2000, KindOfAche.MILD, 0937781722, testemail22@gmail.com, None), (Test Patient23, 2000, KindOfAche.MILD, 0937781723, testemail23@gmail.com, 2023-02-02), (Test Patient24, 2000, KindOfAche.MILD, 0937781724, testemail24@gmail.com, 2023-02-02), (Test Patient25, 2000, KindOfAche.MILD, 0937781725, testemail25@gmail.com, 2023-02-02), (Test Patient26, 2000, KindOfAche.MILD, 0937781726, testemail26@gmail.com, None)]
+2023-03-03 15:33:59,292 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:33:59] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:33:59,369 - root - DEBUG - New patient was added to DB: (Test Patient27, 2000, KindOfAche.MILD, 0937781727, testemail27@gmail.com, None)
+2023-03-03 15:33:59,370 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:33:59] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:33:59,477 - root - DEBUG - Patient with id: 57 was appointed
+2023-03-03 15:33:59,478 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:33:59] "POST /patient-api/appoint/57 HTTP/1.1" 200 -
+2023-03-03 15:33:59,483 - root - DEBUG - List of appointed patients to doctor with id: 98 was gotten
+2023-03-03 15:33:59,484 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:33:59] "GET /doctor-api/clients/98 HTTP/1.1" 200 -
+2023-03-03 15:33:59,585 - root - DEBUG - Patient by id - 57 was deleted
+2023-03-03 15:33:59,586 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:33:59] "DELETE /patient-api/57 HTTP/1.1" 200 -
+2023-03-03 15:33:59,752 - root - DEBUG - Doctor by id - 98 was deleted
+2023-03-03 15:33:59,752 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:33:59] "DELETE /doctor-api/98 HTTP/1.1" 200 -
+2023-03-03 15:39:24,260 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com)]
+2023-03-03 15:39:24,261 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:39:24] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:39:24,341 - root - DEBUG - New doctor was added to DB: (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)
+2023-03-03 15:39:24,342 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:39:24] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:39:24,345 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16)]
+2023-03-03 15:39:24,346 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:39:24] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:39:24,433 - root - DEBUG - New patient was added to DB: (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None)
+2023-03-03 15:39:24,434 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:39:24] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:39:24,524 - root - DEBUG - Patient with id: 58 was appointed
+2023-03-03 15:39:24,526 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:39:24] "POST /patient-api/appoint/58 HTTP/1.1" 200 -
+2023-03-03 15:39:24,530 - root - DEBUG - List of appointed patients to doctor with id: 99 was gotten
+2023-03-03 15:39:24,530 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:39:24] "GET /doctor-api/clients/99 HTTP/1.1" 200 -
+2023-03-03 15:39:24,649 - root - DEBUG - Patient by id - 58 was deleted
+2023-03-03 15:39:24,650 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:39:24] "DELETE /patient-api/58 HTTP/1.1" 200 -
+2023-03-03 15:39:24,758 - root - DEBUG - Doctor by id - 99 was deleted
+2023-03-03 15:39:24,758 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:39:24] "DELETE /doctor-api/99 HTTP/1.1" 200 -
+2023-03-03 15:41:02,185 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com)]
+2023-03-03 15:41:02,186 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:02] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:41:02,194 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:02] "GET /doctor-api/count HTTP/1.1" 200 -
+2023-03-03 15:41:02,200 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com)]
+2023-03-03 15:41:02,201 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:02] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:41:02,474 - root - DEBUG - New doctor was added to DB: (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)
+2023-03-03 15:41:02,475 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:02] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:41:02,479 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-03-03 15:41:02,481 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:02] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:41:02,486 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-03-03 15:41:02,487 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:02] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:41:02,494 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-03-03 15:41:02,506 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:02] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:41:02,911 - root - DEBUG - Doctor by id - 100 was deleted
+2023-03-03 15:41:02,912 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:02] "DELETE /doctor-api/100 HTTP/1.1" 200 -
+2023-03-03 15:41:02,918 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com)]
+2023-03-03 15:41:02,920 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:02] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:41:02,927 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com)]
+2023-03-03 15:41:02,928 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:02] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:41:02,932 - root - DEBUG - Doctor by id - 80 was gotten, doctor: (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com)
+2023-03-03 15:41:02,933 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:02] "GET /doctor-api/80 HTTP/1.1" 200 -
+2023-03-03 15:41:02,940 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com)]
+2023-03-03 15:41:02,942 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:02] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:41:03,463 - root - DEBUG - New doctor was added to DB: (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)
+2023-03-03 15:41:03,463 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:03] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:41:03,466 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16)]
+2023-03-03 15:41:03,467 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:03] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 15:41:03,604 - root - DEBUG - New patient was added to DB: (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None)
+2023-03-03 15:41:03,605 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:03] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 15:41:03,704 - root - DEBUG - Patient with id: 59 was appointed
+2023-03-03 15:41:03,706 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:03] "POST /patient-api/appoint/59 HTTP/1.1" 200 -
+2023-03-03 15:41:03,710 - root - DEBUG - List of appointed patients to doctor with id: 101 was gotten
+2023-03-03 15:41:03,711 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:03] "GET /doctor-api/clients/101 HTTP/1.1" 200 -
+2023-03-03 15:41:03,829 - root - DEBUG - Patient by id - 59 was deleted
+2023-03-03 15:41:03,830 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:03] "DELETE /patient-api/59 HTTP/1.1" 200 -
+2023-03-03 15:41:03,932 - root - DEBUG - Doctor by id - 101 was deleted
+2023-03-03 15:41:03,933 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:03] "DELETE /doctor-api/101 HTTP/1.1" 200 -
+2023-03-03 15:41:03,940 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 3, Specialty.ORTHOPEDIST, 093778178, testemail8@gmail.com)]
+2023-03-03 15:41:03,942 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:03] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 15:41:04,022 - root - DEBUG - Doctor by id - 80 was updated, new doctor: (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)
+2023-03-03 15:41:04,022 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 15:41:04] "PUT /doctor-api/80 HTTP/1.1" 200 -
+2023-03-03 16:00:46,994 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16)]
+2023-03-03 16:00:46,996 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:00:46] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 16:00:47,065 - root - DEBUG - New patient was added to DB: (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None)
+2023-03-03 16:00:47,067 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:00:47] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 16:00:47,072 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)]
+2023-03-03 16:00:47,073 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:00:47] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:00:47,149 - root - DEBUG - New doctor was added to DB: (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)
+2023-03-03 16:00:47,150 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:00:47] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:00:47,239 - root - DEBUG - Patient with id: 60 was appointed
+2023-03-03 16:00:47,242 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:00:47] "POST /patient-api/appoint/60 HTTP/1.1" 200 -
+2023-03-03 16:00:47,253 - src - ERROR - Exception on /doctor-api/clients/102 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 144, in post
+    ls = [json.loads(obj.to_json()) for obj in doctor_service.get_filtered_list_of_patients(doctor_id, date)]
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 109, in get_filtered_list_of_patients
+    Patient.date_of_appointment >= date['date_from']).filter(
+KeyError: 'date_from'
+2023-03-03 16:00:47,255 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:00:47] "[35m[1mPOST /doctor-api/clients/102 HTTP/1.1[0m" 500 -
+2023-03-03 16:00:47,260 - src - ERROR - Exception on /doctor-api/clients/102 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 144, in post
+    ls = [json.loads(obj.to_json()) for obj in doctor_service.get_filtered_list_of_patients(doctor_id, date)]
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 109, in get_filtered_list_of_patients
+    Patient.date_of_appointment >= date['date_from']).filter(
+KeyError: 'date_from'
+2023-03-03 16:00:47,262 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:00:47] "[35m[1mPOST /doctor-api/clients/102 HTTP/1.1[0m" 500 -
+2023-03-03 16:00:47,339 - root - DEBUG - Patient by id - 60 was deleted
+2023-03-03 16:00:47,340 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:00:47] "DELETE /patient-api/60 HTTP/1.1" 200 -
+2023-03-03 16:00:47,431 - root - DEBUG - Doctor by id - 102 was deleted
+2023-03-03 16:00:47,432 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:00:47] "DELETE /doctor-api/102 HTTP/1.1" 200 -
+2023-03-03 16:02:26,335 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)]
+2023-03-03 16:02:26,336 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:26,344 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "GET /doctor-api/count HTTP/1.1" 200 -
+2023-03-03 16:02:26,352 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)]
+2023-03-03 16:02:26,353 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:26,423 - root - DEBUG - New doctor was added to DB: (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)
+2023-03-03 16:02:26,424 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:26,428 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-03-03 16:02:26,429 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:26,434 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-03-03 16:02:26,435 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:26,442 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com), (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)]
+2023-03-03 16:02:26,443 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:26,522 - root - DEBUG - Doctor by id - 103 was deleted
+2023-03-03 16:02:26,522 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "DELETE /doctor-api/103 HTTP/1.1" 200 -
+2023-03-03 16:02:26,533 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)]
+2023-03-03 16:02:26,534 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:26,541 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)]
+2023-03-03 16:02:26,543 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:26,548 - root - DEBUG - Doctor by id - 80 was gotten, doctor: (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)
+2023-03-03 16:02:26,549 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "GET /doctor-api/80 HTTP/1.1" 200 -
+2023-03-03 16:02:26,557 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16)]
+2023-03-03 16:02:26,558 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 16:02:26,649 - root - DEBUG - New patient was added to DB: (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None)
+2023-03-03 16:02:26,650 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 16:02:26,655 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)]
+2023-03-03 16:02:26,656 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:26,749 - root - DEBUG - New doctor was added to DB: (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)
+2023-03-03 16:02:26,750 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:26,890 - root - DEBUG - Patient with id: 61 was appointed
+2023-03-03 16:02:26,892 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "POST /patient-api/appoint/61 HTTP/1.1" 200 -
+2023-03-03 16:02:26,895 - src - ERROR - Exception on /doctor-api/clients/104 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 144, in post
+    ls = [json.loads(obj.to_json()) for obj in doctor_service.get_filtered_list_of_patients(doctor_id, date)]
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 109, in get_filtered_list_of_patients
+    Patient.date_of_appointment >= date['date_from']).filter(
+KeyError: 'date_from'
+2023-03-03 16:02:26,896 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "[35m[1mPOST /doctor-api/clients/104 HTTP/1.1[0m" 500 -
+2023-03-03 16:02:26,900 - src - ERROR - Exception on /doctor-api/clients/104 [POST]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 467, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 582, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/denys/python/dentistClinic/src/rest/doctor_api.py", line 144, in post
+    ls = [json.loads(obj.to_json()) for obj in doctor_service.get_filtered_list_of_patients(doctor_id, date)]
+  File "/home/denys/python/dentistClinic/src/service/doctor_service.py", line 109, in get_filtered_list_of_patients
+    Patient.date_of_appointment >= date['date_from']).filter(
+KeyError: 'date_from'
+2023-03-03 16:02:26,901 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:26] "[35m[1mPOST /doctor-api/clients/104 HTTP/1.1[0m" 500 -
+2023-03-03 16:02:27,065 - root - DEBUG - Patient by id - 61 was deleted
+2023-03-03 16:02:27,065 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:27] "DELETE /patient-api/61 HTTP/1.1" 200 -
+2023-03-03 16:02:27,232 - root - DEBUG - Doctor by id - 104 was deleted
+2023-03-03 16:02:27,232 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:27] "DELETE /doctor-api/104 HTTP/1.1" 200 -
+2023-03-03 16:02:27,238 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)]
+2023-03-03 16:02:27,240 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:27] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:27,350 - root - DEBUG - New doctor was added to DB: (Test Doctor9, 3, Specialty.ORTHOPEDIST, 093778179, testemail9@gmail.com)
+2023-03-03 16:02:27,351 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:27] "POST /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:27,355 - root - DEBUG - All patients was gotten: [(Test Patient1, 2000, KindOfAche.MILD, 093778171, testemail1@gmail.com, 2023-03-23), (Test Patient2, 2000, KindOfAche.MILD, 093778172, testemail2@gmail.com, 2023-03-17), (Test Patient3, 2004, KindOfAche.MILD, 063778173, testemail3@gmail.com, 2023-03-23), (Test Patient4, 2000, KindOfAche.MILD, 093778174, testemail4@gmail.com, None), (Test Patient7, 2000, KindOfAche.MILD, 093778177, testemail7@gmail.com, 2023-03-23), (JUnv, 2000, KindOfAche.MIDDLE, 4857349875, fgv@knvj.dfkvm, None), (JUnvffg, 2000, KindOfAche.MIDDLE, 438573, fgfddfv@knvj.dfkvm, None), (JUnvff, 2000, KindOfAche.MIDDLE, 4385773, fgfddfv@knvj.dfkv, 2023-03-23), (Denchik, 2004, KindOfAche.MIDDLE, 438577432, dun@knvj.dfk, None), (Jhiv, 3453, KindOfAche.MILD, 23574, fvdfv@dvbfdf.vf, 2023-03-16)]
+2023-03-03 16:02:27,357 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:27] "GET /patient-api HTTP/1.1" 200 -
+2023-03-03 16:02:27,455 - root - DEBUG - New patient was added to DB: (Test Patient11, 2000, KindOfAche.MILD, 0937781711, testemail11@gmail.com, None)
+2023-03-03 16:02:27,456 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:27] "POST /patient-api HTTP/1.1" 200 -
+2023-03-03 16:02:27,545 - root - DEBUG - Patient with id: 62 was appointed
+2023-03-03 16:02:27,547 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:27] "POST /patient-api/appoint/62 HTTP/1.1" 200 -
+2023-03-03 16:02:27,552 - root - DEBUG - List of appointed patients to doctor with id: 105 was gotten
+2023-03-03 16:02:27,553 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:27] "GET /doctor-api/clients/105 HTTP/1.1" 200 -
+2023-03-03 16:02:27,624 - root - DEBUG - Patient by id - 62 was deleted
+2023-03-03 16:02:27,625 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:27] "DELETE /patient-api/62 HTTP/1.1" 200 -
+2023-03-03 16:02:27,691 - root - DEBUG - Doctor by id - 105 was deleted
+2023-03-03 16:02:27,692 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:27] "DELETE /doctor-api/105 HTTP/1.1" 200 -
+2023-03-03 16:02:27,698 - root - DEBUG - All doctors was gotten: [(Test Doctor1, 3, Specialty.ORTHOPEDIST, 093778171, testemail1@gmail.com), (Test Doctor2, 3, Specialty.ORTHOPEDIST, 093778172, testemail2@gmail.com), (Test Doctor3, 3, Specialty.ORTHOPEDIST, 093778173, testemail3@gmail.com), (Test Doctor5, 3, Specialty.ORTHOPEDIST, 093778175, testemail5@gmail.com), (Test Doctor6, 3, Specialty.ORTHOPEDIST, 093778176, testemail6@gmail.com), (Denis Postolny, 2, Specialty.SURGEON, 0924373556, den2@gmail.com), (Test Doctor7, 3, Specialty.ORTHOPEDIST, 093778177, testemail7@gmail.com), (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)]
+2023-03-03 16:02:27,699 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:27] "GET /doctor-api HTTP/1.1" 200 -
+2023-03-03 16:02:27,707 - root - DEBUG - Doctor by id - 80 was updated, new doctor: (Test Doctor8, 4, Specialty.ORTHOPEDIST, 094728178, my_testemail8@gmail.com)
+2023-03-03 16:02:27,708 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2023 16:02:27] "PUT /doctor-api/80 HTTP/1.1" 200 -
