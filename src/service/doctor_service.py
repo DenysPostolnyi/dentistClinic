@@ -1,9 +1,8 @@
 """
 Doctor services for working with DB
 """
-import datetime
-
 from src.models.models import db, Doctor, Patient
+from src.service import patient_service
 
 
 def add_doctors(doctor):
@@ -68,6 +67,9 @@ def delete(doctor_id):
     """
     doctor = Doctor.query.get(doctor_id)
     if doctor:
+        patients = get_list_of_patients(doctor_id)
+        for patient in patients:
+            patient_service.cancel_appointment(patient.patient_id)
         db.session.delete(doctor)
         db.session.commit()
     else:
