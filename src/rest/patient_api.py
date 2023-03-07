@@ -38,9 +38,9 @@ class PatientAPIGetPost(Resource):
         """
         new_patient = request.get_json(force=True)
         patient = patient_mapper.json_to_patient(new_patient)
-        patient_service.add_patient(patient)
+        answer = patient_service.add_patient(patient)
         logging.debug("New patient was added to DB: %s", patient)
-        return {"message": "Patient was added successfully"}
+        return {"message": "Patient was added successfully", "patient": json.loads(answer.to_json())}
 
 
 class PatientAPIGetUpdateDelete(Resource):
@@ -97,5 +97,45 @@ class PatientAPIGetUpdateDelete(Resource):
             abort(404, str(error))
 
 
+class PatientAPIAppoint(Resource):
+    """
+    Class for appoint or unappoint chosen person
+    """
+
+    def post(self, patient_id):
+        """
+        Method for appoint person
+        :param patient_id:
+        :return: message that patient appointed successfully,
+        Person that was appointed
+        """
+        try:
+            data_of_appointment = request.get_json(force=True)
+            answer = patient_service.make_appointment(patient_id, data_of_appointment)
+            logging.debug("Patient with id: %s was appointed", patient_id)
+            return {"message": "Patient with id: %s was appointed successfully",
+                    "patient": json.loads(answer.to_json())}
+        except RuntimeError as error:
+            logging.debug("Patient for appointment by id - %s was not appointed", patient_id)
+            abort(404, str(error))
+
+    def delete(self, patient_id):
+        """
+        Method for unappoint person
+        :param patient_id:
+        :return: message that patient unappointed successfully,
+        Person that was unappointed
+        """
+        try:
+            answer = patient_service.cancel_appointment(patient_id)
+            logging.debug("Patient with id: %s was unappointed", patient_id)
+            return {"message": "Patient with id: %s was unappointed successfully",
+                    "patient": json.loads(answer.to_json())}
+        except RuntimeError as error:
+            logging.debug("Patient for unappoint by id - %s was not found", patient_id)
+            abort(404, str(error))
+
+
 api.add_resource(PatientAPIGetPost, '/patient-api')
 api.add_resource(PatientAPIGetUpdateDelete, '/patient-api/<patient_id>')
+api.add_resource(PatientAPIAppoint, '/patient-api/appoint/<patient_id>')

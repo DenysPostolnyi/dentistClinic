@@ -18,6 +18,7 @@ class DoctorAPIGetPost(Resource):
     """
     Class for receiving GET and POST methods without params
     """
+
     def get(self):
         """
         Get method for getting all doctors from DB
@@ -37,15 +38,34 @@ class DoctorAPIGetPost(Resource):
         """
         new_doctor = request.get_json(force=True)
         doctor = doctor_mapper.json_to_doctor(new_doctor)
-        doctor_service.add_doctors(doctor)
+        answer = doctor_service.add_doctors(doctor)
         logging.debug("New doctor was added to DB: %s", doctor)
-        return {"message": "Doctor was added successfully"}
+
+        return {"message": "Doctor was added successfully", "doctor": json.loads(answer.to_json())}
+
+
+class DoctorAPICount(Resource):
+    """
+    Class for GET method that returns amount of doctors
+    """
+    def get(self):
+        """
+        Method call service that counts amount of doctors
+        :return:
+        """
+        doctors = doctor_service.get_all()
+        if doctors:
+            return {
+                "amount": doctor_service.count_all()
+            }
+        return {"message": "Doctor list is empty"}
 
 
 class DoctorAPIGetUpdateDelete(Resource):
     """
     Class for receiving GET and PUT DELETE methods with parameter id
     """
+
     def get(self, doctor_id):
         """
          Get method for getting doctor from DB by id
@@ -95,5 +115,42 @@ class DoctorAPIGetUpdateDelete(Resource):
             abort(404, str(error))
 
 
+class DoctorAPIClients(Resource):
+    """
+    Class for getting info about appointed patients
+    """
+    def get(self, doctor_id):
+        """
+        Method for getting all appointed patients to the doctor
+        :param doctor_id:
+        :return: list of appointed patients
+        """
+        try:
+            ls = [json.loads(obj.to_json()) for obj in doctor_service.get_list_of_patients(doctor_id)]
+            logging.debug("List of appointed patients to doctor with id: %s was gotten", doctor_id)
+            return ls
+        except RuntimeError as error:
+            logging.debug("Doctor by id - %s was not found", doctor_id)
+            abort(404, str(error))
+
+    def post(self, doctor_id):
+        """
+        Method for getting all appointed patients to the doctor from one time to another
+        :param doctor_id:
+        :return: list of appointed patients searched by time
+        """
+        try:
+            date = request.get_json(force=True)
+            ls = [json.loads(obj.to_json()) for obj in doctor_service.get_filtered_list_of_patients(doctor_id, date)]
+            logging.debug("List of appointed patients from date %s, to %s to doctor with id: %s was gotten",
+                          date["date_from"], date["date_to"], doctor_id)
+            return ls
+        except RuntimeError as error:
+            logging.debug("Doctor by id - %s was not found", doctor_id)
+            abort(404, str(error))
+
+
 api.add_resource(DoctorAPIGetPost, '/doctor-api')
+api.add_resource(DoctorAPICount, '/doctor-api/count')
 api.add_resource(DoctorAPIGetUpdateDelete, '/doctor-api/<doctor_id>')
+api.add_resource(DoctorAPIClients, '/doctor-api/clients/<doctor_id>')

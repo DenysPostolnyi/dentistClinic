@@ -1,0 +1,724 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #bca8f9;
+    transition: 0.2s;
+}
+
+html {
+    /*
+    10px / 16px = 0.925 = 62.5%
+    percentage of user's browser font-size settings
+    */
+    font-size: 62.5%;
+    overflow-x: hidden;
+    margin: 0 5.8rem 0 6.8rem;
+    /*Does not work in Safari*/
+    /*scroll-behavior: smooth;*/
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #555;
+    overflow-x: hidden;
+}
+
+.open-button {
+    font-weight: 500;
+    font-size: 1.8rem;
+    background-color: #5b6268;
+    color: white;
+    text-decoration: none;
+    padding: 1.3rem 1.2rem;
+    border-radius: 0.8rem;
+}
+
+.open-button:hover, .open-button:active {
+    background-color: white;
+    color: #5b6268;
+    box-shadow: inset 0 0 0 3px #5b6268;
+}
+
+.delete-button {
+    font-weight: 500;
+    font-size: 1.8rem;
+    background-color: #e03131;
+    color: white;
+    text-decoration: none;
+    padding: 1.3rem 1.2rem;
+    border-radius: 0.8rem;
+}
+
+.delete-button:hover, .delete-button:active {
+    background-color: white;
+    color: #e03131;
+    box-shadow: inset 0 0 0 3px #e03131;
+}
+
+.item-buttons-in-list {
+    margin-right: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    background-color: rgb(5, 133, 2529);
+}
+
+/**************************/
+/* HEADER */
+/**************************/
+
+header {
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: center;
+    justify-content: space-between;
+    /* Because we want header to be sticky latter */
+    height: 6.8rem;
+    /*padding: 0 1rem;*/
+    position: relative;
+    /*margin: 1.2rem;*/
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    text-align: center;
+    color: blue;
+    font-weight: 585;
+    font-size: 1.8rem;
+}
+
+.nav-link:hover, .nav-link:active {
+    color: white;
+}
+
+.active-link {
+    background-color: rgb(0, 133, 2523);
+    color: white;
+    padding: 1.3rem 1rem;
+    border-radius: 0.8rem;
+}
+
+.active-link:hover, .active-link:active {
+    background-color: white;
+    color: rgb(0, 133, 2523);
+    box-shadow: inset 0 0 0 3px rgb(0, 133, 2523);
+}
+
+.add {
+    background-color: #2b8a3e;
+    color: white;
+    padding: 1.3rem 1.2rem;
+    border-radius: 0.8rem;
+}
+
+.add:hover, .add:active {
+    background-color: white;
+    color: #2b8a3e;
+    box-shadow: inset 0 0 0 3px #2b8a3e;
+}
+
+/**************************/
+/* SELECTOR */
+/**************************/
+
+.selector {
+    display: flex;
+    align-items: center;
+
+    height: 6.8rem;
+    /*padding: 0 1rem;*/
+    position: relative;
+    /*margin: 1.2rem;*/
+
+    gap: 4.6rem;
+}
+
+.selector-items {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.selector-items select {
+    position: relative;
+
+    width: 12.6rem;
+    height: 3.6rem;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-color: rgb(0, 133, 2523);
+    border-width: 0.2rem;
+    background-color: white;
+}
+
+.selector-items select option {
+    background-color: white;
+}
+
+.selector-items select:hover, .selector-items select:active {
+    box-shadow: inset 0 0 0 2px #509999;
+    transition: 0.2s;
+}
+
+.selector-items label {
+    font-size: 1.6rem;
+    color: black;
+}
+
+.selector-items input {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.radio-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.selector-items input:hover, .selector-items input:active {
+    height: 1.7rem;
+    width: 1.7rem;
+    transition: 0.2s;
+    border-width: 2rem;
+    border-color: blue;
+}
+
+.selector-items input:checked {
+    height: 1.7rem;
+    width: 1.7rem;
+}
+
+.submit-button {
+    width: 7.4rem;
+    height: 3.6rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-radius: 0.8rem;
+    background-color: rgb(0, 133, 2523);
+    font-size: 1.6rem;
+    color: white;
+}
+
+.submit-button:hover, .submit-button:active {
+    background-color: white;
+    color: rgb(0, 133, 2523);
+    box-shadow: inset 0 0 0 3px rgb(0, 133, 2523);
+}
+
+.amount {
+    color: blue;
+    font-size: 1.8rem;
+}
+
+/**************************/
+/* List of patients/doctors */
+/**************************/
+
+.patient-in-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(0, 133, 2523);
+    height: 5.4rem;
+    box-shadow: inset 0 0 0 3px rgb(0, 133, 2523);
+    border-radius: 0.7rem;
+    margin-bottom: 0.8rem;
+    margin-left: 0.8rem;
+
+    color: white;
+}
+
+.full-name-in-list {
+    margin-left: 2rem;
+    background-color: rgb(0, 133, 2523);
+    font-size: 1.9rem;
+}
+
+/**************************/
+/* Info about patients/doctors */
+/**************************/
+
+.person-info-window {
+    width: 30%;
+}
+
+.info {
+    margin: 2rem;
+    border: solid #5f3dc4 0.2rem;
+    border-radius: 4.2rem;
+    background-color: #ded4fc;
+    color: blue;
+    font-size: 1.8rem;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.info p {
+    padding: 2.4rem 1.2rem 0 3.2rem;
+    background-color: inherit;
+}
+
+.info p a {
+    background-color: inherit;
+}
+
+.appointment {
+    background-color: inherit;
+}
+
+.cancel-in-form {
+    margin-top: 2.4rem;
+    margin-bottom: 1.2rem;
+    background-color: inherit;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.cancel-appoint{
+    display: flex;
+    text-decoration: none;
+    width: 7.4rem;
+    height: 3.6rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.not-appointed {
+    background-color: inherit;
+    color: red;
+}
+
+.make-appointment {
+    width: 16.4rem;
+    height: 3.6rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-radius: 0.8rem;
+    background-color: rgb(0, 133, 2523);
+    font-size: 1.6rem;
+    color: white;
+}
+
+.make-appointment:hover, .make-appointment:active {
+    background-color: white;
+    color: rgb(0, 133, 2523);
+    box-shadow: inset 0 0 0 3px rgb(0, 133, 2523);
+}
+
+/**************************/
+/* buttons under info */
+/**************************/
+
+.control-panel {
+    margin-left: 4.8rem;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.edit-button {
+    font-weight: 500;
+    font-size: 1.8rem;
+    background-color: #5b6268;
+    color: white;
+    text-decoration: none;
+    padding: 1.6rem 3.2rem;
+    border-radius: 0.8rem;
+}
+
+.edit-button:hover, .edit-button:active {
+    background-color: white;
+    color: #5b6268;
+    box-shadow: inset 0 0 0 3px #5b6268;
+}
+
+.back-button {
+    font-weight: 500;
+    font-size: 1.8rem;
+    background-color: #2b8a3e;
+    color: white;
+    text-decoration: none;
+    padding: 1.6rem 2.8rem;
+    border-radius: 0.8rem;
+}
+
+.back-button:hover, .back-button:active {
+    background-color: white;
+    color: #2b8a3e;
+    box-shadow: inset 0 0 0 3px #2b8a3e;
+}
+
+.delete-info {
+    padding: 1.6rem 2.2rem;
+}
+
+/**************************/
+/* modal for making appointment */
+/**************************/
+
+/*general form*/
+.making-appointment {
+    position: fixed;
+    z-index: 999;
+    overflow: auto;
+
+    margin: 10rem;
+    border: solid white 0;
+    border-radius: 0.8rem;
+    background-color: white;
+    width: 45rem;
+    left: 42%;
+    top: 32%;
+    height: 27%;
+
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease-in-out;
+    /* 1) Hide it visually */
+    opacity: 0;
+
+    /* 2) Make it inaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    visibility: hidden;
+}
+
+/*head*/
+.making-appointment h3 {
+    background-color: inherit;
+    padding: 1.2rem;
+    color: blue;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+/*fields and buttons*/
+.form-of-appointment {
+    background-color: inherit;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-of-appointment select, input {
+    background-color: white;
+}
+
+.left-part {
+    background-color: white;
+    text-align: center;
+}
+
+.left-part select {
+    height: 3.4rem;
+    width: 18.4rem;
+    border-radius: 0.8rem;
+}
+
+.left-part select option {
+    background-color: white;
+}
+
+.left-part select:hover, .left-part select:active {
+    box-shadow: inset 0 0 0 3px rgb(0, 133, 2523);
+    transition: 0.2s;
+}
+
+
+.kind-of-doc {
+    margin-top: 2.4rem;
+    margin-bottom: 1.4rem;
+}
+
+
+.buttons-appointment {
+    margin-top: 2.4rem;
+    margin-bottom: 1.6rem;
+    background-color: white;
+    display: flex;
+    align-items: inherit;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.close-appointment {
+    width: 8.4rem;
+    height: 3.8rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-radius: 0.8rem;
+    background-color: #5b6268;
+    font-size: 1.6rem;
+    color: white;
+}
+
+.close-appointment:hover, .close-appointment:active {
+    background-color: white;
+    color: #5b6268;
+    box-shadow: inset 0 0 0 3px #5b6268;
+}
+
+.make-appointment-submit {
+    width: 8.4rem;
+    height: 3.8rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-radius: 0.8rem;
+    background-color: rgb(0, 133, 2523);
+    font-size: 1.6rem;
+    color: white;
+}
+
+.make-appointment-submit:hover, .make-appointment-submit:active {
+    background-color: white;
+    color: rgb(0, 133, 2523);
+    box-shadow: inset 0 0 0 3px rgb(0, 133, 2523);
+}
+
+.right-part {
+    text-align: center;
+    background-color: white;
+}
+
+.kalendar-block{
+    margin-top: 2rem;
+    margin-left: 4.4rem;
+}
+
+.kalendar-block label {
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.kalendar {
+    height: 3.4rem;
+    width: 18.4rem;
+    border-radius: 0.8rem;
+    border-width: 0.1rem;
+}
+
+.kalendar:hover, .kalendar:active {
+    box-shadow: inset 0 0 0 3px rgb(0, 133, 2523);
+    transition: 0.2s;
+}
+
+.open-modal[name="modal-window"] {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+
+/**************************/
+/* edit/add form */
+/**************************/
+
+.main-field-for-entering-data {
+    border: #5f3dc4 solid 0.2rem;
+    border-radius: 3.8rem;
+    overflow: hidden;
+    width: 56rem;
+    height: 31rem;
+    background-color: #ded4fc;
+}
+
+.full-name {
+    margin: 2.8rem 0 0 1.2rem;
+    background-color: inherit;
+    font-size: 1.8rem;
+    color: black;
+}
+
+.full-name label {
+    background-color: inherit;
+}
+
+.full-name input {
+    width: 53rem;
+    height: 3.3rem;
+    margin-top: 0.6rem;
+    background-color: inherit;
+    border-width: 0.1rem;
+    border-radius: 0.8rem;
+    border-color: #5b6268;
+    padding-left: 1rem;
+    font-size: 1.4rem;
+    outline: none;
+}
+
+.full-name input:hover, .full-name input:active, .full-name input:focus {
+    box-shadow: inset 0 0 0 2px #bca8f9;
+    transition: 0.2s;
+}
+
+.general-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: inherit;
+    margin-left: 1.2rem;
+    font-size: 1.8rem;
+    color: black;
+}
+
+.right-info-enter-part {
+    background-color: inherit;
+}
+
+.left-info-enter-part {
+    background-color: inherit;
+}
+
+.label-for-general-info {
+    background-color: inherit;
+    display: block;
+    margin: 1.2rem 0 -1rem 0;
+}
+
+.field-for-general-info {
+    width: 26rem;
+    height: 3.3rem;
+    margin-top: 0.6rem;
+    background-color: inherit;
+    border-color: #5b6268;
+    border-width: 0.1rem;
+    border-radius: 0.8rem;
+    padding-left: 1rem;
+    font-size: 1.4rem;
+    outline: none;
+}
+
+.field-for-general-info:hover, .field-for-general-info:active, .field-for-general-info:focus {
+    box-shadow: inset 0 0 0 2px #bca8f9 !important;
+    transition: 0.2s;
+}
+
+.field-for-general-info option {
+    background-color: inherit;
+}
+
+.color-from-field {
+    background-color: inherit;
+}
+
+.cancel-entering {
+    width: 7.4rem;
+    height: 3.6rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+    background-color: #e03131;
+    color: white;
+    text-decoration: none;
+    border: hidden;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancel-entering:hover, .cancel-entering:active {
+    background-color: white;
+    color: #e03131;
+    box-shadow: inset 0 0 0 3px #e03131;
+}
+
+
+/**************************/
+/* delete dialog box */
+/**************************/
+
+.dialog-del {
+    margin: 24rem;
+    height: 12rem;
+    width: 25rem;
+    border: 0.1rem solid;
+    background-color: white;
+}
+
+.dialog-del h3 {
+    background-color: inherit;
+    margin: 0.8rem 0.8rem;
+    font-size: 1.6rem;
+}
+
+.dialog-del p {
+    background-color: inherit;
+    margin: 1.6rem 0.8rem;
+    font-size: 1.3rem;
+}
+
+.del-choose {
+    background-color: inherit;
+    display: flex;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.del-choose input {
+    border-width: 0.1rem;
+    text-align: center;
+    width: 11.5rem;
+    padding: 0.8rem 0 0.8rem 0;
+}
+
+
+/**************************/
+/* doctor info */
+/**************************/
+
+.doctor-info {
+    margin: 2rem;
+    height: 38rem;
+    width: 65rem;
+    border: solid #5f3dc4 0.2rem;
+    border-radius: 4.2rem;
+    background-color: #ded4fc;
+    color: blue;
+    font-size: 1.8rem;
+    font-weight: 600;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.doctor-info p {
+    padding: 3.4rem 1.2rem 0 3.2rem;
+    background-color: inherit;
+}
+
+.doctor-info p a {
+    background-color: inherit;
+}
+
+.buttons-doctor-info {
+    width: 58rem;
+}
+
+.appointed-patients-list {
+    margin-right: 1.2rem;
+    margin-top: 0.8rem;
+    height: 24rem;
+    border: solid 0.1rem black;
+    border-radius: 4.2rem;
+    background-color: white;
+    overflow: hidden;
+}
+
+.appointed-patients-list a {
+    background-color: inherit;
+    margin-top: 0.8rem;
+    display: block;
+    text-align: center;
+}

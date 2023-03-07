@@ -46,9 +46,9 @@ class Doctor(db.Model):
             "doctor_id": self.doctor_id,
             "full_name": self.full_name,
             "seniority": self.seniority,
-            "specialty": str(self.specialty),
+            "specialty": str(self.specialty).split('.')[1].lower(),
             "phone_number": self.phone_number,
-            "email": self.email
+            "email": self.email,
         })
 
 
@@ -68,16 +68,17 @@ class Patient(db.Model):
     """
     __tablename__ = "Patients"
     patient_id = db.Column(db.Integer, primary_key=True)
-    doctor_id = db.Column(db.ForeignKey("Doctors.doctor_id"))
+    doctor_id = db.Column(db.ForeignKey("Doctors.doctor_id", ondelete='SET NULL'))
     full_name = db.Column(db.String(100), unique=True)
     year_of_birth = db.Column(db.Integer)
     kind_of_ache = db.Column(db.Enum(KindOfAche))
     phone_number = db.Column(db.String(10), unique=True)
     email = db.Column(db.String(100), unique=True)
+    date_of_appointment = db.Column(db.Date)
 
     def __repr__(self):
         return f"({self.full_name}, {self.year_of_birth}, {self.kind_of_ache}, " \
-               f"{self.phone_number}, {self.email})"
+               f"{self.phone_number}, {self.email}, {self.date_of_appointment})"
 
     def to_json(self):
         """
@@ -89,7 +90,8 @@ class Patient(db.Model):
             "doctor_id": self.doctor_id,
             "full_name": self.full_name,
             "year_of_birth": self.year_of_birth,
-            "kind_of_ache": str(self.kind_of_ache),
+            "kind_of_ache": str(self.kind_of_ache).split('.')[1].lower(),
             "phone_number": self.phone_number,
-            "email": self.email
+            "email": self.email,
+            "date_of_appointment": str(self.date_of_appointment)
         })

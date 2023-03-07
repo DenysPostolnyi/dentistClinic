@@ -7,3 +7,20 @@ Dentist clinic wants to introduce a digital appointment to doctors. I need to de
   • Doctor (fields: full name, seniority, specialty (therapist, orthopedist, surgeon, radiologist), amount of assigned pacients);  
   
 Relationship between entities: one to many (patient can be registered only to one doctor, but doctor can have many patients).
+
+### Starting project:
+Before starting project you must build it. 
+1) Set env variables 'MYSQL_DATABASE=travis_db MYSQL_USER=root MYSQL_PORT=3306 MYSQL_HOST=127.0.0.1 DATABASE_URL=mysql://$MYSQL_USER:@$MYSQL_HOST:$MYSQL_PORT/$MYSQL_DATABASE'
+2) Download useful packages by commands: 'pip install -r requirements.txt' and 'pip install mysqlclient'
+3) Create new DB 'mysql -e 'CREATE DATABASE IF NOT EXISTS travis_db;''
+4) Update DB with migrations 'flask --app=src/ db upgrade'
+5) Start app with Gunicorn 'gunicorn wsgi:app -b 127.0.0.1:5000 -D'
+!!! For finish program enter 'pkill gunicorn'
+
+### Available URLs
+1) Doctor
+- Web service: http://127.0.0.1:5000/doctor-api
+- Web application: http://127.0.0.1:5000/doctors
+2) Patient
+- Web service: http://127.0.0.1:5000/patient-api
+- Web application: http://127.0.0.1:5000/patients
