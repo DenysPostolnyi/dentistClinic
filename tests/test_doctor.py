@@ -1,12 +1,13 @@
 """
 Module for doctor's tests
 """
+import json
 import unittest
 import requests
 
 from tests.utils.for_api import delete_patient, delete_doctor, create_doctor, create_patient
 from tests.utils import for_services
-from src import app, Doctor, Patient
+from src import app, Doctor
 from src.service import doctor_service, patient_service
 
 
@@ -59,7 +60,7 @@ class DoctorApiTestCase(unittest.TestCase):
             "full_name": f"Test Doctor{var}",
             "seniority": 3,
             "specialty": "ORTHOPEDIST",
-            "phone_number": f"09377817{var}",
+            "phone_number": f"09817{var}",
             "email": f"testemail{var}@gmail.com"
         }
         response = requests.post("http://127.0.0.1:5000/doctor-api", json=doctor_attrs,
@@ -89,7 +90,7 @@ class DoctorApiTestCase(unittest.TestCase):
                 "full_name": f"Test Doctor{var}",
                 "seniority": 4,
                 "specialty": "ORTHOPEDIST",
-                "phone_number": f"09472817{var}",
+                "phone_number": f"0917{var}",
                 "email": f"my_testemail{var}@gmail.com"
             }
             doctor_id = take_all.json()[len(take_all.json()) - 1].get('doctor_id')
@@ -374,3 +375,122 @@ class DoctorServicesTestCase(unittest.TestCase):
 
             patient_service.delete(patient.patient_id)
             doctor_service.delete(doctor.doctor_id)
+
+
+class DoctorRoutesTestCase(unittest.TestCase):
+    """
+    Doctor Routes test case
+    """
+    def test_index(self):
+        """
+        Test for rout which return index page
+        :return:
+        """
+        with app.test_client() as c:
+            response = c.get('/doctors')
+            self.assertEqual(200, response.status_code)
+
+    def test_delete(self):
+        """
+        Test for rout which return index page
+        :return:
+        """
+        doctor = for_services.create_doctor()
+        with app.test_client() as c:
+            response = c.get(f"/doctors/delete/{doctor.doctor_id}")
+            self.assertEqual(302, response.status_code)
+
+    def test_info(self):
+        """
+        Test for rout which return index page
+        :return:
+        """
+        doctor = for_services.create_doctor()
+        with app.test_client() as c:
+            response = c.get(f"/doctors/{doctor.doctor_id}")
+            self.assertEqual(200, response.status_code)
+            c.get(f"/doctors/delete/{doctor.doctor_id}")
+
+    def test_filter(self):
+        """
+        Test for rout for page with info about doctor where list appointed patients filtered by date of appointment
+        :return:
+        """
+        doctor = for_services.create_doctor()
+        with app.test_client() as c:
+            response = c.post(f"/doctors/{doctor.doctor_id}", data={
+                "date_from": "2023-02-03",
+                "date_to": "2023-02-15"
+            })
+            self.assertEqual(200, response.status_code)
+
+            c.get(f"/doctors/delete/{doctor.doctor_id}")
+
+    def test_add(self):
+        """
+        Test for rout for page for adding new doctor
+        :return:
+        """
+        with app.test_client() as c:
+            # Test get
+            response = c.get("/doctors/add")
+            self.assertEqual(200, response.status_code)
+
+            # Test post
+            response_all = requests.get("http://127.0.0.1:5000/doctor-api",
+                                        timeout=1000)
+            if isinstance(response_all.json(), dict) and "message" in response_all.json().keys():
+                self.assertEqual("Doctor list is empty", response_all.json().get("message"))
+                amount_before = 0
+            else:
+                amount_before = len(response_all.json())
+
+            var = amount_before + 1
+
+            response = c.post("/doctors/add", data={
+                "full_name": f"Test Doctor{var}",
+                "seniority": 3,
+                "specialty": "ORTHOPEDIST",
+                "phone_number": f"09817{var}",
+                "email": f"testemail{var}@gmail.com"
+            })
+            self.assertEqual(302, response.status_code)
+
+    def test_edit(self):
+        """
+        Test for rout for page for editing info about doctor
+        :return:
+        """
+        response_all = requests.get("http://127.0.0.1:5000/doctor-api",
+                                    timeout=1000)
+        if isinstance(response_all.json(), dict) and "message" in response_all.json().keys():
+            amount_before = 0
+        else:
+            amount_before = len(response_all.json())
+
+        var = amount_before + 1
+
+        created_doctor = requests.post("http://127.0.0.1:5000/doctor-api", json={
+            "full_name": f"Test Doctor{var}",
+            "seniority": 3,
+            "specialty": "ORTHOPEDIST",
+            "phone_number": f"09817{var}",
+            "email": f"testemail{var}@gmail.com"
+        }, timeout=1000).json()['doctor']
+        with app.test_client() as c:
+            # Test get
+            response = c.get(f"/doctors-edit/{created_doctor['doctor_id']}")
+            self.assertEqual(200, response.status_code)
+
+            # Test post
+            response = c.post(f"/doctors-edit/{created_doctor['doctor_id']}", data={
+                "full_name": f"Test Doctor{var}",
+                "seniority": 3,
+                "specialty": "ORTHOPEDIST",
+                "phone_number": f"09817{var}",
+                "email": f"updated-email{var}@gmail.com"
+            })
+            self.assertEqual(302, response.status_code)
+
+            requests.delete(f"http://127.0.0.1:5000/doctor-api/{created_doctor['doctor_id']}",
+                            timeout=1000)

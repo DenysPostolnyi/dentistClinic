@@ -1,2 +1,302 @@
 2023-03-07 08:35:31,760 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
 2023-03-07 08:36:22,928 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 09:19:16,281 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 09:19:16,282 - src - ERROR - Exception on /doctors [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/lib/python3.10/http/client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 975, in send
+    self.connect()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f7e4baaa230>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /doctor-api (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7e4baaa230>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/src/views/doctor_routes.py", line 19, in doctor_index
+    doctors = requests.get("http://127.0.0.1:5000/doctor-api", timeout=1000).json()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /doctor-api (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7e4baaa230>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2023-03-07 09:19:24,982 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 09:19:25,024 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 2640
+2023-03-07 09:19:25,027 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 09:19:25,037 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 15
+2023-03-07 09:19:42,578 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 09:19:42,583 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 2640
+2023-03-07 09:19:42,584 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 09:19:42,589 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 15
+2023-03-07 11:15:23,309 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:15:23,551 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/154 HTTP/1.1" 200 47
+2023-03-07 11:16:07,480 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:16:07,605 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/155 HTTP/1.1" 200 47
+2023-03-07 11:16:19,588 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:16:19,708 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/156 HTTP/1.1" 200 47
+2023-03-07 11:18:42,671 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:18:42,678 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/157 HTTP/1.1" 200 156
+2023-03-07 11:18:42,681 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:18:42,687 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/157 HTTP/1.1" 200 3
+2023-03-07 11:20:00,659 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:20:00,664 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/158 HTTP/1.1" 200 156
+2023-03-07 11:20:00,666 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:20:00,672 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/158 HTTP/1.1" 200 3
+2023-03-07 11:20:00,701 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:20:00,817 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/158 HTTP/1.1" 200 47
+2023-03-07 11:20:13,070 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:20:13,075 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/159 HTTP/1.1" 200 156
+2023-03-07 11:20:13,079 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:20:13,086 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/159 HTTP/1.1" 200 3
+2023-03-07 11:20:13,118 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:20:13,275 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/159 HTTP/1.1" 200 47
+2023-03-07 11:37:50,952 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:37:50,956 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/160 HTTP/1.1" 200 156
+2023-03-07 11:37:50,983 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:37:50,987 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/160 HTTP/1.1" 200 156
+2023-03-07 11:39:33,455 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:39:33,459 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/161 HTTP/1.1" 200 156
+2023-03-07 11:39:33,490 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:39:33,495 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/161 HTTP/1.1" 200 156
+2023-03-07 11:39:33,497 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:39:33,503 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api/clients/161 HTTP/1.1" 200 3
+2023-03-07 11:39:33,507 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:39:33,566 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/161 HTTP/1.1" 200 47
+2023-03-07 11:54:56,326 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:54:56,327 - src - ERROR - Exception on /doctors/162 [GET]
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/lib/python3.10/http/client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 975, in send
+    self.connect()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f21308e2c20>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /doctor-api/162 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f21308e2c20>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/denys/python/dentistClinic/src/views/doctor_routes.py", line 53, in info
+    req = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}", timeout=1000)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/denys/python/dentistClinic/venv/lib/python3.10/site-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /doctor-api/162 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f21308e2c20>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2023-03-07 11:56:16,391 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:56:16,395 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/163 HTTP/1.1" 200 156
+2023-03-07 11:56:16,397 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:56:16,406 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/163 HTTP/1.1" 200 3
+2023-03-07 11:56:16,432 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:56:16,609 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/163 HTTP/1.1" 200 47
+2023-03-07 11:56:58,671 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:56:58,675 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/165 HTTP/1.1" 200 156
+2023-03-07 11:56:58,676 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:56:58,682 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api/clients/165 HTTP/1.1" 200 3
+2023-03-07 11:56:58,702 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:56:58,765 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/165 HTTP/1.1" 200 47
+2023-03-07 11:57:05,383 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:57:05,387 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/166 HTTP/1.1" 200 156
+2023-03-07 11:57:05,389 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:57:05,395 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/166 HTTP/1.1" 200 3
+2023-03-07 11:57:05,423 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 11:57:05,485 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/166 HTTP/1.1" 200 47
+2023-03-07 12:02:22,515 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:02:22,520 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 3739
+2023-03-07 12:02:22,526 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:02:22,657 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 200 213
+2023-03-07 12:03:08,049 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:03:08,054 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 3897
+2023-03-07 12:03:08,058 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:03:08,142 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 200 213
+2023-03-07 12:44:39,456 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:44:39,497 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4055
+2023-03-07 12:44:39,499 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:44:39,647 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 200 210
+2023-03-07 12:45:21,745 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:45:21,751 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4210
+2023-03-07 12:45:21,755 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:45:21,823 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 200 210
+2023-03-07 12:46:01,019 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:46:01,036 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4365
+2023-03-07 12:46:01,038 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:46:01,041 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 400 92
+2023-03-07 12:46:17,979 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:46:17,986 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4365
+2023-03-07 12:46:17,988 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:46:17,991 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 400 92
+2023-03-07 12:46:46,773 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:46:46,787 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4365
+2023-03-07 12:46:46,789 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:46:46,792 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 400 92
+2023-03-07 12:47:19,920 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:47:19,927 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4365
+2023-03-07 12:47:19,929 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:47:19,931 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 400 92
+2023-03-07 12:47:56,285 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:47:56,289 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4365
+2023-03-07 12:48:14,311 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:48:14,320 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4365
+2023-03-07 12:48:26,722 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:48:26,727 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4365
+2023-03-07 12:48:26,729 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:48:26,756 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 500 37
+2023-03-07 12:48:58,662 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:48:58,667 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4365
+2023-03-07 12:48:58,670 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:48:58,732 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 200 210
+2023-03-07 12:49:19,275 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:19,281 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4520
+2023-03-07 12:49:19,283 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:19,344 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 200 210
+2023-03-07 12:49:19,348 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:19,352 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/172 HTTP/1.1" 200 154
+2023-03-07 12:49:19,390 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:19,393 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/172 HTTP/1.1" 200 154
+2023-03-07 12:49:19,395 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:19,559 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "PUT /doctor-api/172 HTTP/1.1" 200 162
+2023-03-07 12:49:19,561 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:19,779 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/172 HTTP/1.1" 200 47
+2023-03-07 12:49:38,430 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:38,436 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4520
+2023-03-07 12:49:38,438 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:38,576 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 200 210
+2023-03-07 12:49:38,985 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,066 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/174 HTTP/1.1" 200 47
+2023-03-07 12:49:39,072 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,077 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4675
+2023-03-07 12:49:39,079 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,169 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api HTTP/1.1" 200 210
+2023-03-07 12:49:39,171 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,175 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/175 HTTP/1.1" 200 154
+2023-03-07 12:49:39,183 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,187 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/175 HTTP/1.1" 200 154
+2023-03-07 12:49:39,189 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,279 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "PUT /doctor-api/175 HTTP/1.1" 200 162
+2023-03-07 12:49:39,282 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,359 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/175 HTTP/1.1" 200 47
+2023-03-07 12:49:39,435 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,439 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/176 HTTP/1.1" 200 156
+2023-03-07 12:49:39,441 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,447 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "POST /doctor-api/clients/176 HTTP/1.1" 200 3
+2023-03-07 12:49:39,457 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,528 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/176 HTTP/1.1" 200 47
+2023-03-07 12:49:39,533 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,539 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api HTTP/1.1" 200 4675
+2023-03-07 12:49:39,540 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,546 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 15
+2023-03-07 12:49:39,647 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,650 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/177 HTTP/1.1" 200 156
+2023-03-07 12:49:39,652 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,657 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/clients/177 HTTP/1.1" 200 3
+2023-03-07 12:49:39,659 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
+2023-03-07 12:49:39,729 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "DELETE /doctor-api/177 HTTP/1.1" 200 47
