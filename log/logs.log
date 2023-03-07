@@ -17243,3 +17243,6 @@ KeyError: 'date_from'
 2023-03-06 10:28:41,168 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:5000
 2023-03-06 10:28:41,178 - urllib3.connectionpool - DEBUG - http://127.0.0.1:5000 "GET /doctor-api/count HTTP/1.1" 200 14
 2023-03-06 10:41:00,768 - flask_migrate - ERROR - Error: Path doesn't exist: '/home/denys/python/dentistClinic/migrations'.  Please use the 'init' command to create a new scripts folder.
+2023-03-06 11:05:08,363 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-06 11:05:08,363 - werkzeug - INFO - [33mPress CTRL+C to quit[0m

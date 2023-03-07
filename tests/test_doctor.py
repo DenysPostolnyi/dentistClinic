@@ -4,7 +4,10 @@ Module for doctor's tests
 import unittest
 import requests
 
-from tests import delete_patient, delete_doctor, create_doctor, create_patient
+from tests.utils.for_api import delete_patient, delete_doctor, create_doctor, create_patient
+from tests.utils import for_services
+from src import app, Doctor, Patient
+from src.service import doctor_service, patient_service
 
 
 class DoctorApiTestCase(unittest.TestCase):
@@ -208,3 +211,166 @@ class DoctorApiTestCase(unittest.TestCase):
 
         delete_patient(created_patient.json()['patient']['patient_id'])
         delete_doctor(created_doctor.json()['doctor']['doctor_id'])
+
+
+class DoctorServicesTestCase(unittest.TestCase):
+    """
+    Doctor Service test case
+    """
+
+    def test_get_all(self):
+        """
+        Test for service which get all doctors
+        :return:
+        """
+        with app.app_context():
+            doctors_list = doctor_service.get_all()
+            self.assertIsNotNone(doctors_list)
+            self.assertIs(list, type(doctors_list))
+
+    def test_get_one_by_id(self):
+        """
+        Test for service which get doctor by id
+        :return:
+        """
+        with app.app_context():
+            doctors = doctor_service.get_all()
+            if doctors is not None:
+                doctor_id = doctors[0].doctor_id
+                doctor = doctor_service.get_one_by_id(doctor_id)
+                self.assertIsNotNone(doctor)
+                self.assertEqual(doctors[0], doctor)
+
+    def test_add(self):
+        """
+        Test for service which add new doctor
+        :return:
+        """
+        with app.app_context():
+            doctor_list = doctor_service.get_all()
+            if doctor_list is not None:
+                val = doctor_list[len(doctor_list) - 1].doctor_id
+            else:
+                val = 0
+            doctor_to_add = Doctor(
+                full_name=f"Test Doctor{val}",
+                seniority=3,
+                specialty="ORTHOPEDIST",
+                phone_number=f"0917{val}",
+                email=f"testemail{val}@gmail.com"
+            )
+            new_doctor = doctor_service.add_doctors(doctor_to_add)
+            self.assertEqual(doctor_to_add.full_name, new_doctor.full_name)
+            doctor_service.delete(new_doctor.doctor_id)
+
+    def test_count(self):
+        """
+        Test for service which count amount of doctors
+        :return:
+        """
+        with app.app_context():
+            doctors_list = doctor_service.get_all()
+            doctor_amount = doctor_service.count_all()
+
+            self.assertEqual(len(doctors_list), doctor_amount)
+
+    def test_update(self):
+        """
+        Test for service which update doctor
+        :return:
+        """
+        with app.app_context():
+            doctor_list = doctor_service.get_all()
+            if doctor_list is not None:
+                val = doctor_list[len(doctor_list) - 1].doctor_id
+            else:
+                val = 0
+            doctor_for_update = Doctor(
+                full_name=f"Test Doctor{val}",
+                seniority=3,
+                specialty="ORTHOPEDIST",
+                phone_number=f"0937{val}",
+                email=f"testemail{val}@gmail.com"
+            )
+            doctor_for_update = doctor_service.add_doctors(doctor_for_update)
+            doctor_for_update.email = "teste_update@gmail.com"
+            doctor_service.update(doctor_for_update.doctor_id, doctor_for_update)
+            self.assertEqual(doctor_for_update, doctor_service.get_one_by_id(doctor_for_update.doctor_id))
+            doctor_service.delete(doctor_for_update.doctor_id)
+
+    def test_delete(self):
+        """
+        Test for service which delete doctor
+        :return:
+        """
+        with app.app_context():
+            doctor_list = doctor_service.get_all()
+            if doctor_list is not None:
+                val = doctor_list[len(doctor_list) - 1].doctor_id
+            else:
+                val = 0
+            doctor_for_delete = Doctor(
+                full_name=f"Test Doctor{val}",
+                seniority=3,
+                specialty="ORTHOPEDIST",
+                phone_number=f"0937{val}",
+                email=f"testemail{val}@gmail.com"
+            )
+            doctor_for_delete = doctor_service.add_doctors(doctor_for_delete)
+            doctor_service.delete(doctor_for_delete.doctor_id)
+            self.assertNotIn(doctor_for_delete, doctor_service.get_all())
+
+    def test_get_list_of_patients(self):
+        """
+        Test for service which get list of appointed patients to the doctor
+        :return:
+        """
+        with app.app_context():
+            doctor = for_services.create_doctor()
+            patient = for_services.create_patient()
+
+            # appoint patient
+            data = {
+                'doctor_id': int(doctor.doctor_id),
+                'date_of_appointment': "2023-02-02"
+            }
+
+            patient_service.make_appointment(patient.patient_id, data)
+            patient.date_of_appointment = "2023-02-02"
+            self.assertEqual(patient.patient_id, doctor_service.get_list_of_patients(doctor.doctor_id)[0].patient_id)
+
+            patient_service.delete(patient.patient_id)
+            doctor_service.delete(doctor.doctor_id)
+
+    def test_get_filtered_list_of_patients(self):
+        """
+        Test for service which get filtered list of appointed patients to the doctor by date
+        :return:
+        """
+        with app.app_context():
+            doctor = for_services.create_doctor()
+            patient = for_services.create_patient()
+
+            # appoint patient
+            data = {
+                'doctor_id': int(doctor.doctor_id),
+                'date_of_appointment': "2023-02-02"
+            }
+
+            patient_service.make_appointment(patient.patient_id, data)
+
+            date_for_search = {
+                "date_from": "2023-01-02",
+                "date_to": "2023-03-02",
+            }
+
+            self.assertEqual(patient.patient_id,
+                             doctor_service.get_filtered_list_of_patients(doctor.doctor_id, date_for_search)[
+                                 0].patient_id)
+
+            date_for_search['date_to'] = "2023-02-01"
+
+            self.assertEqual([], doctor_service.get_filtered_list_of_patients(doctor.doctor_id, date_for_search))
+
+            patient_service.delete(patient.patient_id)
+            doctor_service.delete(doctor.doctor_id)
