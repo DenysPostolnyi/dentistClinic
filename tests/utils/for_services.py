@@ -31,7 +31,7 @@ def create_patient():
             full_name=f"Test Patient{patient_val}",
             year_of_birth=2000,
             kind_of_ache="MILD",
-            phone_number=f"09377817{patient_val}",
+            phone_number=f"09817{patient_val}",
             email=f"testemail{patient_val}@gmail.com"
         )
 
