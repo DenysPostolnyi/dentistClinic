@@ -5,7 +5,7 @@ from src.service import doctor_service, patient_service
 def create_doctor():
     with app.app_context():
         doctor_list = doctor_service.get_all()
-        if doctor_list is not None:
+        if len(doctor_list) > 0:
             val = doctor_list[len(doctor_list) - 1].doctor_id
         else:
             val = 0
@@ -22,7 +22,7 @@ def create_doctor():
 def create_patient():
     with app.app_context():
         patients_list = patient_service.get_all()
-        if patients_list is not None:
+        if len(patients_list) > 0:
             patient_val = patients_list[len(patients_list) - 1].patient_id
         else:
             patient_val = 0

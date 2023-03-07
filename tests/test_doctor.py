@@ -249,7 +249,7 @@ class DoctorServicesTestCase(unittest.TestCase):
         """
         with app.app_context():
             doctor_list = doctor_service.get_all()
-            if doctor_list is not None:
+            if len(doctor_list) > 0:
                 val = doctor_list[len(doctor_list) - 1].doctor_id
             else:
                 val = 0
@@ -282,7 +282,7 @@ class DoctorServicesTestCase(unittest.TestCase):
         """
         with app.app_context():
             doctor_list = doctor_service.get_all()
-            if doctor_list is not None:
+            if  len(doctor_list) > 0:
                 val = doctor_list[len(doctor_list) - 1].doctor_id
             else:
                 val = 0
@@ -306,7 +306,7 @@ class DoctorServicesTestCase(unittest.TestCase):
         """
         with app.app_context():
             doctor_list = doctor_service.get_all()
-            if doctor_list is not None:
+            if  len(doctor_list) > 0:
                 val = doctor_list[len(doctor_list) - 1].doctor_id
             else:
                 val = 0

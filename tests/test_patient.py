@@ -213,7 +213,7 @@ class PatientServicesTestCase(unittest.TestCase):
         """
         with app.app_context():
             patients_list = patient_service.get_all()
-            if patients_list is not None:
+            if len(patients_list) > 0:
                 val = patients_list[len(patients_list) - 1].patient_id
             else:
                 val = 0
@@ -235,7 +235,7 @@ class PatientServicesTestCase(unittest.TestCase):
         """
         with app.app_context():
             patients_list = patient_service.get_all()
-            if patients_list is not None:
+            if len(patients_list) > 0:
                 patient_val = patients_list[len(patients_list) - 1].patient_id
             else:
                 patient_val = 0
