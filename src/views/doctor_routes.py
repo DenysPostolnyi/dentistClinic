@@ -42,7 +42,7 @@ def delete(doctor_id):
         abort(404)
 
 
-@doctor_routes.route("/doctors/<int:doctor_id>", methods=['GET'])
+@doctor_routes.route("/doctors/<int:doctor_id>", methods=['GET', 'POST'])
 def info(doctor_id):
     """
     Rout for page with info about doctor
@@ -51,36 +51,27 @@ def info(doctor_id):
     """
     try:
         req = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}", timeout=1000)
-        take_patients = requests.get(f"http://127.0.0.1:5000/doctor-api/clients/{doctor_id}", timeout=1000)
-        if req.status_code == 200 and take_patients.status_code == 200:
-            doctor = req.json()
-            patients = take_patients.json()
-            return render_template("doctor/doctorInfo.html", doctor=doctor, patients=patients)
-        return redirect(url_for('doctor_routes.doctor_index'))
-    except TemplateNotFound:
-        abort(404)
+        if req.status_code == 200:
+            if request.method == "GET":
+                take_patients = requests.get(f"http://127.0.0.1:5000/doctor-api/clients/{doctor_id}", timeout=1000)
+                if take_patients.status_code == 200:
+                    doctor = req.json()
+                    patients = take_patients.json()
+                    return render_template("doctor/doctorInfo.html", doctor=doctor, patients=patients)
 
+            date_from = request.form['date_from']
+            date_to = request.form['date_to']
+            date = {
+                "date_from": date_from,
+                "date_to": date_to,
+            }
 
-@doctor_routes.route("/doctors-filter/<int:doctor_id>", methods=['GET', 'POST'])
-def info_filter(doctor_id):
-    """
-    Rout for page with info about doctor where list appointed patients filtered by date of appointment
-    :param doctor_id:
-    :return:
-    """
-    try:
-        date_from = request.form['date_from']
-        date_to = request.form['date_to']
-        date = {
-            "date_from": date_from,
-            "date_to": date_to,
-        }
-        req = requests.get(f"http://127.0.0.1:5000/doctor-api/{doctor_id}", timeout=1000)
-        take_patients = requests.post(f"http://127.0.0.1:5000/doctor-api/clients/{doctor_id}", json=date, timeout=1000)
-        if req.status_code == 200 and take_patients.status_code == 200:
-            doctor = req.json()
-            patients = take_patients.json()
-            return render_template("doctor/doctorInfo.html", doctor=doctor, patients=patients)
+            take_patients = requests.post(f"http://127.0.0.1:5000/doctor-api/clients/{doctor_id}", json=date,
+                                          timeout=1000)
+            if take_patients.status_code == 200:
+                doctor = req.json()
+                patients = take_patients.json()
+                return render_template("doctor/doctorInfo.html", doctor=doctor, patients=patients)
         return redirect(url_for('doctor_routes.doctor_index'))
     except TemplateNotFound:
         abort(404)

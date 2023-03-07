@@ -9,7 +9,7 @@
                 <p>Seniority: {{ doctor['seniority'] }} years</p>
                 <p>Email: {{ doctor['email'] }}</p>
                 <p>Phone number: +38{{ doctor['phone_number'] }}</p>
-                <form action="{{ url_for('doctor_routes.info_filter', doctor_id=doctor['doctor_id']) }}" method="POST">
+                <form action="{{ url_for('doctor_routes.info', doctor_id=doctor['doctor_id']) }}" method="POST">
                     <div class="kalendar-block">
                         <label for="date_from">Choose date from:</label>
                         <input id="date_from" name="date_from" type="date" class="kalendar"
