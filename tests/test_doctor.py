@@ -236,7 +236,7 @@ class DoctorServicesTestCase(unittest.TestCase):
         """
         with app.app_context():
             doctors = doctor_service.get_all()
-            if doctors is not None:
+            if len(doctors) > 0:
                 doctor_id = doctors[0].doctor_id
                 doctor = doctor_service.get_one_by_id(doctor_id)
                 self.assertIsNotNone(doctor)

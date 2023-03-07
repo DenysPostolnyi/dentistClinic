@@ -18163,3 +18163,5 @@ KeyError: 'mild'
 2023-03-07 13:22:55,605 - werkzeug - INFO - 127.0.0.1 - - [07/Mar/2023 13:22:55] "DELETE /patient-api/133 HTTP/1.1" 200 -
 2023-03-07 13:22:55,697 - root - DEBUG - Doctor by id - 191 was deleted
 2023-03-07 13:22:55,697 - werkzeug - INFO - 127.0.0.1 - - [07/Mar/2023 13:22:55] "DELETE /doctor-api/191 HTTP/1.1" 200 -
+2023-03-07 13:32:37,253 - werkzeug - INFO - 127.0.0.1 - - [07/Mar/2023 13:32:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2023-03-07 13:32:37,265 - werkzeug - INFO - 127.0.0.1 - - [07/Mar/2023 13:32:37] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
