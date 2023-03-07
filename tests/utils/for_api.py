@@ -17,7 +17,7 @@ def create_doctor():
         "full_name": f"Test Doctor{var}",
         "seniority": 3,
         "specialty": "ORTHOPEDIST",
-        "phone_number": f"09377817{var}",
+        "phone_number": f"0917{var}",
         "email": f"testemail{var}@gmail.com"
     }
     return requests.post("http://127.0.0.1:5000/doctor-api", json=doctor_attrs,
@@ -37,7 +37,7 @@ def create_patient():
         "full_name": f"Test Patient{var}",
         "year_of_birth": 2000,
         "kind_of_ache": "MILD",
-        "phone_number": f"09377817{var}",
+        "phone_number": f"0937{var}",
         "email": f"testemail{var}@gmail.com"
     }
     return requests.post("http://127.0.0.1:5000/patient-api", json=patient_attrs,
